@@ -10,12 +10,19 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 Online LATEX parsers to make report!!
 
-
 Follow these security points:
 http://expressjs.com/en/advanced/best-practice-security.html
 
 
 # HTML5
+
+Why boilerplates?
+
+Boilerplates to conside:
+https://www.npmjs.com/package/node-boilerplate
+https://github.com/inadarei/nodebootstrap
+
+
 
 ## Validators
 https://github.com/mozilla/html5-lint
@@ -24,6 +31,12 @@ https://www.npmjs.com/package/html-validator
 
 # CSS
 
+
+Styleguides (research others)
+http://codeguide.co/
+https://github.com/sahat/hackathon-starter#recommended-design-resources
+
+
 # JS
 
 # PNG
@@ -31,6 +44,9 @@ https://www.npmjs.com/package/html-validator
 # SVG
 
 # Server
+
+https://github.com/sahat/hackathon-starter#recommended-nodejs-libraries
+
 
 # Database
 
