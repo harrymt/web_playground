@@ -39,6 +39,9 @@ https://github.com/sahat/hackathon-starter#recommended-design-resources
 
 # JS
 
+- Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
+
+
 # PNG
 
 # SVG
