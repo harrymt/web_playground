@@ -14,14 +14,22 @@ Follow these security points:
 http://expressjs.com/en/advanced/best-practice-security.html
 
 
-# HTML5
+# Setup
 
 Why boilerplates?
 
-Boilerplates to conside:
-https://www.npmjs.com/package/node-boilerplate
-https://github.com/inadarei/nodebootstrap
+NodeBootstrap - unobtrusive skeleton project for Node/Express.js with pre-configured best-practices. Kick-start your Node project development with tons of boilerplate taken care of, such as: clustering, Docker-support, error-handling, modularity, logging, views, environments etc. http://www.nodebootstrap.io
 
+(Why use a boilerplate? http://whatis.techtarget.com/definition/boilerplate)
+
+Boilerplates to consider:
+https://www.npmjs.com/package/node-boilerplate (Doesn't use docker, or express, pro docker bit)
+https://github.com/inadarei/nodebootstrap (use this one!)
+
+# HTML
+
+- Practices, JS at the end of document
+- CSS at top via a CDN probs
 
 
 ## Validators
@@ -113,26 +121,26 @@ A means you have done sophisticated or extensive work
 	- Client-side JS for effects or animation or interaction, including use of client-side frameworks, but excluding aspects which are to do with dynamic page construction
 	- Written a substantial script yourself, or written a number of script functions with different issues involved, or gained a medium amount of experience with client-side frameworks
 	- Gained a high level of understanding of how client-side JavaScript works, or a high level of expertise in using client-side frameworks
-- PNG: 
+- PNG:
 	- Working with bitmap graphics in Gimp or Krita
 	- Show how to convert images to PNG, cropping away unwanted edges, changing resoluation
 	- Use basic tools such as using filters or changing colours or combining existing images or creating simple shapes or filling
 	- Gained experience with some more sophisticated tools such as handling layers and transparency, or airbrushing or creating original artwork
-- SVG: 
+- SVG:
 	- this is working with vector graphics in Inkscape
 	- Created a basic drawing in Inkscape, probably by copying something else
 	- Gained experience with some of Inkscape's features such as shape tools, freehand drawing, simplification
 	- Gained a higher level of experience, e.g. with path editing, grouping, transformations, gradients, patterns, etc., or put a lot of effort into vector artwork
-- Server: 
+- Server:
 	- this is creating or adapting a server, either programming it yourself or using express and its add-ons
 	- means you've created a server by minimally adapting the one provided, or closely following a tutorial to set up express
 	- B means you've dealt with things like port numbers, URL validation, content negotiation for old browsers, sending redirections to browsers, handling UTF-8
 	- A means you've dealt with things like https and certificates, or web sockets, or cloud hosting, or security issues beyond URL validation, or auto-testing, or cookies, or running under reduced privilege
-- Database: 
+- Database:
 	- C means you've manually created a database, and then extracted data from it in your server
 	- B means you've managed to update or insert data as well as extract it, and you've got the hang of callbacks for getting things to happen in the right order
 	- A means you've gained a lot of experience with SQL, or you've put a lot of effort into organising database access (e.g. into a separate server-side module) or you've put a lot of effort into database design or details of handling your data
-- Dynamic pages: 
+- Dynamic pages:
 	- this is either inserting data into templates on the server side and delivering dynamic pages or requesting data from the server and inserting into existing pages on the client side
 	- C means you've created a simple dynamic delivery system or you have used a framework in a simple way
 	- B means you've organised dynamic delivery in a more sophisticated way, either doing more of your own programming or using more features of a framework
