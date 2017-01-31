@@ -17,8 +17,16 @@ http://expressjs.com/en/advanced/best-practice-security.html
 # ----- FRONT END ------
 
 - Uses Docker https://www.docker.com/products/docker-toolbox
-	
-	
+- How I set it up: I ran the following
+
+```
+npm install nodebootstrap -g
+nodebootstrap build web_playground
+npm run docker-dev // Run docker stuff
+```
+- Then view at `http://<docker-host>:5000/`
+
+
 # Setup
 
 Why boilerplates?
