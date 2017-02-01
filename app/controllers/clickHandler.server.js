@@ -1,37 +1,72 @@
 'use strict';
 
-var Users = require('../models/users.js');
-
-function ClickHandler () {
+function ClickHandler (db) {
+	var clicks = db.collection('clicks');
 
 	this.getClicks = function (req, res) {
-		Users
-			.findOne({ 'github.id': req.user.github.id }, { '_id': false })
-			.exec(function (err, result) {
-				if (err) { throw err; }
+		clicks
+			.findOne(
+				{},
+				{ '_id': false },
+				function (err, result) {
+					if (err) {
+						throw err;
+					}
 
-				res.json(result.nbrClicks);
-			});
+					var clickResults = [];
+
+					if (result) {
+						clickResults.push(result);
+						res.json(clickResults);
+					} else {
+						clicks.insert({ 'clicks': 0 }, function (err) {
+							if (err) {
+								throw err;
+							}
+
+							clicks.findOne({}, {'_id': false}, function (err, doc) {
+								if (err) {
+									throw err;
+								}
+
+								clickResults.push(doc);
+								res.json(clickResults);
+							});
+
+						});
+
+					}
+				}
+			);
 	};
 
 	this.addClick = function (req, res) {
-		Users
-			.findOneAndUpdate({ 'github.id': req.user.github.id }, { $inc: { 'nbrClicks.clicks': 1 } })
-			.exec(function (err, result) {
-					if (err) { throw err; }
+		clicks
+			.findAndModify(
+				{},
+				{ '_id': 1 },
+				{ $inc: { 'clicks': 1 } },
+				function (err, result) {
+					if (err) {
+						throw err;
+					}
 
-					res.json(result.nbrClicks);
+					res.json(result);
 				}
 			);
 	};
 
 	this.resetClicks = function (req, res) {
-		Users
-			.findOneAndUpdate({ 'github.id': req.user.github.id }, { 'nbrClicks.clicks': 0 })
-			.exec(function (err, result) {
-					if (err) { throw err; }
+		clicks
+			.update(
+				{},
+				{ 'clicks': 0 },
+				function (err, result) {
+					if (err) {
+						throw err;
+					}
 
-					res.json(result.nbrClicks);
+					res.json(result);
 				}
 			);
 	};
