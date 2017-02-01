@@ -83,8 +83,15 @@ https://github.com/sahat/hackathon-starter#recommended-nodejs-libraries
 
 # Database
 
+- SQLite
+
+
 # Dynamic Pages
 
+
+## General Testing
+
+- Use PhantomJs to automate things you do in the website
 
 
 
