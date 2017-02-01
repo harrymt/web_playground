@@ -66,6 +66,9 @@ https://github.com/sahat/hackathon-starter#recommended-design-resources
 
 # JS
 
+- Use Mocha for unit tests
+- https://github.com/mochajs/mocha
+
 - Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
 
 
