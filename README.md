@@ -16,17 +16,6 @@ http://expressjs.com/en/advanced/best-practice-security.html
 
 # ----- FRONT END ------
 
-- Uses Docker https://www.docker.com/products/docker-toolbox
-- How I set it up: I ran the following
-
-```
-npm install nodebootstrap -g
-nodebootstrap build web_playground
-npm run docker-dev // Run docker stuff
-```
-- Then view at `http://<docker-host>:5000/`
-
-
 # Setup
 
 Why boilerplates?
@@ -37,7 +26,8 @@ NodeBootstrap - unobtrusive skeleton project for Node/Express.js with pre-config
 
 Boilerplates to consider:
 https://www.npmjs.com/package/node-boilerplate (Doesn't use docker, or express, pro docker bit)
-https://github.com/inadarei/nodebootstrap (use this one!)
+https://github.com/inadarei/nodebootstrap (TOO BLOATED)
+http://www.clementinejs.com/tutorials/tutorial-beginner.html (More lighter weight! USE!)
 
 # HTML
 
