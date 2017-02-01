@@ -29,6 +29,13 @@ https://www.npmjs.com/package/node-boilerplate (Doesn't use docker, or express, 
 https://github.com/inadarei/nodebootstrap (TOO BLOATED)
 http://www.clementinejs.com/tutorials/tutorial-beginner.html (More lighter weight! USE!)
 
+```bash
+git clone https://github.com/johnstonbl01/clementinejs-fcc.git web_playground
+cd web_playgroud
+npm install
+```
+
+
 # HTML
 
 - Practices, JS at the end of document
