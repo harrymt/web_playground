@@ -5,6 +5,15 @@ Harrys web playground, demonstrating variety of website development techniques u
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
+# To build this project
+
+- First clone the project, and do `npm install`
+- Then run a MongoDB instance, (windows) run C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe
+- `node server` then goto localhost:3000
+
+# TODO
+
+- Move to SQLite
 
 # General / Report
 
