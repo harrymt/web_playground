@@ -1,27 +1,25 @@
 {
-  "name": "clementinejs-angular",
+  "name": "web_playground",
   "version": "1.0.2",
-  "description": "The elegant and lightweight boilerplate for full stack JavaScript",
+  "description": "Exploring and showing off lots of different web technologies.",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnstonbl01/clementinejs-angular"
+    "url": "git+https://github.com/harrymt/web_playground"
   },
-  "homepage": "http://johnstonbl01.github.io/clementinejs/",
-  "bugs": "https://github.com/johnstonbl01/clementinejs-angular/issues",
+  "homepage": "https://github.com/harrymt/web_playground",
+  "bugs": "https://github.com/harrymt/web_playground/issues",
   "keywords": [
-    "MEAN",
-    "MongoDB",
+    "MongoDb",
     "Express",
     "Angular",
     "Node",
-    "javascript",
-    "boilerplate"
+    "javascript"
   ],
-  "author": "Blake Johnston",
+  "author": "Harry Mumford-Turner",
   "license": "MIT",
   "dependencies": {
     "express": "^4.12.4",
-    "mongodb": "^2.0.33"
+    "mongodb": "^2.2.22"
   }
 }
