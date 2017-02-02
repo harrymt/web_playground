@@ -87,14 +87,22 @@ https://github.com/sahat/hackathon-starter#recommended-nodejs-libraries
 
 # Database
 
+<<<<<<< HEAD
 Why not Mongo DB
 http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
 
 http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/
+=======
+- SQLite
+>>>>>>> origin/master
 
 
 # Dynamic Pages
 
+
+## General Testing
+
+- Use PhantomJs to automate things you do in the website
 
 
 
