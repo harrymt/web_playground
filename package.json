@@ -1,25 +1,27 @@
 {
-  "name": "web_playground",
-  "version": "1.0.2",
+  "name": "web-playground",
+  "version": "0.0.1",
   "description": "Exploring and showing off lots of different web technologies.",
-  "main": "server.js",
+  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harrymt/web_playground"
   },
+    "scripts": {
+    "start": "node ./bin/www"
+  },
   "homepage": "https://github.com/harrymt/web_playground",
   "bugs": "https://github.com/harrymt/web_playground/issues",
-  "keywords": [
-    "MongoDb",
-    "Express",
-    "Angular",
-    "Node",
-    "javascript"
-  ],
   "author": "Harry Mumford-Turner",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.12.4",
-    "mongodb": "^2.2.22"
+    "sqlite3": "^3.1.8",
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0",
+    "pug": "~2.0.0-beta10",
+    "serve-favicon": "~2.3.2"
   }
 }

@@ -8,12 +8,18 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 # To build this project
 
 - First clone the project, and do `npm install`
-- Then run a MongoDB instance, (windows) run C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe
-- `node server` then goto localhost:3000
+- Then run the server via `node server`
+- Goto localhost:3000
+
+# Setup
+
+Install [sqlite3](https://www.sqlite.org/download.html) and add it to your PATH.
+
 
 # TODO
 
-- Move to SQLite
+- Use express js templates: https://expressjs.com/en/4x/api.html#res.render
+
 
 # General / Report
 
@@ -30,28 +36,26 @@ http://expressjs.com/en/advanced/best-practice-security.html
 Why boilerplates?
 
 NodeBootstrap - unobtrusive skeleton project for Node/Express.js with pre-configured best-practices. Kick-start your Node project development with tons of boilerplate taken care of, such as: clustering, Docker-support, error-handling, modularity, logging, views, environments etc. http://www.nodebootstrap.io
-
+make a note, that all boilerplates are poo?
 (Why use a boilerplate? http://whatis.techtarget.com/definition/boilerplate)
 
 Boilerplates to consider:
 https://www.npmjs.com/package/node-boilerplate (Doesn't use docker, or express, pro docker bit)
 https://github.com/inadarei/nodebootstrap (TOO BLOATED)
-http://www.clementinejs.com/tutorials/tutorial-beginner.html (More lighter weight! USE!)
+http://www.clementinejs.com/tutorials/tutorial-beginner.html (More lighter weight! Dont use though)
+Use basic Express application generator: https://expressjs.com/en/starter/generator.html
 
-```bashgit
-git clone https://github.com/johnstonbl01/clementinejs-angular.git web_playground
-cd web_playground
-npm install
-```
 
 
 # HTML
 
 - Practices, JS at the end of document
 - CSS at top via a CDN probs
-
+- Use &#960 rather than hex characters
+- Use 1.0XML
 
 ## Validators
+
 https://github.com/mozilla/html5-lint
 https://www.npmjs.com/package/html-validator
 
@@ -82,6 +86,12 @@ https://github.com/sahat/hackathon-starter#recommended-nodejs-libraries
 
 
 # Database
+
+Why not Mongo DB
+http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
+
+http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/
+
 
 # Dynamic Pages
 
