@@ -48,6 +48,7 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - CSS at top via a CDN probs
 - Use &#960 rather than hex characters
 - Use 1.0XML
+- Find a Polyglot HTML5 validator
 
 ## Validators
 
