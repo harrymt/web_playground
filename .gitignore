@@ -1,4 +1,5 @@
 # Ignore database
+*.db
 
 # Ignore sass files
 /.sass-cache/*
