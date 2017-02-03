@@ -5,28 +5,27 @@ Harrys web playground, demonstrating variety of website development techniques u
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
-# To build this project
 
-- First clone the project, and do `npm install`
-- Then run the server via `node bin/www`
-- Goto localhost:3000
+## To run the project
 
-# Setup
+- Clone project `git clone git@github.com:harrymt/web_playground.git`
+- Run `node server`
+- View the website on `localhost:3001`
 
-Install [sqlite3](https://www.sqlite.org/download.html) and add it to your PATH.
+
+## Build the project
+
+- Ensure Ruby, Sass the Ruby gem and Grunt is installed
+- Ensure [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
+- Run `grunt` to build the files
+- Now run `node server`
+- View the website on `localhost:3001`
 
 
 # General / Report
 
-Online LATEX parsers to make report!!
-
-Follow these security points:
-http://expressjs.com/en/advanced/best-practice-security.html
-
-
-# ----- FRONT END ------
-
-# Setup
+- Online LATEX parsers to make report!!
+- Follow these security points: http://expressjs.com/en/advanced/best-practice-security.html
 
 Why boilerplates?
 
@@ -49,6 +48,7 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - Use &#960 rather than hex characters
 - Use 1.0XML
 - Find a Polyglot HTML5 validator
+
 
 ## Validators
 
