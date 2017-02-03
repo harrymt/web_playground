@@ -1,4 +1,4 @@
-$primaryColor : #EFEFEF;
+$primaryColor : #555;
 
 body {
   padding: 50px;
@@ -11,4 +11,8 @@ a {
 
 .main_menu span {
   padding: 10px;
+}
+
+.active {
+  font-weight: bold;
 }
