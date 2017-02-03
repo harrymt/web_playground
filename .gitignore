@@ -1,3 +1,10 @@
+# Ignore sass files
+/.sass-cache/*
+/.sass-cache
+
+# Ignore the map files
+*.css.map
+
 # Linter
 .eslintrc
 
