@@ -8,17 +8,12 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 # To build this project
 
 - First clone the project, and do `npm install`
-- Then run the server via `node server`
+- Then run the server via `node bin/www`
 - Goto localhost:3000
 
 # Setup
 
 Install [sqlite3](https://www.sqlite.org/download.html) and add it to your PATH.
-
-
-# TODO
-
-- Use express js templates: https://expressjs.com/en/4x/api.html#res.render
 
 
 # General / Report
@@ -87,14 +82,12 @@ https://github.com/sahat/hackathon-starter#recommended-nodejs-libraries
 
 # Database
 
-<<<<<<< HEAD
 Why not Mongo DB
 http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
 
 http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/
-=======
+
 - SQLite
->>>>>>> origin/master
 
 
 # Dynamic Pages
