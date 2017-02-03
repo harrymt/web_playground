@@ -58,6 +58,7 @@ https://www.npmjs.com/package/html-validator
 
 # CSS
 
+- Dont use lots of whitespace, add more columns
 
 Styleguides (research others)
 http://codeguide.co/
