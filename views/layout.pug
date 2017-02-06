@@ -2,6 +2,10 @@ doctype html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB")
 html
   include includes/head.pug
   body
-    include includes/header.pug
-    block content
-    include includes/footer.pug
+    .container
+      .main
+        include includes/header.pug
+        .block_colour
+        .information
+          block content
+      include includes/footer.pug
