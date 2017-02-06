@@ -5,6 +5,8 @@ Harrys web playground, demonstrating variety of website development techniques u
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
+![Screenshot](screenshot.png "Screenshot")
+
 
 ## To run the project
 
