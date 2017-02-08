@@ -79,6 +79,9 @@ https://github.com/sahat/hackathon-starter#recommended-design-resources
 
 # SVG
 
+- Generate circles in SVG http://www.lugolabs.com/circles
+
+
 # Server
 
 https://github.com/sahat/hackathon-starter#recommended-nodejs-libraries
