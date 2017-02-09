@@ -7,6 +7,10 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 ![Screenshot](screenshot.png "Screenshot")
 
+# TODO
+
+- Make navigation links fully clickable, not just on the text
+
 
 ## To run the project
 
@@ -213,3 +217,11 @@ If you have used a framework, making it do what you want counts for more than ju
 - Write something longer to explain overall aim and design
 - Highlight things that I am proud of
 - Anything that took a long time, but didn't make it into the site
+
+
+## Technologies Used
+
+- [Markdown to PDF](https://www.npmjs.com/package/markdown-pdf)
+
+
+
