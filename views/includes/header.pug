@@ -7,10 +7,14 @@ mixin navlink(menu_item, current_page)
     else
       a(href="/")= menu_item
   else
-    if (menu_item == current_page)
-      a.active(href="/")= menu_item
-    else
-      a(href="/" + menu_item.toLowerCase())= menu_item
+    +makeURL(menu_item, (menu_item == current_page))
+
+
+mixin makeURL(item, is_active)
+  if(is_active)
+    a.active(href="/" + item.toLowerCase())= item
+  else
+    a(href="/" + item.toLowerCase())= item
 
 
 ul.navigation
