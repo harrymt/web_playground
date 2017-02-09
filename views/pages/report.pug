@@ -1,5 +1,10 @@
 extends ../layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  p The report below is written in Markdown (report.md). A PDF version can be generated here.
+    =" "
+    a(href="/report/pdf/", class="btn btn-inline") Generate PDF
+
+  p
+
+  include:markdown-it(linkify langPrefix='highlight-') ../../report.md
