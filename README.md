@@ -10,7 +10,11 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 # TODO
 
 - Make navigation links fully clickable, not just on the text
-
+- Use Polyglot HTML5, which is HTML5 & XHTML5
+	- Configure the server to either server using text/html or application/xhtml+xml
+	- Add to grunt a HTML validator https://github.com/jzaefferer/grunt-html
+- READ THIS WHOLE DOCUMENT FIRST!
+- Comment all
 
 ## To run the project
 
@@ -53,7 +57,6 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - CSS at top via a CDN probs
 - Use &#960 rather than hex characters
 - Use 1.0XML
-- Find a Polyglot HTML5 validator
 
 
 ## Validators
@@ -65,6 +68,7 @@ https://www.npmjs.com/package/html-validator
 # CSS
 
 - Dont use lots of whitespace, add more columns
+- https://github.com/gruntjs/grunt-contrib-csslint
 
 Styleguides (research others)
 http://codeguide.co/
@@ -75,8 +79,20 @@ https://github.com/sahat/hackathon-starter#recommended-design-resources
 
 - Use Mocha for unit tests
 - https://github.com/mochajs/mocha
-
 - Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
+- QUnit for tests, JSlint for linting
+- StyleGuide https://google.github.io/styleguide/jsguide.html
+
+### Best Practices
+
+- Douglas Crockford JS best practices
+	- Use Strict mode
+	- Make field and methods private
+	- Avoid using this keywrod
+	- Use Power consutrctors to avoid the new keyword
+	- Inheritence is different
+	- New ES6 features (not neccessarily well supported cross brower )
+
 
 
 # PNG
