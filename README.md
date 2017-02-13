@@ -120,8 +120,9 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 # Dynamic Pages
 
 
-## General Testing
-
+# General Testing
+- Performance, use Lighthouse extension
+	https://developers.google.com/web/tools/lighthouse/
 - Use PhantomJs to automate things you do in the website
 
 
