@@ -17,6 +17,7 @@ var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 // Disable minification for debug
+// TODO on release enable
 app.locals.pretty = true;
 
 /**

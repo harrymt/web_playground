@@ -10,8 +10,6 @@ var bodyParser = require('body-parser');
 var pages = require('./routes/pages');
 var report = require('./routes/report');
 
-var port = 3000;
-
 var app = express();
 
 // view engine setup
