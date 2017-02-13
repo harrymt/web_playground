@@ -1,5 +1,4 @@
 {
-  "disallowAttributeConcatenation" : true,
   "disallowAttributeTemplateString" : true,
   "disallowBlockExpansion" : true,
   "disallowClassAttributeWithStaticValue" : true,
