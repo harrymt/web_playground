@@ -1,0 +1,19 @@
+
+h1 {
+  color: $masked-grey;
+  font-size: 1.5rem;
+  padding: 0 10px;
+  border-left: 3px solid $blue;
+}
+
+h3 {
+  color: darken($subtle-grey, 7%);
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0 10px;
+  border-left: 3px solid $blue;
+}
+
+p {
+  padding: 10px 0;
+}

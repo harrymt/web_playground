@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 
     scsslint: {
       all: [
-        'dev/scss/**/*.scss',
+        'dev/scss/_partials/*.scss',
         'dev/scss/*.scss'
       ]
     },

@@ -1,0 +1,14 @@
+
+
+.block_colour {
+  width: 100%;
+  height: 300px;
+  background-color: $blue;
+}
+
+.information {
+  @include opensans;
+
+  padding: 20px 50px;
+  margin-bottom: 30px;
+}

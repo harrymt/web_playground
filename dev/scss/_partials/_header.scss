@@ -1,0 +1,76 @@
+
+// HEADER
+
+
+ul.navigation li ul li a,
+ul.navigation li a {
+  display: block;
+  padding: 15px;
+}
+
+ul.navigation {
+  font-size: 0;
+  list-style-type: none;
+
+  // initial li
+  li {
+    @include opensans;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: $masked-grey;
+
+    display: inline-block;
+    // padding: 15px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: $masked-grey;
+    }
+
+
+    // secondary ul
+    ul {
+      display: none;
+    }
+    // initial li:hover
+    &:hover {
+      cursor: pointer;
+      background-color: $subtle-grey;
+
+      // secondary ul visibility change
+      ul {
+        display: block;
+
+        width: 200px;
+        right: 0;
+
+        position: absolute;
+
+        // secondary li
+        li {
+          display: block;
+          background-color: darken($subtle-white, 7%);
+          span {
+            float: right;
+            color: $subtle-white;
+            background-color: $blue;
+            padding: 2px 5px;
+            text-align: center;
+            font-size: .8rem;
+            border-radius: 3px;
+          }
+
+          &:hover {
+            background-color: darken($subtle-white, 10%);
+            span {
+              background-color: darken($blue, 5%);
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
