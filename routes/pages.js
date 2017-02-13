@@ -7,6 +7,5 @@ router.get('/front-end', function(req, res, next) { res.render('pages/front-end'
 router.get('/back-end', function(req, res, next) { res.render('pages/back-end', { title: 'Back-End'}); });
 router.get('/report', function(req, res, next) {  res.render('pages/report', { title: 'Report'}); });
 router.get('/extras', function(req, res, next) {  res.render('pages/extras', { title: 'Extras'}); });
-router.get('/about', function(req, res, next) {  res.render('pages/about', { title: 'About'}); });
 
 module.exports = router;
