@@ -7,6 +7,14 @@ module.exports = function (grunt) {
   });
 
   grunt.initConfig({
+
+    scsslint: {
+      all: [
+        'dev/scss/**/*.scss',
+        'dev/scss/*.scss'
+      ]
+    },
+
     sass: {
       dist: {
         options: {
@@ -32,7 +40,7 @@ module.exports = function (grunt) {
 
     watch: {
       css: {
-        files: ['dev/scss/*.scss'],
+        files: ['dev/scss/*.scss', 'dev/scss/**/*.scss'],
         tasks: ['default'],
         options: {
           spawn: false
@@ -64,8 +72,9 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-puglint'); // Lint Pug (HTML templates)
   grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
+  grunt.loadNpmTasks('grunt-scss-lint'); // Lint SCSS files
   grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
   grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
 
-  grunt.registerTask('default', ['puglint', 'uglify', 'sass']);
+  grunt.registerTask('default', ['puglint', 'scsslint', 'uglify', 'sass']);
 };
