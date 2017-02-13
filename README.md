@@ -9,12 +9,15 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 # TODO
 
-- Make navigation links fully clickable, not just on the text
 - Use Polyglot HTML5, which is HTML5 & XHTML5
 	- Configure the server to either server using text/html or application/xhtml+xml
-	- Add to grunt a HTML validator https://github.com/jzaefferer/grunt-html
-- READ THIS WHOLE DOCUMENT FIRST!
 - Comment all
+- Test performance by encooperating the lighthouse task!
+	- Performance, use Lighthouse extension
+		https://developers.google.com/web/tools/lighthouse/
+- Use PhantomJs to automate things you do in the website
+- Test JSusing mocha https://github.com/mochajs/mocha
+- Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
 
 ## To run the project
 
@@ -26,6 +29,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ## Build the project
 
 - Ensure Ruby, Sass the Ruby gem and Grunt is installed
+- `gem update --system && gem install scss_lint`
 - Ensure [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
 - Run `grunt` to build the files
 - Now run `node server`
@@ -61,6 +65,8 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 
 ## Validators
 
+- Uses a PUG validator
+
 https://github.com/mozilla/html5-lint
 https://www.npmjs.com/package/html-validator
 
@@ -68,11 +74,10 @@ https://www.npmjs.com/package/html-validator
 # CSS
 
 - Dont use lots of whitespace, add more columns
-- https://github.com/gruntjs/grunt-contrib-csslint
 
-Styleguides (research others)
-http://codeguide.co/
-https://github.com/sahat/hackathon-starter#recommended-design-resources
+- Uses SCSS
+	- Styleguide of: https://github.com/airbnb/css
+	- Uses scss-lint here https://www.npmjs.com/package/grunt-scss-lint
 
 
 # JS
@@ -118,6 +123,8 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 
 
 # Dynamic Pages
+
+- Pug
 
 
 # General Testing
