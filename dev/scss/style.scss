@@ -1,25 +1,20 @@
+
 //variables
-$background-purple: #EEEEEE;
+$background-purple: #eee;
 $subtle-white: #f9f9f9;
 $subtle-grey: #f2f2f2;
 $masked-grey: #333;
-$blue: #F03861;
+$shadow-color: #000;
+$blue: #f03861;
 
 $open-sans: 'Open Sans', sans-serif;
-
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 .active {
   font-weight: bold;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   background-color: $background-purple;
 }
@@ -34,16 +29,14 @@ body, html {
 
 .material_design {
   width: 80%;
-  margin: 5% auto 0 auto;
-  box-shadow: 0 4px 12px rgba(black, 0.1);
+  margin: 5% auto 0;
+  box-shadow: 0 4px 12px rgba($shadow-color, 0.1);
   background-color: $subtle-white;
-  // max-width: 1800px;
-
 
   h1 {
     color: $masked-grey;
     font-size: 1.5rem;
-    padding: 0px 10px;
+    padding: 0 10px;
     border-left: 3px solid $blue;
   }
 
@@ -51,12 +44,12 @@ body, html {
     color: darken($subtle-grey, 7%);
     font-size: 1rem;
     font-weight: 300;
-    padding: 0px 10px;
+    padding: 0 10px;
     border-left: 3px solid $blue;
   }
 
   p {
-    padding: 10px 0px;
+    padding: 10px 0;
   }
 
 }
@@ -87,6 +80,16 @@ footer {
 }
 
 
+
+// HEADER
+
+
+ul.navigation li ul li a,
+ul.navigation li a {
+  display: block;
+  padding: 15px;
+}
+
 ul.navigation {
   font-size: 0;
   list-style-type: none;
@@ -99,7 +102,7 @@ ul.navigation {
     color: $masked-grey;
 
     display: inline-block;
-    padding: 15px;
+    // padding: 15px;
     position: relative;
 
     a {
@@ -112,7 +115,6 @@ ul.navigation {
     ul {
       display: none;
     }
-
     // initial li:hover
     &:hover {
       cursor: pointer;
@@ -121,10 +123,9 @@ ul.navigation {
       // secondary ul visibility change
       ul {
         display: block;
-        margin-top: 15px;
 
         width: 200px;
-        left: 0;
+        right: 0;
 
         position: absolute;
 
@@ -151,5 +152,6 @@ ul.navigation {
         }
       }
     }
+
   }
 }

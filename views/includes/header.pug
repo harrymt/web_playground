@@ -1,31 +1,40 @@
 
 //- Create a navigation item
-mixin navlink(menu_item, current_page)
+mixin navlink(menu_item, current_page, is_dropdown)
   if (menu_item === 'Home' )
     if (menu_item === current_page)
       a.active( href='/' )= menu_item
+        if (is_dropdown)
+          =' '
+          i.fa.fa-angle-down
     else
       a( href='/' )= menu_item
+        if (is_dropdown)
+          =' '
+          i.fa.fa-angle-down
   else
-    +makeURL(menu_item, (menu_item == current_page))
+    +makeURL(menu_item, (menu_item == current_page), is_dropdown)
 
 //- This mixin creates a URL link
-mixin makeURL(item, is_active)
-  link_url= '/' + item.toLowerCase()
+mixin makeURL(item, is_active, is_dropdown)
   if(is_active)
-    a.active( href=link_url )= item
+    a.active( href='/' + item.toLowerCase() )= item
+      if (is_dropdown)
+        =' '
+        i.fa.fa-angle-down
   else
-    a( href=link_url )= item
+    a( href='/' + item.toLowerCase() )= item
+      if (is_dropdown)
+        =' '
+        i.fa.fa-angle-down
 
 //- Start rendering page
 ul.navigation
   li
-    +navlink('Home', title)
+    +navlink('Home', title, false)
   li
-    +navlink('Front-End', title)
-    =' '
-    i.fa.fa-angle-down
-    ul
+    +navlink('Front-End', title, true)
+    ul.navigation-nested
       li
         a( href='front-end#html' ) HTML
       li
@@ -37,10 +46,8 @@ ul.navigation
       li
         a( href='front-end#svg' ) SVG
   li
-    +navlink('Back-End', title)
-    =' '
-    i.fa.fa-angle-down
-    ul
+    +navlink('Back-End', title, true)
+    ul.navigation-nested
       li
         a( href='back-end#server' ) Server
       li
@@ -48,8 +55,6 @@ ul.navigation
       li
         a( href='back-end#dynamic' ) Dynamic
   li
-    +navlink('Report', title)
+    +navlink('Report', title, false)
   li
-    +navlink('Extras', title)
-  li
-    +navlink('About', title)
+    +navlink('Extras', title, false)
