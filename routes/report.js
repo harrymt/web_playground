@@ -7,10 +7,10 @@ router.get('/report/pdf', function(req, res, next) {
 
   console.log("Trying to render report.");
 
-  markdownpdf().from("report.md").to("report.pdf", function () {
+  markdownpdf().from("report/report.md").to("report/report.pdf", function () {
     console.log("Successfully rendered report.");
 
-    fs.readFile("report.pdf", function(err, data) {
+    fs.readFile("report/report.pdf", function(err, data) {
         res.contentType("application/pdf");
         res.send(data);
     });
