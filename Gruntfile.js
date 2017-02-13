@@ -45,6 +45,7 @@ module.exports = function (grunt) {
       },
 
       pug: {
+        files: ['views/*.pug', 'views/**/*.pug'],
         tasks: ['default']
       }
     },
