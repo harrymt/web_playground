@@ -1,5 +1,6 @@
+'use strict';
+
 module.exports = function (grunt) {
-  'use strict';
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json')
@@ -10,7 +11,6 @@ module.exports = function (grunt) {
       dist: {
         options: {
           style: 'compressed'
-          // loadPath: require('node-bourbon').includePaths // If use bourbon
         },
 
         files: {
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        mangle: false // TODO change to true on release
+        mangle: true
       },
       my_target: {
         files: {
@@ -50,7 +50,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
   grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
   grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
-  grunt.loadNpmTasks('grunt-serve'); // Local server
 
   grunt.registerTask('default', ['uglify', 'sass']);
 };
