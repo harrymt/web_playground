@@ -1,54 +1,55 @@
 
 //- Create a navigation item
 mixin navlink(menu_item, current_page)
-  if (menu_item == "Home")
-    if (menu_item == current_page)
-      a.active(href="/")= menu_item
+  if (menu_item === 'Home' )
+    if (menu_item === current_page)
+      a.active( href='/' )= menu_item
     else
-      a(href="/")= menu_item
+      a( href='/' )= menu_item
   else
     +makeURL(menu_item, (menu_item == current_page))
 
-
+//- This mixin creates a URL link
 mixin makeURL(item, is_active)
+  link_url= '/' + item.toLowerCase()
   if(is_active)
-    a.active(href="/" + item.toLowerCase())= item
+    a.active( href=link_url )= item
   else
-    a(href="/" + item.toLowerCase())= item
+    a( href=link_url )= item
 
-
+//- Start rendering page
 ul.navigation
   li
-    +navlink("Home", title)
+    +navlink('Home', title)
   li
-    +navlink("Front-End", title)
-    =" "
+    +navlink('Front-End', title)
+    =' '
     i.fa.fa-angle-down
     ul
       li
-        a(href="front-end#html") HTML
+        a( href='front-end#html' ) HTML
       li
-        a(href="front-end#css") CSS
+        a( href='front-end#css' ) CSS
       li
-        a(href="front-end#js") JS
+        a( href='front-end#js' ) JS
       li
-        a(href="front-end#png") PNG
+        a( href='front-end#png' ) PNG
       li
-        a(href="front-end#svg") SVG
+        a( href='front-end#svg' ) SVG
   li
-    +navlink("Back-End", title)
-    =" "
+    +navlink('Back-End', title)
+    =' '
     i.fa.fa-angle-down
     ul
       li
-        a(href="back-end#server") Server
+        a( href='back-end#server' ) Server
       li
-        a(href="back-end#database") Database
+        a( href='back-end#database' ) Database
       li
-        a(href="back-end#dynamic") Dynamic
+        a( href='back-end#dynamic' ) Dynamic
   li
-    +navlink("Report", title)
+    +navlink('Report', title)
   li
-    +navlink("Extras", title)
+    +navlink('Extras', title)
   li
-    +navlink("About", title)
+    +navlink('About', title)

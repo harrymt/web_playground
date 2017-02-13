@@ -42,14 +42,29 @@ module.exports = function (grunt) {
       javascript: {
         files: ['dev/js/*.js'],
         tasks: ['default']
+      },
+
+      pug: {
+        tasks: ['default']
+      }
+    },
+
+    puglint: {
+      views: {
+        options: {
+          extends: './views/.pug-lintrc' // config file
+        },
+        src: ['views/**/*.pug']
       }
     }
-
   });
 
+
+
+  grunt.loadNpmTasks('grunt-puglint'); // Lint Pug (HTML templates)
   grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
   grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
   grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
 
-  grunt.registerTask('default', ['uglify', 'sass']);
+  grunt.registerTask('default', ['puglint', 'uglify', 'sass']);
 };

@@ -1,14 +1,14 @@
-extends ../layout
+extends ../layout.pug
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to title
 
-  h2(id='server') Server
+  h2#server Server
   p Details about how the server was constructed.
 
-  h2(id='database') Database
+  h2#database Database
   p Details about how the database works.
 
-  h2(id='dynamic') Dynamic Pages
+  h2#dynamic Dynamic Pages
   p Details about how dynamic pages are displayed. Pug.
