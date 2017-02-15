@@ -1,4 +1,3 @@
-
 # Web Playground
 
 Harrys web playground, demonstrating variety of website development techniques using best practices and standards.
@@ -8,16 +7,15 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ![Screenshot](screenshot.png "Screenshot")
 
 # TODO
-
-- Use Polyglot HTML5, which is HTML5 & XHTML5
-	- Configure the server to either server using text/html or application/xhtml+xml
-- Comment all
+- Fix CSS errors
 - Test performance by encooperating the lighthouse task!
 	- Performance, use Lighthouse extension
 		https://developers.google.com/web/tools/lighthouse/
+- Comment all
 - Use PhantomJs to automate things you do in the website
 - Test JSusing mocha https://github.com/mochajs/mocha
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
+- Go through security here http://expressjs.com/en/advanced/best-practice-security.html
 
 ## To run the project
 
@@ -61,14 +59,15 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - CSS at top via a CDN probs
 - Use &#960 rather than hex characters
 - Use 1.0XML
-
+- Handles content negotiation using (Polyglot HTML)[https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup]
+https://www.w3.org/TR/xhtml-media-types/#media-types
 
 ## Validators
 
 - Uses a PUG validator
 
-https://github.com/mozilla/html5-lint
-https://www.npmjs.com/package/html-validator
+https://github.com/mozilla/html5-lint ?
+https://www.npmjs.com/package/html-validator ?
 
 
 # CSS
