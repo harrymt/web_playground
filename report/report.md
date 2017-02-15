@@ -6,4 +6,4 @@ The marking of this unit splits the project into different sections, labelled be
 
 ## HTML
 
-To create a <WHY ARE HTML TEMPLATING LANGUAGES GOOD> HTML templating language called [Pug](https://pugjs.org/api/getting-started.html) (formerly called [Jade](https://www.npmjs.com/package/jade)). 'Pug  is a high performance template engine heavily influenced by Haml and implemented with JavaScript for node and browsers.'[pug]
+To create a <WHY ARE HTML TEMPLATING LANGUAGES GOOD> HTML templating language called [Pug](https://pugjs.org/api/getting-started.html) (formerly called [Jade](https://www.npmjs.com/package/jade)). _"Pug  is a high performance template engine heavily influenced by Haml and implemented with JavaScript for node and browsers."_ [\[1\]](https://github.com/pugjs/pug)
