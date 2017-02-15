@@ -1,5 +1,8 @@
 "use strict";
 
+// Get other server side code
+var server_side_code = require( __dirname + '/server/main.js');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -20,14 +23,28 @@ app.set('view options', {pretty: true}); // TODO Disable minification for now
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', pages);
+// Report will render with PDF
 app.use('/', report);
 
+// Perform content negotiation
+app.use(server_side_code.handleContent);
+
+/**
+ * Route every page.
+ */
+app.use('/', pages);
+
+
+/*
+ * ERROR HANDLING
+ *
+ * Below this line are all the error handling functions.
+ *
+ */
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
