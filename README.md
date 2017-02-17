@@ -17,25 +17,28 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
 - Go through security here http://expressjs.com/en/advanced/best-practice-security.html
 
-## To run the project
+
+## Dependancies
 
 - Clone project `git clone git@github.com:harrymt/web_playground.git`
-- Run `node server`
-- View the website on `localhost:3001`
-
-
-## Build the project
-
 - Ensure Ruby, Sass the Ruby gem and Grunt is installed
-- `gem update --system && gem install scss_lint`
+	- `gem update --system && gem install scss_lint`
 - Ensure [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
+
+## Run Project
+
+- `node server`
+- View at `localhost:3001`
+
+
+## Build Project
+
 - Run `grunt` to build the files
-- Now run `node server`
-- View the website on `localhost:3001`
 
-## Run Tests
 
-- `npm test`
+## Test Project
+
+- `grunt tests`
 
 
 # General / Report
