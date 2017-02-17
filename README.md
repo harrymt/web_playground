@@ -13,7 +13,6 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 		https://developers.google.com/web/tools/lighthouse/
 - Comment all
 - Use PhantomJs to automate things you do in the website
-- Test JSusing mocha https://github.com/mochajs/mocha
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
 - Go through security here http://expressjs.com/en/advanced/best-practice-security.html
 
@@ -68,6 +67,7 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - Use 1.0XML
 - Handles content negotiation using (Polyglot HTML)[https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup]
 https://www.w3.org/TR/xhtml-media-types/#media-types
+- Uses [PUG](https://pugjs.org)
 
 ## Validators
 
@@ -81,15 +81,13 @@ https://www.npmjs.com/package/html-validator ?
 
 - Dont use lots of whitespace, add more columns
 
-- Uses SCSS
+- Uses [SCSS](http://sass-lang.com/)
 	- Styleguide of: https://github.com/airbnb/css
 	- Uses scss-lint here https://www.npmjs.com/package/grunt-scss-lint
 
 
 # JS
-
-- Use Mocha for unit tests
-- https://github.com/mochajs/mocha
+- Uses [Mocha](https://github.com/mochajs/mocha) for unit tests
 - Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
 - QUnit for tests, JSlint for linting
 - StyleGuide https://google.github.io/styleguide/jsguide.html
@@ -252,6 +250,7 @@ If you have used a framework, making it do what you want counts for more than ju
 ## Technologies Used
 
 - [Markdown to PDF](https://www.npmjs.com/package/markdown-pdf)
-
-
-
+- [sqlite3](https://www.sqlite.org/download.html)
+- [Mocha](https://github.com/mochajs/mocha)
+- [SCSS](http://sass-lang.com/)
+- [PUG](https://pugjs.org)
