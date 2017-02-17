@@ -33,6 +33,10 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Now run `node server`
 - View the website on `localhost:3001`
 
+## Run Tests
+
+- `npm test`
+
 
 # General / Report
 
