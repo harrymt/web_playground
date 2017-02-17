@@ -8,6 +8,10 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
 
+    exec: {
+      mocha: 'npm test'
+    },
+
     scsslint: {
       all: [
         'dev/scss/_partials/*.scss',
@@ -75,6 +79,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-scss-lint'); // Lint SCSS files
   grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
   grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
+  grunt.loadNpmTasks('grunt-exec'); // Run command line commands
 
-  grunt.registerTask('default', ['puglint', 'scsslint', 'uglify', 'sass']);
+  grunt.registerTask('tests', ['exec:mocha', 'puglint', 'scsslint']);
+  grunt.registerTask('default', ['exec:mocha', 'puglint', 'scsslint', 'uglify', 'sass']);
 };
