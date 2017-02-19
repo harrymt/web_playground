@@ -16,10 +16,10 @@ html {
 }
 
 .main {
-  @extend .material_design;
+  @extend %material;
 }
 
-.material_design {
+%material {
   width: 80%;
   margin: 5% auto 0;
   box-shadow: 0 4px 12px rgba($shadow-color, 0.1);

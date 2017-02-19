@@ -1,11 +1,25 @@
 
-// HEADER
-
-
-ul.navigation li ul li a,
+ul.navigation-nested li a,
 ul.navigation li a {
   display: block;
   padding: 15px;
+}
+
+// secondary ul visibility change
+ul.navigation-nested {
+  // secondary li
+  li {
+    display: block;
+    background-color: darken($subtle-white, 7%);
+
+    a {
+      width: 200px;
+    }
+
+    &:hover {
+      background-color: darken($subtle-white, 10%);
+    }
+  }
 }
 
 ul.navigation {
@@ -21,7 +35,6 @@ ul.navigation {
     color: $masked-grey;
 
     display: inline-block;
-    // padding: 15px;
     position: relative;
 
     a {
@@ -29,48 +42,20 @@ ul.navigation {
       color: $masked-grey;
     }
 
-
     // secondary ul
-    ul {
+    ul.navigation-nested {
       display: none;
     }
-    // initial li:hover
-    &:hover {
-      cursor: pointer;
-      background-color: $subtle-grey;
+  }
 
-      // secondary ul visibility change
-      ul {
-        display: block;
+  li:hover {
+    cursor: pointer;
+    background-color: $subtle-grey;
 
-        width: 200px;
-        right: 0;
-
-        position: absolute;
-
-        // secondary li
-        li {
-          display: block;
-          background-color: darken($subtle-white, 7%);
-          span {
-            float: right;
-            color: $subtle-white;
-            background-color: $blue;
-            padding: 2px 5px;
-            text-align: center;
-            font-size: .8rem;
-            border-radius: 3px;
-          }
-
-          &:hover {
-            background-color: darken($subtle-white, 10%);
-            span {
-              background-color: darken($blue, 5%);
-            }
-          }
-        }
-      }
+    ul.navigation-nested {
+      display: block;
+      right: 0;
+      position: absolute;
     }
-
   }
 }

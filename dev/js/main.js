@@ -4,4 +4,4 @@
 console.log("Loaded front end Javascript");
 
 // TODO
-// onclick(js-load-report).showLoading();
+// $('js-load-report').on('click', function() {onclick(js-load-report).showLoading();

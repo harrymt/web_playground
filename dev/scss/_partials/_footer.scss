@@ -1,6 +1,6 @@
 
 
 footer {
-  @extend .material_design;
+  @extend %material;
   margin-top: 20px;
 }
