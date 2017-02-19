@@ -45,7 +45,7 @@ module.exports = function (grunt) {
     watch: {
       css: {
         files: ['dev/scss/*.scss', 'dev/scss/**/*.scss'],
-        tasks: ['default'],
+        tasks: ['scsslint', 'sass'],
         options: {
           spawn: false
         }
@@ -53,12 +53,12 @@ module.exports = function (grunt) {
 
       javascript: {
         files: ['dev/js/*.js'],
-        tasks: ['default']
+        tasks: ['exec:mocha', 'uglify']
       },
 
       pug: {
         files: ['views/*.pug', 'views/**/*.pug'],
-        tasks: ['default']
+        tasks: ['puglint']
       }
     },
 
@@ -82,5 +82,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-exec'); // Run command line commands
 
   grunt.registerTask('tests', ['exec:mocha', 'puglint', 'scsslint']);
-  grunt.registerTask('default', ['exec:mocha', 'puglint', 'scsslint', 'uglify', 'sass']);
+  grunt.registerTask('build', ['uglify', 'sass']);
+  grunt.registerTask('default', ['tests', 'build']);
 };
