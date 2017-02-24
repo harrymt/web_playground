@@ -108,6 +108,7 @@ https://www.npmjs.com/package/html-validator ?
 
 # SVG
 
+- Look at inkscape, different technologies!!!
 - Generate circles in SVG http://www.lugolabs.com/circles
 
 
