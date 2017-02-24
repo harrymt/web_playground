@@ -7,7 +7,6 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ![Screenshot](screenshot.png "Screenshot")
 
 # TODO
-- Fix CSS errors
 - Test performance by encooperating the lighthouse task!
 	- Performance, use Lighthouse extension
 		https://developers.google.com/web/tools/lighthouse/
@@ -15,7 +14,10 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Use PhantomJs to automate things you do in the website
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
 - Go through security here http://expressjs.com/en/advanced/best-practice-security.html
-
+- Add async to js files?
+- Check what happens if js is disabled on site
+- Check what happens when the internet is disabled on site (font awesome icons dont load in header for a start)
+- Build a CSS FRAMEWORK!! (base on this one https://github.com/yegor256/tacit/blob/master/Gruntfile.js)
 
 ## Dependancies
 
@@ -23,6 +25,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Ensure Ruby, Sass the Ruby gem and Grunt is installed
 	- `gem update --system && gem install scss_lint`
 - Ensure [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
+- `npm install`
 
 ## Run Project
 
@@ -78,6 +81,7 @@ https://www.npmjs.com/package/html-validator ?
 
 
 # CSS
+
 
 - Dont use lots of whitespace, add more columns
 
