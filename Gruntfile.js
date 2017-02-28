@@ -69,7 +69,31 @@ module.exports = function (grunt) {
         },
         src: ['views/**/*.pug']
       }
+    },
+
+    pagespeed: {
+      options: {
+        nokey: true,
+        url: "https://nameless-garden-21270.herokuapp.com/"
+      },
+      prod: {
+        options: {
+          url: "https://nameless-garden-21270.herokuapp.com/",
+          locale: "en_GB",
+          strategy: "desktop",
+          threshold: 90
+        }
+      },
+      paths: {
+        options: {
+          paths: ["/", "/front-end", "/back-end", "/report", "/extras"],
+          locale: "en_GB",
+          strategy: "desktop",
+          threshold: 90
+        }
+      }
     }
+
   });
 
 
@@ -80,8 +104,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
   grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
   grunt.loadNpmTasks('grunt-exec'); // Run command line commands
+  grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
 
-  grunt.registerTask('tests', ['exec:mocha', 'puglint', 'scsslint']);
+  grunt.registerTask('tests', ['pagespeed', 'exec:mocha', 'puglint', 'scsslint']);
   grunt.registerTask('build', ['uglify', 'sass']);
   grunt.registerTask('default', ['tests', 'build']);
 };
