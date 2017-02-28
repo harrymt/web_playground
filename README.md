@@ -7,9 +7,9 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ![Screenshot](screenshot.png "Screenshot")
 
 # TODO
-- Test performance by encooperating the lighthouse task!
-	- Performance, use Lighthouse extension
+- Test performance by using the chrome extension of lighthouse:
 		https://developers.google.com/web/tools/lighthouse/
+- Automatically test performance using grunt performance testing tools, available here: https://github.com/blackrabbit99/browser-performance-testing-tools
 - Comment all
 - Use PhantomJs to automate things you do in the website
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
@@ -17,7 +17,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Add async to js files?
 - Check what happens if js is disabled on site
 - Check what happens when the internet is disabled on site (font awesome icons dont load in header for a start)
-- Build a CSS FRAMEWORK!! (base on this one https://github.com/yegor256/tacit/blob/master/Gruntfile.js)
+- Host on Heroku instance
 
 ## Dependancies
 
@@ -84,7 +84,7 @@ https://www.npmjs.com/package/html-validator ?
 
 
 - Dont use lots of whitespace, add more columns
-
+- Uses a CSS framework I designed
 - Uses [SCSS](http://sass-lang.com/)
 	- Styleguide of: https://github.com/airbnb/css
 	- Uses scss-lint here https://www.npmjs.com/package/grunt-scss-lint
@@ -95,7 +95,6 @@ https://www.npmjs.com/package/html-validator ?
 - Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
 - QUnit for tests, JSlint for linting
 - StyleGuide https://google.github.io/styleguide/jsguide.html
-- Add code coverage https://codecov.io/
 
 ### Best Practices
 
@@ -106,7 +105,6 @@ https://www.npmjs.com/package/html-validator ?
 	- Use Power consutrctors to avoid the new keyword
 	- Inheritence is different
 	- New ES6 features (not neccessarily well supported cross brower )
-
 
 
 # PNG
