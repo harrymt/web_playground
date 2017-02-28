@@ -95,6 +95,7 @@ https://www.npmjs.com/package/html-validator ?
 - Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
 - QUnit for tests, JSlint for linting
 - StyleGuide https://google.github.io/styleguide/jsguide.html
+- Add code coverage https://codecov.io/
 
 ### Best Practices
 
