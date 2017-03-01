@@ -20,6 +20,10 @@
       // Serve HTML
       console.log("Can handle HTML");
       next();
+    } else if(findNeedleInHaystack(header_type, "image/*")) {
+      // Serve an image
+      console.log("Can handle images");
+      next();
     } else if(findNeedleInHaystack(header_type, "application/xhtml+xml")) {
       // Serve XHTML
       console.log("Can handle XHTML");
@@ -27,14 +31,15 @@
     } else {
       // Trigger error.
       res.status(406);
-      next(setUnacceptableRequest());
+      next(setUnacceptableRequest(header_type));
     }
   }
 
-  function setUnacceptableRequest() {
+  function setUnacceptableRequest(header) {
       var err = new Error('Unacceptable request detected!');
       err.status = 406;
       console.log("Unacceptable request detected");
+      console.log(header);
       return err;
   }
 
