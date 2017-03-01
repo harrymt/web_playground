@@ -1,7 +1,10 @@
 doctype html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB")
 html
   include includes/head.pug
-  body
+  body( onload='test_if_js_enabled();' )
+    .banner#pls-enable-js Please
+      =' '
+      a( href='http://enable-javascript.com/' ) enable Javascript.
     .container
       .main
         include includes/header.pug

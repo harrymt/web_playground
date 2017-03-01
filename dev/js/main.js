@@ -3,6 +3,16 @@
 // Front end JS
 console.log("Loaded front end Javascript");
 
+//
+// If js is enabled then hide the 'Please enable JS'
+// message.
+//
+function test_if_js_enabled() {
+  document.getElementById('pls-enable-js').style.display = "none";
+}
+
+
+// --- SVG ---
 
 // Configurable options
 // TODO set as changable variables

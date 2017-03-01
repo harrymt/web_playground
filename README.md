@@ -9,8 +9,6 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 # TODO
 
 - Use PhantomJs to automate things you do in the website
-- Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
-- Go through security here http://expressjs.com/en/advanced/best-practice-security.html
 - Check what happens if js is disabled on site
 - Check what happens when the internet is disabled on site (font awesome icons dont load in header for a start)
 - Comment all
@@ -71,6 +69,7 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 
 # Security
 
+- Based on: http://expressjs.com/en/advanced/best-practice-security.html
 - Uses [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
 - Uses [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 
