@@ -10,6 +10,7 @@ module.exports = function (grunt) {
 
     exec: {
       mocha: 'npm test',
+      server: 'node server',
       deploy: 'git checkout heroku/master && git merge master && git checkout master && git push heroku master'
     },
 
@@ -98,7 +99,6 @@ module.exports = function (grunt) {
   });
 
 
-
   grunt.loadNpmTasks('grunt-puglint'); // Lint Pug (HTML templates)
   grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
   grunt.loadNpmTasks('grunt-scss-lint'); // Lint SCSS files
@@ -107,12 +107,21 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-exec'); // Run command line commands
   grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
 
+  // Start a node server
+  grunt.registerTask('server', ['exec:server']);
 
+  // Validate Pug and SCSS files
   grunt.registerTask('lint', ['puglint', 'scsslint']);
+
+  // Minify and create CSS files
   grunt.registerTask('build', ['uglify', 'sass']);
+
+  // Run unit tests and linting
   grunt.registerTask('tests', ['exec:mocha', 'lint']);
 
-  grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed'])
+  // Deploy to heroku server then run page insight tests
+  grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
 
-  grunt.registerTask('default', ['tests', 'build']);
+  // Do what you expect the default task to do
+  grunt.registerTask('default', ['tests', 'build', 'server']);
 };
