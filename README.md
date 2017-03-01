@@ -120,6 +120,24 @@ https://www.npmjs.com/package/html-validator ?
 - Look at inkscape, different technologies!!!
 - Generate circles in SVG http://www.lugolabs.com/circles
 
+Animate a person icon using svg.
+
+```scss
+
+.svg-icon {
+  height: 100px;
+  overflow: visible;
+  width: 100px;
+}
+
+.svg-icon path {
+  animation: animatePath 5s 1s forwards infinite;
+  fill: none;
+  stroke: rgba(255, 255, 255, .9);
+  stroke-width: 0.45;
+}
+
+```
 
 # Server
 
