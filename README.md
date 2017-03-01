@@ -7,16 +7,14 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ![Screenshot](screenshot.png "Screenshot")
 
 # TODO
-- Test performance by using the chrome extension of lighthouse:
-		https://developers.google.com/web/tools/lighthouse/
-- Automatically test performance using grunt performance testing tools, available here: https://github.com/blackrabbit99/browser-performance-testing-tools
-- Comment all
+
 - Use PhantomJs to automate things you do in the website
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
 - Go through security here http://expressjs.com/en/advanced/best-practice-security.html
 - Add async to js files?
 - Check what happens if js is disabled on site
 - Check what happens when the internet is disabled on site (font awesome icons dont load in header for a start)
+- Comment all
 
 
 ## Dependancies
@@ -47,6 +45,11 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ## Deploy
 
 - `grunt deploy`
+
+
+## Performance Tests
+
+- Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 
 
 # General / Report
