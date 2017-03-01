@@ -17,7 +17,7 @@ var report = require('./routes/report');
 
 var app = express().use(function (req, res, next) {
   if (req.app.get('env') !== 'development' ? req.header('x-forwarded-proto') == 'http' : false) {
-    res.redirect(301, 'https://' + 'dummy.com' + req.url)
+    res.redirect(301, 'https://' + req.get('Host') + req.url)
     return
   }
   next()
