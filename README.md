@@ -7,7 +7,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ![Screenshot](screenshot.png "Screenshot")
 
 # TODO
-
+- Add compression as middleware in server https://www.npmjs.com/package/compression
 - Use PhantomJs to automate things you do in the website
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
 - Go through security here http://expressjs.com/en/advanced/best-practice-security.html
