@@ -6,12 +6,14 @@ mixin navlink(menu_item, current_page, is_dropdown)
       a.active( href='/' )= menu_item
         if (is_dropdown)
           =' '
-          i.fa.fa-angle-down
+          svg.icon.icon-circle-down
+            use( xlink:href='#icon-circle-down' )
     else
       a( href='/' )= menu_item
         if (is_dropdown)
           =' '
-          i.fa.fa-angle-down
+          svg.icon.icon-circle-down
+            use( xlink:href='#icon-circle-down' )
   else
     +makeURL(menu_item, (menu_item == current_page), is_dropdown)
 
@@ -21,12 +23,14 @@ mixin makeURL(item, is_active, is_dropdown)
     a.active( href='/' + item.toLowerCase() )= item
       if (is_dropdown)
         =' '
-        i.fa.fa-angle-down
+        svg.icon.icon-circle-down
+          use( xlink:href='#icon-circle-down' )
   else
     a( href='/' + item.toLowerCase() )= item
       if (is_dropdown)
         =' '
-        i.fa.fa-angle-down
+        svg.icon.icon-circle-down
+          use( xlink:href='#icon-circle-down' )
 
 //- Start rendering page
 ul.navigation
