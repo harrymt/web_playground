@@ -9,11 +9,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var helmet = require('helmet');
 
 var pages = require('./routes/pages');
 var report = require('./routes/report');
 
 var app = express();
+
+// Secure the Express app by setting various HTTP headers.
+app.use(helmet());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,7 +38,7 @@ app.use('/', report);
 app.use(server_side_code.handleContent);
 
 /**
- * Route every page.
+ * Route every other page.
  */
 app.use('/', pages);
 

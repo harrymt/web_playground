@@ -70,6 +70,11 @@ http://www.clementinejs.com/tutorials/tutorial-beginner.html (More lighter weigh
 Use basic Express application generator: https://expressjs.com/en/starter/generator.html
 
 
+# Security
+
+- Uses [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
+- Uses [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
+
 
 # HTML
 
