@@ -1,22 +1,4 @@
 
-.icon {
-  display: inline-block;
-  width: .9em;
-  height: .9em;
-  fill: currentColor;
-}
-
-.icon-circle-down {
-  color: $material-grey;
-}
-
-.svg-definition {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
 // SVG
 line {
   stroke: $material-grey;
