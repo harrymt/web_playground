@@ -6,11 +6,6 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 ![Screenshot](screenshot.png "Screenshot")
 
-# TODO
-
-- Use PhantomJs to automate things you do in the website?? Needed?
-- Comment all
-
 
 ## Dependancies
 
