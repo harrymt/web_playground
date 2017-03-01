@@ -15,13 +15,21 @@ var compression = require('compression');
 var pages = require('./routes/pages');
 var report = require('./routes/report');
 
-var app = express();
+var app = express().use(function (req, res, next) {
+  if (req.app.get('env') !== 'development' ? req.header('x-forwarded-proto') == 'http' : false) {
+    res.redirect(301, 'https://' + 'dummy.com' + req.url)
+    return
+  }
+  next()
+});
 
 // Secure the Express app by setting various HTTP headers.
 app.use(helmet());
 
 // Compress all routes
 app.use(compression());
+
+
 
 // Set css, js and images for a static serve
 app.use(express.static(path.join(__dirname, 'public')));
@@ -36,6 +44,7 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Report will render with PDF
 app.use('/', report);
