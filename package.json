@@ -11,7 +11,8 @@
     "node": "6.9.4"
   },
   "scripts": {
-    "test": "mocha dev/tests"
+    "test": "mocha dev/tests",
+    "start": "npm install && node server.js"
   },
   "homepage": "https://github.com/harrymt/web_playground",
   "bugs": "https://github.com/harrymt/web_playground/issues",
