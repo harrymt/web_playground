@@ -26,27 +26,27 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 	- `gem update --system && gem install scss_lint`
 - Ensure [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
 - `npm install`
+- To deploy download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+
 
 ## Run Project
 
-- `node server`
-- View at `localhost:3001`
+- `node server` (view at `localhost:3001`)
 
 
 ## Build Project
 
-- Run `grunt` to build the files
+- Run `grunt build` to build the files
 
 
 ## Test Project
 
 - `grunt tests`
 
+
 ## Deploy
 
-- Download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
-- `heroku create`
-- `git push heroku master`
+- `grunt deploy`
 
 
 # General / Report
