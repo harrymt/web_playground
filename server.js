@@ -16,9 +16,10 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
-// Disable minification for debug
-// TODO on release enable
-app.locals.pretty = true;
+// If we are in development mode, output non-minified code
+if (app.get('env') === 'development') {
+  app.locals.pretty = true;
+}
 
 /**
  * Create HTTP server.
