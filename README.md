@@ -7,11 +7,10 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ![Screenshot](screenshot.png "Screenshot")
 
 # TODO
-- Add compression as middleware in server https://www.npmjs.com/package/compression
+
 - Use PhantomJs to automate things you do in the website
 - Research this: https://github.com/sahat/hackathon-starter#recommended-design-resources
 - Go through security here http://expressjs.com/en/advanced/best-practice-security.html
-- Add async to js files?
 - Check what happens if js is disabled on site
 - Check what happens when the internet is disabled on site (font awesome icons dont load in header for a start)
 - Comment all
@@ -76,6 +75,10 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - Uses [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 
 
+# Performance
+
+- Compression is used https://www.npmjs.com/package/compression
+
 # HTML
 
 - Practices, JS at the end of document
@@ -105,6 +108,8 @@ https://www.npmjs.com/package/html-validator ?
 
 
 # JS
+
+- Add async to js files
 - Uses [Mocha](https://github.com/mochajs/mocha) for unit tests
 - Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
 - QUnit for tests, JSlint for linting
@@ -148,8 +153,6 @@ Animate a person icon using svg.
 ```
 
 # Server
-
-https://github.com/sahat/hackathon-starter#recommended-nodejs-libraries
 
 
 # Database
