@@ -9,7 +9,8 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     exec: {
-      mocha: 'npm test'
+      mocha: 'npm test',
+      deploy: 'git checkout heroku/master && git merge master && git checkout master && git push heroku master'
     },
 
     scsslint: {
@@ -106,7 +107,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-exec'); // Run command line commands
   grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
 
-  grunt.registerTask('tests', ['pagespeed', 'exec:mocha', 'puglint', 'scsslint']);
+
+  grunt.registerTask('lint', ['puglint', 'scsslint']);
   grunt.registerTask('build', ['uglify', 'sass']);
+  grunt.registerTask('tests', ['exec:mocha', 'lint']);
+
+  grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed'])
+
   grunt.registerTask('default', ['tests', 'build']);
 };
