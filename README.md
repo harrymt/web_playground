@@ -66,6 +66,7 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - Uses [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
 - Uses [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 - Uses the tag for external links `rel='noopener'` https://developers.google.com/web/tools/lighthouse/audits/noopener
+- Site runs on HTTPS: https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https
 
 # Performance
 
