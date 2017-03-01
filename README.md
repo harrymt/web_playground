@@ -42,6 +42,12 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 - `grunt tests`
 
+## Deploy
+
+- Download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+- `heroku create`
+- `git push heroku master`
+
 
 # General / Report
 
@@ -114,6 +120,24 @@ https://www.npmjs.com/package/html-validator ?
 - Look at inkscape, different technologies!!!
 - Generate circles in SVG http://www.lugolabs.com/circles
 
+Animate a person icon using svg.
+
+```scss
+
+.svg-icon {
+  height: 100px;
+  overflow: visible;
+  width: 100px;
+}
+
+.svg-icon path {
+  animation: animatePath 5s 1s forwards infinite;
+  fill: none;
+  stroke: rgba(255, 255, 255, .9);
+  stroke-width: 0.45;
+}
+
+```
 
 # Server
 
@@ -136,8 +160,7 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 
 
 # General Testing
-- Performance, use Lighthouse extension
-	https://developers.google.com/web/tools/lighthouse/
+- Performance, tests CL production code hosted on heroku
 - Use PhantomJs to automate things you do in the website
 
 
