@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     exec: {
       mocha: 'npm test',
       server: 'node server',
-      deploy: 'git checkout heroku/master && git merge master && git checkout master && git push heroku master'
+      deploy: 'git checkout heroku/master && git pull && git checkout master && git push heroku master'
     },
 
     scsslint: {
