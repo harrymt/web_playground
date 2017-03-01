@@ -7,7 +7,9 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 ![Screenshot](screenshot.png "Screenshot")
 
 
-## Dependancies
+## Setup
+
+#### Dependancies
 
 - Clone project `git clone git@github.com:harrymt/web_playground.git`
 - Ensure Ruby, Sass the Ruby gem and Grunt is installed
@@ -16,25 +18,43 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - `npm install`
 - To deploy download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
 
+#### Grunt
 
-## Start Server
+The whole project uses `GruntJS` to handle everything from running to deployment.
 
-- `grunt server` (view at `localhost:3001`)
+**[Gruntfile.js](Gruntfile.js)**
+```javascript
+
+/**
+ * Start Server.
+ *
+ * Start a Node server - view at localhost:3001
+ */
+grunt.registerTask('server', ['exec:server']);
+
+/**
+ * Build.
+ *
+ * Minify and create CSS files
+ */
+grunt.registerTask('build', ['uglify', 'sass']);
+
+/**
+ * Test.
+ *
+ * Run unit tests and lint
+ */
+grunt.registerTask('tests', ['exec:mocha', 'lint']);
+
+/**
+ * Deploy.
+ *
+ * Deploy to heroku server then run page insight tests.
+ */
+grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
+```
 
 
-## Build
-
-- `grunt build`
-
-
-## Test
-
-- `grunt tests`
-
-
-## Deploy
-
-- `grunt deploy`
 
 
 ## Performance Tests
@@ -42,7 +62,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 
 
-Why boilerplates?
+Why not boilerplates?
 
 NodeBootstrap - unobtrusive skeleton project for Node/Express.js with pre-configured best-practices. Kick-start your Node project development with tons of boilerplate taken care of, such as: clustering, Docker-support, error-handling, modularity, logging, views, environments etc. http://www.nodebootstrap.io
 make a note, that all boilerplates are poo?
@@ -66,6 +86,8 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 # Performance
 
 - Compression is used https://www.npmjs.com/package/compression
+- Minification is used
+
 
 # HTML
 
