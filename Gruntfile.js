@@ -76,11 +76,11 @@ module.exports = function (grunt) {
     pagespeed: {
       options: {
         nokey: true,
-        url: "https://nameless-garden-21270.herokuapp.com/"
+        url: "https://webtechnologies.herokuapp.com/"
       },
       prod: {
         options: {
-          url: "https://nameless-garden-21270.herokuapp.com/",
+          url: "https://webtechnologies.herokuapp.com/",
           locale: "en_GB",
           strategy: "desktop",
           threshold: 90
