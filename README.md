@@ -8,9 +8,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 # TODO
 
-- Use PhantomJs to automate things you do in the website
-- Check what happens if js is disabled on site
-- Check what happens when the internet is disabled on site (font awesome icons dont load in header for a start)
+- Use PhantomJs to automate things you do in the website?? Needed?
 - Comment all
 
 
@@ -49,11 +47,6 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 
 
-# General / Report
-
-- Online LATEX parsers to make report!!
-- Follow these security points: http://expressjs.com/en/advanced/best-practice-security.html
-
 Why boilerplates?
 
 NodeBootstrap - unobtrusive skeleton project for Node/Express.js with pre-configured best-practices. Kick-start your Node project development with tons of boilerplate taken care of, such as: clustering, Docker-support, error-handling, modularity, logging, views, environments etc. http://www.nodebootstrap.io
@@ -72,7 +65,7 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 - Based on: http://expressjs.com/en/advanced/best-practice-security.html
 - Uses [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
 - Uses [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
-
+- Uses the tag for external links `rel='noopener'` https://developers.google.com/web/tools/lighthouse/audits/noopener
 
 # Performance
 
@@ -108,6 +101,7 @@ https://www.npmjs.com/package/html-validator ?
 
 # JS
 
+- If js is disabled a banner message is displayed
 - Add async to js files
 - Uses [Mocha](https://github.com/mochajs/mocha) for unit tests
 - Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
@@ -129,6 +123,7 @@ https://www.npmjs.com/package/html-validator ?
 
 # SVG
 
+- Icons are drawn using SVG rather than loading a font pack, such as FontAwesome icons from https://icomoon.io/app/#/select/image
 - Look at inkscape, different technologies!!!
 - Generate circles in SVG http://www.lugolabs.com/circles
 
