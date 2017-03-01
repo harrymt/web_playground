@@ -17,7 +17,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - Add async to js files?
 - Check what happens if js is disabled on site
 - Check what happens when the internet is disabled on site (font awesome icons dont load in header for a start)
-- Host on Heroku instance
+
 
 ## Dependancies
 
@@ -29,17 +29,17 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - To deploy download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
 
 
-## Run Project
+## Start Server
 
-- `node server` (view at `localhost:3001`)
-
-
-## Build Project
-
-- Run `grunt build` to build the files
+- `grunt server` (view at `localhost:3001`)
 
 
-## Test Project
+## Build
+
+- `grunt build`
+
+
+## Test
 
 - `grunt tests`
 
