@@ -10,6 +10,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
+var compression = require('compression');
 
 var pages = require('./routes/pages');
 var report = require('./routes/report');
@@ -18,6 +19,12 @@ var app = express();
 
 // Secure the Express app by setting various HTTP headers.
 app.use(helmet());
+
+// Compress all routes
+app.use(compression());
+
+// Set css, js and images for a static serve
+app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
