@@ -6,6 +6,8 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 ![Screenshot](screenshot.png "Screenshot")
 
+TODO: Travis CI?
+
 
 ## Setup
 
@@ -66,12 +68,10 @@ grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
 ```
 
 
-
-
 ## Performance Tests
 
 - Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-
+- TODO: add screenshot from lighthouse report @ end
 
 Why not boilerplates?
 
