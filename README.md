@@ -31,7 +31,9 @@ Each one of the following tasks should be run using `grunt <task>`, e.g. `grunt 
 /**
  * Start Server.
  *
- * Start a Node server - view at localhost:3001
+ * Start a Node server - view at localhost:3001.
+ *
+ * $ grunt server
  */
 grunt.registerTask('server', ['exec:server']);
 
@@ -39,6 +41,8 @@ grunt.registerTask('server', ['exec:server']);
  * Build.
  *
  * Minify and create CSS files
+ *
+ * $ grunt build
  */
 grunt.registerTask('build', ['uglify', 'sass']);
 
@@ -46,13 +50,17 @@ grunt.registerTask('build', ['uglify', 'sass']);
  * Test.
  *
  * Run unit tests and lint
+ *
+ * $ grunt tests
  */
 grunt.registerTask('tests', ['exec:mocha', 'lint']);
 
 /**
  * Deploy.
  *
- * Deploy to heroku server then run page insight tests.
+ * Deploy to heroku server then run page insight tests
+ *
+ * $ grunt deploy
  */
 grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
 ```
