@@ -114,7 +114,7 @@ module.exports = function (grunt) {
                     width: 1024,
                     height: 'all'
                 },
-                renderDelay: 0
+                renderDelay: 10
             }
         }
     }
