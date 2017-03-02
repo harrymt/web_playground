@@ -45,6 +45,7 @@
     "grunt-puglint": "^1.0.0",
     "grunt-scss-lint": "^0.5.0",
     "grunt-serve": "^0.1.6",
+    "grunt-webshot": "^0.3.0",
     "mocha": "^3.2.0"
   }
 }

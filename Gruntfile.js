@@ -1,5 +1,7 @@
 'use strict';
 
+const production_url = "https://webtechnologies.herokuapp.com/";
+
 module.exports = function (grunt) {
 
   grunt.initConfig({
@@ -11,6 +13,7 @@ module.exports = function (grunt) {
     exec: {
       mocha: 'npm test',
       server: 'node server',
+      screenshot: 'grunt webshot && git commit -am "Auto generated screenshot" && git push',
       deploy: 'git checkout heroku/master && git pull && git checkout master && git push heroku master'
     },
 
@@ -76,11 +79,11 @@ module.exports = function (grunt) {
     pagespeed: {
       options: {
         nokey: true,
-        url: "https://webtechnologies.herokuapp.com/"
+        url: production_url
       },
       prod: {
         options: {
-          url: "https://webtechnologies.herokuapp.com/",
+          url: production_url,
           locale: "en_GB",
           strategy: "desktop",
           threshold: 90
@@ -94,8 +97,27 @@ module.exports = function (grunt) {
           threshold: 90
         }
       }
-    }
+    },
 
+    webshot: {
+        homepage: {
+            options: {
+                // url, file or html
+                siteType: 'url',
+                site: production_url,
+                savePath: './screenshot.png',
+                windowSize: {
+                    width: 1024,
+                    height: 768
+                },
+                shotSize: {
+                    width: 1024,
+                    height: 'all'
+                },
+                renderDelay: 0
+            }
+        }
+    }
   });
 
 
@@ -106,6 +128,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
   grunt.loadNpmTasks('grunt-exec'); // Run command line commands
   grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
+  grunt.loadNpmTasks('grunt-webshot'); // Take a screenshot
 
   // Start a node server
   grunt.registerTask('server', ['exec:server']);
@@ -119,8 +142,8 @@ module.exports = function (grunt) {
   // Run unit tests and linting
   grunt.registerTask('tests', ['exec:mocha', 'lint']);
 
-  // Deploy to heroku server then run page insight tests
-  grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
+  // Deploy to heroku server, take screenshot then run page insight tests
+  grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'exec:screenshot', 'pagespeed']);
 
   // Do what you expect the default task to do
   grunt.registerTask('default', ['tests', 'build', 'server']);
