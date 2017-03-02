@@ -22,6 +22,9 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 The whole project uses `GruntJS` to handle everything from running to deployment.
 
+Each one of the following tasks should be run using `grunt <task>`, e.g. `grunt build`.
+
+
 **[Gruntfile.js](Gruntfile.js)**
 ```javascript
 
