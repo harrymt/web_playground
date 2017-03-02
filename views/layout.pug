@@ -3,10 +3,11 @@ html
   include includes/head.pug
   body( onload='test_if_js_enabled();' )
     include includes/svgdefs.pug
-    .banner#pls-enable-js
-      p Please
-        =' '
-        a( href='http://enable-javascript.com/' ) enable Javascript.
+    noscript
+      .banner
+        p Please
+          =' '
+          a( href='http://enable-javascript.com/' ) enable Javascript.
     .container
       .main
         include includes/header.pug
