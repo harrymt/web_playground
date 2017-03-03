@@ -29,7 +29,9 @@ module.exports = function (grunt) {
       mocha: 'npm test',
       server: 'node server',
       gitstatus: 'git status',
-      screenshot: 'grunt pageres && git commit -am "Auto generated screenshot" && git push',
+      screenshot: 'grunt pageres',
+      gitcommit_sc: 'git commit -am "Auto generated screenshot"',
+      gitpush: 'git push',
       deploy: 'git checkout heroku/master && git pull && git checkout master && git push heroku master'
     },
 
@@ -156,8 +158,11 @@ module.exports = function (grunt) {
     grunt.log.ok("Continuing with deploying...");
   });
 
+  // Take a screenshot then commit it to the repo
+  grunt.registerTask('screenshot', ['exec:screenshot', 'exec:gitcommit_sc', 'exec:gitpush']);
+
   // Deploy to heroku server, take screenshot then run page insight tests
-  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'tests', 'build', 'exec:deploy', 'exec:screenshot', 'pagespeed']);
+  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'tests', 'build', 'exec:deploy', 'screenshot', 'pagespeed']);
 
   // Do what you expect the default task to do
   grunt.registerTask('default', ['tests', 'build', 'exec:server']);
