@@ -36,10 +36,6 @@ module.exports = function (grunt) {
       git_pull: 'git pull',
       git_checkout_master: 'git checkout master',
       git_push_heroku: {
-        options: {
-            stdout: true,
-            stderr: true
-        },
         cmd: 'git push heroku master'
       }
     },
