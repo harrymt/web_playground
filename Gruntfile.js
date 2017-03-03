@@ -135,6 +135,10 @@ module.exports = function (grunt) {
   // Run unit tests and linting
   grunt.registerTask('tests', ['exec:mocha', 'lint']);
 
+  grunt.registerTask('commit-warn', function() {
+
+  });
+
   // Deploy to heroku server, take screenshot then run page insight tests
   grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'exec:screenshot', 'pagespeed']);
 
