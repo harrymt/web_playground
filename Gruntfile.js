@@ -21,7 +21,7 @@ module.exports = function (grunt) {
       mocha: 'npm test',
       server: 'node server',
       gitstatus: 'git status',
-      screenshot: 'grunt webshot && git commit -am "Auto generated screenshot" && git push',
+      screenshot: 'grunt pageres && git commit -am "Auto generated screenshot" && git push',
       deploy: 'git checkout heroku/master && git pull && git checkout master && git push heroku master'
     },
 
@@ -108,23 +108,15 @@ module.exports = function (grunt) {
       }
     },
 
-    webshot: {
-        homepage: {
-            options: {
-                siteType: 'url',
-                site: production_url,
-                savePath: './screenshot.png',
-                windowSize: {
-                    width: 1024,
-                    height: 768
-                },
-                shotSize: {
-                    width: 1024,
-                    height: 'all'
-                },
-                renderDelay: 10
-            }
+    pageres: {
+      screenshot: {
+        options: {
+          urls: production_url,
+          sizes: ['1024x768'],
+          dest: './',
+          filename: 'screenshot'
         }
+      }
     }
   });
 
@@ -135,7 +127,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
   grunt.loadNpmTasks('grunt-exec'); // Run command line commands
   grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
-  grunt.loadNpmTasks('grunt-webshot'); // Take a screenshot
+  grunt.loadNpmTasks('grunt-pageres'); // Take a screenshot
 
   // Validate Pug and SCSS files
   grunt.registerTask('lint', ['puglint', 'scsslint']);
