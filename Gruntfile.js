@@ -133,16 +133,6 @@ module.exports = function (grunt) {
     }
   });
 
-  // Instead of pre-loading grunt tasks, just just-in-time format, for speed
-  // grunt.loadNpmTasks('grunt-puglint'); // Lint Pug (HTML templates)
-  // grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
-  // grunt.loadNpmTasks('grunt-scss-lint'); // Lint SCSS files
-  // grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
-  // grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
-  // grunt.loadNpmTasks('grunt-exec'); // Run command line commands
-  // grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
-  // grunt.loadNpmTasks('grunt-pageres'); // Take a screenshot
-
   // Validate Pug and SCSS files
   grunt.registerTask('lint', ['puglint', 'scsslint']);
 
