@@ -1,15 +1,12 @@
 'use strict';
 
 const production_url = "https://webtechnologies.herokuapp.com/";
+const local_url = "http://localhost:3001/"
 
 module.exports = function (grunt) {
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json')
-  });
-
-  grunt.initConfig({
-
+    pkg: grunt.file.readJSON('package.json'),
     exec: {
       mocha: 'npm test',
       server: 'node server',
@@ -18,6 +15,7 @@ module.exports = function (grunt) {
     },
 
     scsslint: {
+
       all: [
         'dev/scss/_partials/*.scss',
         'dev/scss/*.scss'
@@ -86,7 +84,7 @@ module.exports = function (grunt) {
           url: production_url,
           locale: "en_GB",
           strategy: "desktop",
-          threshold: 90
+          threshold: 30
         }
       },
       paths: {
@@ -94,7 +92,7 @@ module.exports = function (grunt) {
           paths: ["/", "/front-end", "/back-end", "/report", "/extras"],
           locale: "en_GB",
           strategy: "desktop",
-          threshold: 90
+          threshold: 30
         }
       }
     },
@@ -102,7 +100,6 @@ module.exports = function (grunt) {
     webshot: {
         homepage: {
             options: {
-                // url, file or html
                 siteType: 'url',
                 site: production_url,
                 savePath: './screenshot.png',
@@ -120,7 +117,6 @@ module.exports = function (grunt) {
     }
   });
 
-
   grunt.loadNpmTasks('grunt-puglint'); // Lint Pug (HTML templates)
   grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
   grunt.loadNpmTasks('grunt-scss-lint'); // Lint SCSS files
@@ -129,9 +125,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-exec'); // Run command line commands
   grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
   grunt.loadNpmTasks('grunt-webshot'); // Take a screenshot
-
-  // Start a node server
-  grunt.registerTask('server', ['exec:server']);
 
   // Validate Pug and SCSS files
   grunt.registerTask('lint', ['puglint', 'scsslint']);
@@ -146,5 +139,5 @@ module.exports = function (grunt) {
   grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'exec:screenshot', 'pagespeed']);
 
   // Do what you expect the default task to do
-  grunt.registerTask('default', ['tests', 'build', 'server']);
-};
+  grunt.registerTask('default', ['tests', 'build', 'exec:server']);
+}
