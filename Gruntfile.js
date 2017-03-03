@@ -10,7 +10,9 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   // Load grunt tasks just in time for speed
-  require('jit-grunt')(grunt);
+  require('jit-grunt')(grunt, {
+    scsslint: 'grunt-scss-lint', // Because scss-lint has a - in it
+  });
 
   /**
    * Sleep process for number of seconds.
