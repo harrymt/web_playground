@@ -15,6 +15,9 @@ var compression = require('compression');
 var pages = require('./routes/pages');
 var report = require('./routes/report');
 
+/**
+ * If user goes to http, redirect to https
+ */
 var app = express().use(function (req, res, next) {
   if (req.app.get('env') !== 'development' ? req.header('x-forwarded-proto') == 'http' : false) {
     res.redirect(301, 'https://' + req.get('Host') + req.url)
