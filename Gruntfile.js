@@ -154,10 +154,10 @@ module.exports = function (grunt) {
   // Take a screenshot then commit it to the repo
   grunt.registerTask('screenshot', ['exec:screenshot', 'exec:git_commit_screenshot', 'exec:git_push']);
 
-  grunt.registerTask('push_to_heroku', ['exec:git_checkout_heroku', 'exec:git_pull', 'exec:git_checkout_master', 'exec:git_push_heroku']);
+  grunt.registerTask('push', ['exec:git_checkout_heroku', 'exec:git_pull', 'exec:git_checkout_master', 'exec:git_push_heroku']);
 
   // Deploy to heroku server, take screenshot then run page insight tests
-  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'tests', 'build', 'push_to_heroku', 'screenshot', 'pagespeed']);
+  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'tests', 'build', 'push', 'screenshot', 'pagespeed']);
 
   // Do what you expect the default task to do
   grunt.registerTask('default', ['tests', 'build', 'exec:server']);
