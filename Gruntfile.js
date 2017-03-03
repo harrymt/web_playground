@@ -4,8 +4,13 @@ const production_url = "https://webtechnologies.herokuapp.com/";
 const local_url = "http://localhost:3001/"
 
 
-
 module.exports = function (grunt) {
+
+  // Show running time of tasks
+  require('time-grunt')(grunt);
+
+  // Load grunt tasks just in time for speed
+  require('jit-grunt')(grunt);
 
   /**
    * Sleep process for number of seconds.
@@ -17,6 +22,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     exec: {
       mocha: 'npm test',
       server: 'node server',
@@ -120,14 +126,15 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-puglint'); // Lint Pug (HTML templates)
-  grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
-  grunt.loadNpmTasks('grunt-scss-lint'); // Lint SCSS files
-  grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
-  grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
-  grunt.loadNpmTasks('grunt-exec'); // Run command line commands
-  grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
-  grunt.loadNpmTasks('grunt-pageres'); // Take a screenshot
+  // Instead of pre-loading grunt tasks, just just-in-time format, for speed
+  // grunt.loadNpmTasks('grunt-puglint'); // Lint Pug (HTML templates)
+  // grunt.loadNpmTasks('grunt-contrib-uglify'); // Minify JS
+  // grunt.loadNpmTasks('grunt-scss-lint'); // Lint SCSS files
+  // grunt.loadNpmTasks('grunt-contrib-sass'); // Process Sass files
+  // grunt.loadNpmTasks('grunt-contrib-watch'); // On file update, do task
+  // grunt.loadNpmTasks('grunt-exec'); // Run command line commands
+  // grunt.loadNpmTasks('grunt-pagespeed'); // Test page performance
+  // grunt.loadNpmTasks('grunt-pageres'); // Take a screenshot
 
   // Validate Pug and SCSS files
   grunt.registerTask('lint', ['puglint', 'scsslint']);
