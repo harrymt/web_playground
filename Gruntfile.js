@@ -3,13 +3,24 @@
 const production_url = "https://webtechnologies.herokuapp.com/";
 const local_url = "http://localhost:3001/"
 
+
+
 module.exports = function (grunt) {
+
+  /**
+   * Sleep process for number of seconds.
+   */
+  function sleep(secs) {
+    var waitUntil = new Date().getTime() + secs * 1000;
+    while(new Date().getTime() < waitUntil) true;
+  }
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     exec: {
       mocha: 'npm test',
       server: 'node server',
+      gitstatus: 'git status',
       screenshot: 'grunt webshot && git commit -am "Auto generated screenshot" && git push',
       deploy: 'git checkout heroku/master && git pull && git checkout master && git push heroku master'
     },
@@ -135,12 +146,17 @@ module.exports = function (grunt) {
   // Run unit tests and linting
   grunt.registerTask('tests', ['exec:mocha', 'lint']);
 
+  // Check that we have commmited before a task
   grunt.registerTask('commit-warn', function() {
-
+    grunt.log.warn("Make sure you have commited changes before deploying!");
+    var seconds = 2;
+    grunt.log.warn("Sleeping for " + seconds + " seconds, just to be sure.");
+    sleep(seconds);
+    grunt.log.ok("Continuing with deploying...");
   });
 
   // Deploy to heroku server, take screenshot then run page insight tests
-  grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'exec:screenshot', 'pagespeed']);
+  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'tests', 'build', 'exec:deploy', 'exec:screenshot', 'pagespeed']);
 
   // Do what you expect the default task to do
   grunt.registerTask('default', ['tests', 'build', 'exec:server']);
