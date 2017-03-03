@@ -35,7 +35,13 @@ module.exports = function (grunt) {
       git_checkout_heroku: 'git checkout heroku/master',
       git_pull: 'git pull',
       git_checkout_master: 'git checkout master',
-      git_push_heroku: 'git push heroku master'
+      git_push_heroku: {
+        cmd: 'git push heroku master',
+        onOutData: function (data) {
+          // Stream data to output
+          grunt.log.write(data);
+        }
+      }
     },
 
     scsslint: {
