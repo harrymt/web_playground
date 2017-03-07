@@ -17,6 +17,13 @@ block content
   p The png photos.
 
   h2#svg SVG
-  p Details of SVG.
-  p Description about quicksort.
-  span#quicksort Quicksort
+  p Here are some animated loading icons, created in Inkscape, then animated using SVG animations.
+  .svgs
+    img( src='svg/spinnera.svg', alt='Spinner-A' )
+    img( src='svg/spinnerb.svg', alt='Spinner-B' )
+    img( src='svg/spinnerc.svg', alt='Spinner-C' )
+    img( src='svg/spinnerd.svg', alt='Spinner-D' )
+  p The top navigation drop-down icon is also an SVG, (
+    svg.icon.icon-circle-down
+      use( xlink:href='#icon-circle-down' )
+    =' ) which is preferred over a font, as SVGs load faster and do not require external fonts to be loaded.'
