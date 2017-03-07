@@ -143,6 +143,29 @@ module.exports = function (grunt) {
           }
         ]
       }
+    },
+    svgmin: {
+      options: {
+        plugins: [
+          {
+            removeViewBox: false
+          }, {
+              removeUselessStrokeAndFill: false
+          }, {
+            removeAttrs: {
+                attrs: ['xmlns']
+            }
+          }
+        ]
+      },
+      dist: {
+        files: {
+          'public/svg/spinnera.svg': 'dev/svg/spinnera.svg',
+          'public/svg/spinnerb.svg': 'dev/svg/spinnerb.svg',
+          'public/svg/spinnerc.svg': 'dev/svg/spinnerc.svg',
+          'public/svg/spinnerd.svg': 'dev/svg/spinnerd.svg'
+        }
+      }
     }
   });
 
@@ -152,7 +175,7 @@ module.exports = function (grunt) {
   grunt.registerTask('lint', ['puglint', 'scsslint']);
 
   // Minify and create CSS files
-  grunt.registerTask('build', ['uglify', 'sass', 'imagemin']);
+  grunt.registerTask('build', ['uglify', 'sass', 'imagemin', 'svgmin']);
 
   // Run unit tests and linting
   grunt.registerTask('tests', ['exec:mocha', 'lint']);
