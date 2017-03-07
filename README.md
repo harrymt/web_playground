@@ -75,6 +75,8 @@ grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
 
 - Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - TODO: add screenshot from lighthouse report @ end
+- Used Browser Calories: https://chrome.google.com/webstore/detail/browser-calories/pdkibgfjegigkoaleelbkdpkgceljfco TODO add screenshot at end
+
 
 Why not boilerplates?
 
@@ -105,6 +107,7 @@ Use basic Express application generator: https://expressjs.com/en/starter/genera
 
 # HTML
 
+- TODO Follows this code guide: http://codeguide.co/
 - Practices, JS at the end of document
 - CSS at top via a CDN probs
 - Use &#960 rather than hex characters
