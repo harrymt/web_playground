@@ -144,6 +144,8 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.registerTask('server', ['exec:server']);
+
   // Validate Pug and SCSS files
   grunt.registerTask('lint', ['puglint', 'scsslint']);
 
