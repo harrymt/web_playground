@@ -132,15 +132,17 @@ module.exports = function (grunt) {
       }
     },
     imagemin: {
-      files: [
-        {
-          expand: true,  // Enable dynamic expansion.
-          cwd: 'public/images/', // Src matches are relative to this path.
-          src: ['*.png'], // Actual pattern(s) to match.
-          dest: 'public/images/', // Destination path prefix.
-          ext: '.png'   // Dest filepaths will have this extension.
-        }
-      ]
+      public_images: {
+        files: [
+          {
+            expand: true,  // Enable dynamic expansion.
+            cwd: 'public/images/', // Src matches are relative to this path.
+            src: ['*.png'], // Actual pattern(s) to match.
+            dest: 'public/images/', // Destination path prefix.
+            ext: '.png'   // Dest filepaths will have this extension.
+          }
+        ]
+      }
     }
   });
 
