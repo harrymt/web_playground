@@ -130,6 +130,17 @@ module.exports = function (grunt) {
           filename: 'screenshot'
         }
       }
+    },
+    imagemin: {
+      files: [
+        {
+          expand: true,  // Enable dynamic expansion.
+          cwd: 'public/images/', // Src matches are relative to this path.
+          src: ['*.png'], // Actual pattern(s) to match.
+          dest: 'public/images/', // Destination path prefix.
+          ext: '.png'   // Dest filepaths will have this extension.
+        }
+      ]
     }
   });
 
@@ -137,7 +148,7 @@ module.exports = function (grunt) {
   grunt.registerTask('lint', ['puglint', 'scsslint']);
 
   // Minify and create CSS files
-  grunt.registerTask('build', ['uglify', 'sass']);
+  grunt.registerTask('build', ['uglify', 'sass', 'imagemin']);
 
   // Run unit tests and linting
   grunt.registerTask('tests', ['exec:mocha', 'lint']);
