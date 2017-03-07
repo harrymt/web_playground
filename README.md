@@ -76,6 +76,14 @@ grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
 - Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - TODO: add screenshot from lighthouse report @ end
 - Used Browser Calories: https://chrome.google.com/webstore/detail/browser-calories/pdkibgfjegigkoaleelbkdpkgceljfco TODO add screenshot at end
+- TODO https://developers.google.com/speed/pagespeed/
+- TODO:
+	- https://varvy.com/pagespeed/
+	- http://www.webbloatscore.com/
+	- http://pagelocity.com/
+	- http://perfaudit.com/
+	- http://yellowlab.tools/
+	- https://www.sitespeed.io/documentation/
 
 
 Why not boilerplates?
