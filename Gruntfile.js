@@ -151,10 +151,6 @@ module.exports = function (grunt) {
             removeViewBox: false
           }, {
               removeUselessStrokeAndFill: false
-          }, {
-            removeAttrs: {
-                attrs: ['xmlns']
-            }
           }
         ]
       },
