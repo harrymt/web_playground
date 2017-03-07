@@ -4,196 +4,84 @@
 console.log("Loaded front end Javascript");
 
 
-// --- SVG ---
-
-// Configurable options
-// TODO set as changable variables
-const array_size = 10;
-var width = 200;
-var height = 200;
 
 
-var margins = {
-  top: 10, bottom: 10,
-  left: 5, right: 5
-};
-width -= margins.left - margins.right;
-height -= margins.top - margins.bottom;
+var WIDTH = 200;
+var HEIGHT = 200;
 
-// Setup the SVG
-var svg = d3
-            .select('#quicksort')
-            .append('svg')
-            .attr('width', width)
-            .attr('height', height)
+var buildingsY = 0;
+var rain_size = 20;
+var blueSquares = [];
 
-// Setup the data
-var index = d3.range(array_size);
-var data_array = shuffle(index.slice());
+ var droplets = (WIDTH / (rain_size + 5));
 
-var bars = svg
-              .selectAll('rect')
-              .data(data_array);
+  function draw(canvas) {
+      canvas.width = WIDTH; canvas.height = HEIGHT;
+      var context = canvas.getContext("2d");
+      // Setup shadow
+      context.shadowColor = "rgba(0, 0, 0, 0.3)";
+      context.shadowBlur = 20;
+      context.shadowOffsetX = 10;
+      context.shadowOffsetY = 10;
 
-bars.enter().append('rect');
+      for(var i = 0; i < droplets; i++) {
+        blueSquares.push(getRandomNum(0, 100));
+      }
 
+      return context;
+  }
 
-// var x = d3.scale.ordinal().domain(index).rangePoints([0, width]),
-//     a = d3.scale.linear().domain([0, n - 1]).range([-Math.PI / 4, Math.PI / 4]);
+  function getRandomNum(min, max) {
+      return Math.round(Math.random() * (max - min + 1)) + min;
+  }
 
-// var svg = d3.select("#quicksort").append("svg")
-//     .attr("width", width + margin.left + margin.right)
-//     .attr("height", height + margin.top + margin.bottom)
-//   .append("g")
-//     .attr("transform", "translate(" + margin.left + "," + (margin.top + height) + ")");
+  function moveCubes(context) {
+    buildingsY++; if(buildingsY > (WIDTH * 2)) { buildingsY = -WIDTH; }
+    for(var i = 0; i < droplets; i++) {
+      blueSquares[i]++;
+      if(blueSquares[i] > HEIGHT) { blueSquares[i] = 0; }
+    }
+  }
 
-// var line = svg.selectAll("line")
-//     .data(data)
-//   .enter().append("line")
-//     .attr("index", function(d, i) { return "i" + i; })
-//     .attr("x2", function(d) { return height * Math.sin(a(d)); })
-//     .attr("y2", function(d) { return -height * Math.cos(a(d)); })
-//     .attr("transform", function(d, i) { return "translate(" + x(i) + ")"; });
+  function update(context) {
+      context.clearRect(0, 0, WIDTH, HEIGHT);
 
-// // TODO
-// // $('js-load-report').on('click', function() {onclick(js-load-report).showLoading();
+      moveCubes(context);
 
-// /*
-//  * Based on a JS implementation of quicksort.
-//  * http://khan4019.github.io/front-end-Interview-Questions/sort.html#quickSort
-//  * quickSort([11,8,14,3,6,2,7],0,6);
-// */
-// function quickSort(arr, left, right) {
-//    var len = arr.length,
-//    pivot,
-//    partitionIndex;
+      // Draw buildings
+      context.fillStyle = "#ddd";
+      var big_size = 40;
+      var small_size = 20;
+      context.fillRect(buildingsY + 90, HEIGHT - small_size, 20, small_size);
+      context.fillRect(buildingsY + 50, HEIGHT - small_size, 20, small_size);
+      context.fillRect(buildingsY, HEIGHT - big_size, 20, big_size);
+      context.fillRect(buildingsY - 40, HEIGHT - big_size, 20, big_size);
+      context.fillRect(buildingsY - 80, HEIGHT - small_size, 20, small_size);
+      context.fillRect(buildingsY - 150, HEIGHT - big_size, 20, big_size);
+      context.fillRect(buildingsY - 200, HEIGHT - small_size, 20, small_size);
 
-//   if(left < right){
-//     pivot = right;
-//     partitionIndex = partition(arr, pivot, left, right);
-
-//    // sort left and right
-//    quickSort(arr, left, partitionIndex - 1);
-//    quickSort(arr, partitionIndex + 1, right);
-//   }
-//   return arr;
-// }
+      // Draw rain
+      context.fillStyle = "rgba(0, 0, 50, 0.5)";
+      var x = 0;
+      for(var y = 0; y < droplets; y++) {
+        context.beginPath();
+        context.fillRect(x, y + blueSquares[y], rain_size, rain_size);
+        x += rain_size + 10;
+      }
+  }
 
 
-// /**
-//  * Finds a new partition index for quick sort.
-//  */
-// function partition(arr, pivot, left, right) {
-//    var pivotValue = arr[pivot],
-//        partitionIndex = left;
-
-//    for(var i = left; i < right; i++){
-//     if(arr[i] < pivotValue){
-//       swap(arr, i, partitionIndex);
-//       partitionIndex++;
-//     }
-//   }
-//   swap(arr, right, partitionIndex);
-//   return partitionIndex;
-// }
-
-// /**
-//  * Helper function to swap 2 values in an array.
-//  */
-// function swap(arr, i, j) {
-//    var temp = arr[i];
-//    arr[i] = arr[j];
-//    arr[j] = temp;
-// }
-
-
-
-
-
-// var n = 960
-
-// var z = d3.scaleSequential(d3.interpolateRainbow).domain([0, n])
-
-// var data = d3.range(n)
-
-// var svg = d3.select('svg')
-//   .attr('width', n)
-//   .attr('height', n)
-
-// var g = svg.append('g')
-
-// var rect = g.selectAll('rect')
-//   .data(data, Number)
-// .enter()
-//   .append('rect')
-//   .attr('width', function (d, i) { return i + 1 })
-//   .attr('height', 1)
-//   .attr('x', 1)
-//   .attr('y', function (d, i) { return i })
-//   .attr('fill', z)
-
-// function* sort () {
-//   function* recurse (left, right) {
-//     if (left <= right) {
-//       var l = left, r = right, mid = data[Math.floor((left + right) / 2)]
-//       while (l <= r) {
-//         for (; l <= right && data[l] < mid; ++l);
-//         for (; r > left && data[r] > mid; --r);
-//         if (l <= r) {
-//           yield* swap(l++, r--)
-//         }
-//       }
-//       yield * recurse(left, r)
-//       yield * recurse(l, right)
-//     }
-//   }
-
-//   function* swap (i, j) {
-//     if (i === j) return
-//     yield [i, j]
-//     var t = data[i]
-//     data[i] = data[j]
-//     data[j] = t
-//   }
-
-//   yield * recurse(0, data.length - 1)
-// }
-
-// var gen = { next () { return { done: true } } }
-
-// d3.timer(function () {
-//   var v
-//   while ((v = gen.next()).done) {
-//     d3.shuffle(data)
-//     gen = sort()
-//   }
-//   rect.data(data, Number)
-//     .attr('y', function (d, i) { return i })
-
-//   var line = g.selectAll('.line')
-//     .data(v.value)
-
-//   line.enter().append('rect')
-//     .attr('class', 'line')
-//     .attr('x', 0)
-//     .attr('height', 1)
-//     .attr('width', n)
-//   .merge(line)
-//     .attr('y', function (d, i) { return d })
-
-//   line.exit().remove()
-// })
-
+window.onload = function() {
+    var canvas = document.getElementById("png-example");
+    if(doesElementExist(canvas)) {
+      var context = draw(canvas);
+      setInterval(function() { update(context); }, 20);
+    }
+}
 
 /**
- * Shuffle an array, taken from here
- * http://codepen.io/Oooing/pen/YXwyKZ
+ * Checks if the given element object exists.
  */
-function shuffle(array) {
-  var m = array.length, t, i;
-  while (m) {
-    i = Math.floor(Math.random() * m--);
-    t = array[m], array[m] = array[i], array[i] = t;
-  }
-  return array;
+function doesElementExist(el) {
+  return (typeof(el) != 'undefined' && el != null);
 }
