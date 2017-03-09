@@ -9,7 +9,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 ![Screenshot](screenshot.png "Screenshot")
 
-TODO: Travis CI?
+TODO: Travis CI? Run a Chrome dev tools Audit! TODO: Identify the ctitical path css
 
 
 ## Setup
