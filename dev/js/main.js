@@ -4,6 +4,21 @@
 console.log("Loaded front end Javascript");
 
 
+/**
+ * Load the number of hits.
+ */
+$.getJSON("/hits", function( data ) {
+  $(".js-hits").text(data);
+});
+
+/**
+ * Track a hit
+ */
+$.post("/hit", function( data ) {
+  if(!data) {
+    console.log("Error unable to count number of hits.")
+  }
+});
 
 
 var WIDTH = 200;
