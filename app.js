@@ -1,7 +1,9 @@
 "use strict";
 
-// Get other server side code
-var server_side_code = require( __dirname + '/server/main.js');
+// Get other user written modules
+var security = require( __dirname + '/server/handle-content.js');
+var database = require( __dirname + '/server/database.js');
+
 
 var express = require('express');
 var path = require('path');
@@ -32,8 +34,6 @@ app.use(helmet());
 // Compress all routes
 app.use(compression());
 
-
-
 // Set css, js and images for a static serve
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
+// TODO: uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', report);
 
 // Perform content negotiation
-app.use(server_side_code.handleContent);
+app.use(security.handleContent);
 
 /**
  * Route every other page.
