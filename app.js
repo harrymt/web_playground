@@ -22,11 +22,16 @@ var report = require('./routes/report');
  */
 var app = express().use(function (req, res, next) {
   if (req.app.get('env') !== 'development' ? req.header('x-forwarded-proto') == 'http' : false) {
-    res.redirect(301, 'https://' + req.get('Host') + req.url)
-    return
+    res.redirect(301, 'https://' + req.get('Host') + req.url);
+    return;
   }
-  next()
+  next();
 });
+
+
+// Setup our API to get the number of hits
+app.use('/hits', database.hits);
+app.use('/hit', database.trackHit);
 
 // Secure the Express app by setting various HTTP headers.
 app.use(helmet());
@@ -52,8 +57,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Report will render with PDF
 app.use('/', report);
 
+
+
 // Perform content negotiation
 app.use(security.handleContent);
+
+
 
 /**
  * Route every other page.
