@@ -86,6 +86,11 @@ module.exports = function (grunt) {
       pug: {
         files: ['views/*.pug', 'views/**/*.pug'],
         tasks: ['puglint']
+      },
+
+      svg: {
+        files: ['dev/svg/*.svg'],
+        tasks: ['svgmin']
       }
     },
 
@@ -147,11 +152,9 @@ module.exports = function (grunt) {
     svgmin: {
       options: {
         plugins: [
-          {
-            removeViewBox: false
-          }, {
-              removeUselessStrokeAndFill: false
-          }
+          { removeViewBox: false },
+          { convertShapeToPath: false },
+          { removeUselessStrokeAndFill: false }
         ]
       },
       dist: {
