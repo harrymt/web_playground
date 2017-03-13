@@ -1,3 +1,5 @@
+// TODO "use strict";
+
 (function() {
   /**
    * Middleware to handle content negotiation.
