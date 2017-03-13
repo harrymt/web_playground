@@ -14,20 +14,37 @@ TODO: Travis CI? Run a Chrome dev tools Audit! TODO: Identify the ctitical path 
 
 ## Setup
 
+- Clone project with [Git](https://git-scm.com/downloads). `git clone git@github.com:harrymt/web_playground.git`
+- Navigate to that directory `cd web_playground`
+
 #### Dependancies
 
-- Clone project `git clone git@github.com:harrymt/web_playground.git`
-- Ensure Ruby, Sass the Ruby gem and Grunt is installed
-	- `gem update --system && gem install scss_lint`
-- Ensure [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
+- Install [NodeJS](https://nodejs.org/en/)
+- Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/).
+- Install global SCSS linting with: `gem update --system && gem install scss_lint`
+- Install [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
+
+
+Finally install all nodejs modules.
+
 - `npm install`
+
+
+#### (Optional)
+
 - To deploy download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+- Login to heroku by typing `heroku login`
+
 
 #### Grunt
 
 The whole project uses `GruntJS` to handle everything from running to deployment.
 
-Each one of the following tasks should be run using `grunt <task>`, e.g. `grunt build`.
+- Run `node_modules/grunt-cli/bin/grunt` to run grunt, or
+- Install grunt globally, with `sudo npm install -g grunt-cli`
+
+Each one of the following tasks should be run using `grunt <task>`
+e.g. `grunt build`.
 
 
 **[Gruntfile.js](Gruntfile.js)**
