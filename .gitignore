@@ -50,3 +50,5 @@ jspm_packages
 .node_repl_history
 report.pdf
 .vscode/launch.json
+*.db
+data.db
