@@ -1,11 +1,12 @@
 # Overview
 
-This report breifly outlines the full website as part of the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).
+This report briefly outlines the full website as part of the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).
 
 The marking of this unit splits the project into different sections, labelled below.
 
 ## HTML
 
+The site serves XHTML content when it can, where the HTML is [HTML5 compliant](https://www.w3.org/TR/html5/), tested using a (HTML5 validator)[].
 Talk about Pug
 Talk about the PUG validator
 
