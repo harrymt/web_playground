@@ -2,47 +2,26 @@
 
 This report briefly outlines the full website as part of the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).
 
+TODO:
+- Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator)
+  - Write about it in the [HTML](#html) section
+
 The marking of this unit splits the project into different sections, labelled below.
 
 ## HTML
-The site serves XHTML content when it can, where the HTML is [HTML5 compliant](https://www.w3.org/TR/html5/), tested using a (HTML5 validator)[].
-- TODO Follows this code guide: http://codeguide.co/
-- Practices, JS at the end of document
-- CSS at top via a CDN probs
-- Use &#960 rather than hex characters
-- Use 1.0XML
-- Handles content negotiation using (Polyglot HTML)[https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup]
-https://www.w3.org/TR/xhtml-media-types/#media-types
+The server serves HTML5 [Polyglot HTML](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup) content when it can (the ExpressJS server handles content negotiation), where the HTML is [HTML5 compliant](https://www.w3.org/TR/html5/), tested using the W3C [HTML5 validator](https://validator.w3.org/nu). The HTML, CSS and Javascript all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the Javascript is located at the bottom of the HTML, before the `</body>` tag, to not block any rendering of the page.
+
+Some [Boilerplates](http://www.nodebootstrap.io) were considered, along with different JavaScript frameworks such as [AngularJS](https://angularjs.org/), but, these are very bloated and I wanted to understand exactly how content was served. However, ExpressJS provides an [application generator](https://expressjs.com/en/starter/generator.html) that is recommended as a starting point for all new servers. Because it was recommended, I opted to use it as a starting point for this site.
+
+
+## Dynamic Pages
+
+
+
 - Uses [PUG](https://pugjs.org)
 
 - Uses a PUG validator
 
-https://github.com/mozilla/html5-lint ?
-https://www.npmjs.com/package/html-validator ?
-
-
-Talk about Pug
-Talk about the PUG validator
-
-Talk about the Doctype. and how I use XHTML delivery
-
-Talk about where the JS and CSS lie on the HTML page
-
-Why not boilerplates?
-
-NodeBootstrap - unobtrusive skeleton project for Node/Express.js with pre-configured best-practices. Kick-start your Node project development with tons of boilerplate taken care of, such as: clustering, Docker-support, error-handling, modularity, logging, views, environments etc. http://www.nodebootstrap.io
-make a note, that all boilerplates are poo?
-(Why use a boilerplate? http://whatis.techtarget.com/definition/boilerplate)
-
-Boilerplates to consider:
-https://www.npmjs.com/package/node-boilerplate (Doesn't use docker, or express, pro docker bit)
-https://github.com/inadarei/nodebootstrap (TOO BLOATED)
-http://www.clementinejs.com/tutorials/tutorial-beginner.html (More lighter weight! Dont use though)
-Use basic Express application generator: https://expressjs.com/en/starter/generator.html
-
-
-
-## Dynamic Pages
 
 Talk about grunt
 
@@ -62,6 +41,7 @@ Talk more about PUG
 ## CSS
 
 Talk about SCSS
+- CSS at top via a CDN probs
 
 Talk about the structure of our SCSS
 
