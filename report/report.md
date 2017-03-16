@@ -20,6 +20,16 @@ Some [Boilerplates](http://www.nodebootstrap.io) were considered, along with dif
 
 - Uses [PUG](https://pugjs.org)
 
+```pug
+extends layout.pug
+
+block content
+  h1= title
+  p This was built as ... a full write up is found&#32;
+    a( href='/report' ) here.
+
+```
+
 - Uses a PUG validator
 
 
