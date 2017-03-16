@@ -9,7 +9,7 @@ TODO:
 The marking of this unit splits the project into different sections, labelled below.
 
 ## HTML
-The server serves HTML5 [Polyglot HTML](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup) content when it can (the ExpressJS server handles content negotiation), where the HTML is [HTML5 compliant](https://www.w3.org/TR/html5/), tested using the W3C [HTML5 validator](https://validator.w3.org/nu). The HTML, CSS and Javascript all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the Javascript is located at the bottom of the HTML, before the `</body>` tag, to not block any rendering of the page.
+The server serves HTML5 ([Polyglot HTML](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can (the ExpressJS server handles content negotiation), where the HTML is [HTML5 compliant](https://www.w3.org/TR/html5/), tested using the W3C [HTML5 validator](https://validator.w3.org/nu). The HTML, CSS and Javascript all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the Javascript is located at the bottom of the HTML, before the `</body>` tag, to not block any rendering of the page.
 
 Some [Boilerplates](http://www.nodebootstrap.io) were considered, along with different JavaScript frameworks such as [AngularJS](https://angularjs.org/), but, these are very bloated and I wanted to understand exactly how content was served. However, ExpressJS provides an [application generator](https://expressjs.com/en/starter/generator.html) that is recommended as a starting point for all new servers. Because it was recommended, I opted to use it as a starting point for this site.
 
