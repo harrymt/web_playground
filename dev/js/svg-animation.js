@@ -17,19 +17,19 @@
      * Draw the animation.
      */
     function draw(canvas) {
-          canvas.width = WIDTH; canvas.height = HEIGHT;
-          var context = canvas.getContext("2d");
-          // Setup shadow
-          context.shadowColor = "rgba(0, 0, 0, 0.3)";
-          context.shadowBlur = 20;
-          context.shadowOffsetX = 10;
-          context.shadowOffsetY = 10;
+        canvas.width = WIDTH; canvas.height = HEIGHT;
+        var context = canvas.getContext("2d");
+        // Setup shadow
+        context.shadowColor = "rgba(0, 0, 0, 0.3)";
+        context.shadowBlur = 20;
+        context.shadowOffsetX = 10;
+        context.shadowOffsetY = 10;
 
-          for(var i = 0; i < droplets; i++) {
-            blueSquares.push(utils.getRandomNum(0, 100));
-          }
+        for(var i = 0; i < droplets; i++) {
+          blueSquares.push(utils.getRandomNum(0, 100));
+        }
 
-          return context;
+        return context;
     }
 
     /**
@@ -94,14 +94,14 @@
        * Generate a random number between the min and the max.
        */
       getRandomNum : function(min, max) {
-        return Math.round(Math.random() * (max - min + 1)) + min;
+          return Math.round(Math.random() * (max - min + 1)) + min;
       },
 
       /**
        * Checks if the given element object exists.
        */
       doesElementExist : function(el) {
-        return (typeof(el) != 'undefined' && el !== null);
+          return (typeof(el) != 'undefined' && el !== null);
       }
     };
 
