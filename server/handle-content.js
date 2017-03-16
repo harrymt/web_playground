@@ -1,6 +1,7 @@
-// TODO "use strict";
 
 (function() {
+  "use strict";
+
   /**
    * Middleware to handle content negotiation.
    * If Accept header == application/xhtml+xml (where no "q" param or "q=1" 1+) then xhtml
@@ -9,7 +10,7 @@
   module.exports.handleContent = function(req, res, next) {
     var header_type = req.headers['accept'];
 
-    if(header_type == undefined) {
+    if(header_type === undefined) {
       // Trigger error.
       res.status(406);
       next(setUnacceptableRequest());
@@ -35,7 +36,7 @@
       res.status(406);
       next(setUnacceptableRequest(header_type));
     }
-  }
+  };
 
   function setUnacceptableRequest(header) {
       var err = new Error('Unacceptable request detected!');
@@ -54,7 +55,6 @@
     }
     return false;
   }
-
 
 }());
 

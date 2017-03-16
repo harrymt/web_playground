@@ -1,7 +1,9 @@
-"use strict";
+/* jslint node: true */
+
 
 // Database Module
 (function() {
+  "use strict";
 
   var sqlite3 = require('sqlite3').verbose();
 
@@ -33,14 +35,14 @@
 
   var recordHit = function (req, res) {
     db.run("insert into hits (number) values (1)", function(err) {
-      if (err) { throw err; res.json(err); }
+      if (err) { res.json(err); throw err; }
       res.json(true);
     });
-  }
+  };
 
   var getHits = function (req, res) {
     db.all("select * from hits", function(err, rows) {
-        if (err) { throw err; }
+        if (err) { res.json(err); throw err; }
         res.json(rows.length); // Sum of hits
     });
   };

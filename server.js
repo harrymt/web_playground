@@ -1,18 +1,16 @@
 #!/usr/bin/env node
+/* jslint node: true */
 "use strict";
 
 /**
  * Module dependencies.
  */
-
 var app = require('./app.js');
-var debug = require('debug')('web-playground:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
-
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
@@ -57,7 +55,6 @@ function normalizePort(val) {
 /**
  * Event listener for http server "error" event.
  */
-
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -85,12 +82,10 @@ function onError(error) {
 /**
  * Event listener for http server "listening" event.
  */
-
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
   console.log('Listening on ' + bind);
 }

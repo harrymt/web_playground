@@ -13,7 +13,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 Install [dependencies](#dependencies) and read about [grunt](#grunt) first!
 
 - `npm install`
-- `grunt server` - view at [localhost:3001](localhost:3001)
+- `grunt server` - view at [http://localhost:3001/](http://localhost:3001/)
 
 
 ![Screenshot](screenshot.png "Screenshot")
@@ -68,22 +68,13 @@ grunt.registerTask('server', ['exec:server']);
 grunt.registerTask('build', ['uglify', 'sass']);
 
 /**
- * Test.
- *
- * Run unit tests and lint
- *
- * $ grunt tests
- */
-grunt.registerTask('tests', ['exec:mocha', 'lint']);
-
-/**
  * Deploy.
  *
  * Deploy to heroku server then run page insight tests
  *
  * $ grunt deploy
  */
-grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
+grunt.registerTask('deploy', ['lint', 'build', 'exec:deploy', 'pagespeed']);
 ```
 
 #### (Optional)
@@ -96,6 +87,5 @@ grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
 
 - [Markdown to PDF](https://www.npmjs.com/package/markdown-pdf)
 - [sqlite3](https://www.sqlite.org/download.html)
-- [Mocha](https://github.com/mochajs/mocha)
 - [SCSS](http://sass-lang.com/)
 - [PUG](https://pugjs.org)

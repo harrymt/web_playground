@@ -1,7 +1,9 @@
-'use strict';
+/* jslint node: true */
 
-const production_url = "https://webtechnologies.herokuapp.com/";
-const local_url = "http://localhost:3001/"
+"use strict";
+
+var production_url = "https://webtechnologies.herokuapp.com/";
+var local_url = "http://localhost:3001/";
 
 
 module.exports = function (grunt) {
@@ -19,14 +21,13 @@ module.exports = function (grunt) {
    */
   function sleep(secs) {
     var waitUntil = new Date().getTime() + secs * 1000;
-    while(new Date().getTime() < waitUntil) true;
+    while(new Date().getTime() < waitUntil) { }
   }
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
     exec: {
-      mocha: 'npm test',
       server: 'node server',
       gitstatus: 'git status',
       screenshot: 'grunt pageres',
@@ -58,13 +59,23 @@ module.exports = function (grunt) {
       }
     },
 
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: ['dev/js/util.js', 'dev/js/svg-animation.js', 'dev/js/main.js'],
+        dest: 'public/js/main.min.js'
+      }
+    },
+
     uglify: {
       options: {
         mangle: true
       },
       my_target: {
         files: {
-          'public/js/main.min.js': ['dev/js/main.js']
+          'public/js/main.min.js': ['public/js/main.min.js']
         }
       }
     },
@@ -80,7 +91,7 @@ module.exports = function (grunt) {
 
       javascript: {
         files: ['dev/js/*.js'],
-        tasks: ['exec:mocha', 'uglify']
+        tasks: ['concat', 'uglify']
       },
 
       pug: {
@@ -174,10 +185,7 @@ module.exports = function (grunt) {
   grunt.registerTask('lint', ['puglint', 'scsslint']);
 
   // Minify and create CSS files
-  grunt.registerTask('build', ['uglify', 'sass', 'imagemin', 'svgmin']);
-
-  // Run unit tests and linting
-  grunt.registerTask('tests', ['exec:mocha', 'lint']);
+  grunt.registerTask('build', ['concat', 'uglify', 'sass', 'imagemin', 'svgmin']);
 
   // Check that we have commmited before a task
   grunt.registerTask('commit-warn', function() {
@@ -194,8 +202,8 @@ module.exports = function (grunt) {
   grunt.registerTask('push', ['exec:git_checkout_heroku', 'exec:git_pull', 'exec:git_checkout_master', 'exec:git_push_heroku']);
 
   // Deploy to heroku server, take screenshot then run page insight tests
-  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'tests', 'build', 'push', 'screenshot', 'pagespeed']);
+  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'lint', 'build', 'push', 'screenshot', 'pagespeed']);
 
   // Do what you expect the default task to do
-  grunt.registerTask('default', ['tests', 'build', 'exec:server']);
-}
+  grunt.registerTask('default', ['lint', 'build', 'exec:server']);
+};
