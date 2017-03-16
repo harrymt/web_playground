@@ -2,22 +2,26 @@
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
-
-Harrys web playground, demonstrating variety of website development techniques using best practices and standards.
+Harry's web playground, demonstrating variety of website development techniques using best practices and standards.
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
 ![Screenshot](screenshot.png "Screenshot")
 
-TODO: Travis CI? Run a Chrome dev tools Audit! TODO: Identify the ctitical path css
-
 
 ## Setup
 
+
+Install [dependencies](#dependencies) and read about [grunt](#grunt) first!
+
+- `npm install`
+- `grunt server` - view at [localhost:3001](localhost:3001)
+
+
+#### Dependencies
+
 - Clone project with [Git](https://git-scm.com/downloads). `git clone git@github.com:harrymt/web_playground.git`
 - Navigate to that directory `cd web_playground`
-
-#### Dependancies
 
 - Install [NodeJS](https://nodejs.org/en/)
 - Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/).
@@ -27,15 +31,7 @@ TODO: Travis CI? Run a Chrome dev tools Audit! TODO: Identify the ctitical path 
 - Not needed? Install [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
 
 
-Finally install all nodejs modules.
 
-- `npm install`
-
-
-#### (Optional)
-
-- To deploy download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
-- Login to heroku by typing `heroku login`
 
 
 #### Grunt
@@ -88,6 +84,11 @@ grunt.registerTask('tests', ['exec:mocha', 'lint']);
  */
 grunt.registerTask('deploy', ['tests', 'build', 'exec:deploy', 'pagespeed']);
 ```
+
+#### (Optional)
+
+- To deploy download [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+- Login to heroku by typing `heroku login`
 
 
 ## Technologies Used
