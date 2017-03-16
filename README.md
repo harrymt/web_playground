@@ -6,8 +6,6 @@ Harry's web playground, demonstrating variety of website development techniques 
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
-![Screenshot](screenshot.png "Screenshot")
-
 
 ## Setup
 
@@ -16,6 +14,9 @@ Install [dependencies](#dependencies) and read about [grunt](#grunt) first!
 
 - `npm install`
 - `grunt server` - view at [localhost:3001](localhost:3001)
+
+
+![Screenshot](screenshot.png "Screenshot")
 
 
 #### Dependencies
