@@ -6,6 +6,9 @@ Harry's web playground, demonstrating variety of website development techniques 
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
+- TODO: Add show source next to png, svg
+- TODO: Link to the stylesheet project, include in release?
+
 
 ## Setup
 
@@ -30,8 +33,6 @@ Install [dependencies](#dependencies) and read about [grunt](#grunt) first!
 	- `gem update --system && gem install scss_lint`
 	- OR: `sudo apt-get install scss_lint`
 - Not needed? Install [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
-
-
 
 
 
