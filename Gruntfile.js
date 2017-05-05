@@ -129,7 +129,7 @@ module.exports = function (grunt) {
       },
       paths: {
         options: {
-          paths: ["/", "/front-end", "/back-end", "/report", "/extras"],
+          paths: ["/", "/front-end", "/back-end", "/report"],
           locale: "en_GB",
           strategy: "desktop",
           threshold: 30

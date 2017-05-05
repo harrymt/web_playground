@@ -78,6 +78,8 @@ Talk about mocha tests
 - QUnit for tests, JSlint for linting
 - StyleGuide https://google.github.io/styleguide/jsguide.html
 
+Rendering the report from markdown to pdf
+
 ### Best Practices
 
 - Douglas Crockford JS best practices
@@ -87,6 +89,7 @@ Talk about mocha tests
   - Use Power consutrctors to avoid the new keyword
   - Inheritence is different
   - New ES6 features (not neccessarily well supported cross brower )
+
 
 
 ## SVG
@@ -158,9 +161,6 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 - Site runs on HTTPS: https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https
 
 
-## Extras
-
-Rendering the report from markdown to pdf
 
 
 ===================== SPEC ===================
