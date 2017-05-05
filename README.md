@@ -11,6 +11,10 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - TODO: To stop using some weird node_modules/grunt command, add grunt to npm script, so you do npm run grunt ... https://gruntjs.com/blog/2016-02-11-grunt-1.0.0-rc1-released#npm-scripts
 - TODO: Add humans.txt and others, based on https://github.com/h5bp/html5-boilerplate/tree/master/dist
 - TODO: Run static analysis tools on CSS, HTML and Javascript https://github.com/mre/awesome-static-analysis#css
+- TODO: Rename webtechnologies.herokuapp.com to web_playground.herokuapp.com
+
+- TODO: Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator) - Write about it in the [HTML](#html) section
+
 
 ## Setup
 
