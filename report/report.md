@@ -1,94 +1,97 @@
 # Overview
+*Written by Harry Mumford-Turner for the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).*
 
-This report briefly outlines the full website as part of the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).
+## Introduction
+The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, each section is considered to be of A grade.
 
-TODO:
-- Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator)
-  - Write about it in the [HTML](#html) section
+### Contents
 
-The marking of this unit splits the project into different sections, labelled below.
+1. [HTML](#html)
+2. [CSS](#css)
+3. [JavaScript](#client-side-javascript)
+4. [PNG](#png)
+5. [SVG](#svg)
+6. [Server](#server)
+7. [Database](#database)
+8. [Dynamic Pages](#dynamic_pages)
+9. [Tests](#tests)
+10. [Security](#security)
+
+
 
 ## HTML
-The server serves HTML5 ([Polyglot HTML](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can (the ExpressJS server handles content negotiation), where the HTML is [HTML5 compliant](https://www.w3.org/TR/html5/), tested using the W3C [HTML5 validator](https://validator.w3.org/nu). The HTML, CSS and Javascript all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the Javascript is located at the bottom of the HTML, before the `</body>` tag, to not block any rendering of the page.
 
-Some [Boilerplates](http://www.nodebootstrap.io) were considered, along with different JavaScript frameworks such as [AngularJS](https://angularjs.org/), but, these are very bloated and I wanted to understand exactly how content was served. However, ExpressJS provides an [application generator](https://expressjs.com/en/starter/generator.html) that is recommended as a starting point for all new servers. Because it was recommended, I opted to use it as a starting point for this site.
+The server serves *HTML5* ([Polyglot *HTML*](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can with this content negotiation handled server-side.
 
+The *HTML* is [*HTML5* compliant](https://www.w3.org/TR/html5/), tested using the W3C [HTML5 validator](https://validator.w3.org/nu).
 
-## Dynamic Pages
+The *HTML*, *CSS* and *JavaScript* all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the *JavaScript* is located at the bottom of the *HTML*, before the `</body>` tag, to not block the rest of Document Object Model (DOM) rendering of the page.
 
-
-
-- Uses [PUG](https://pugjs.org)
-
-```pug
-extends layout.pug
-
-block content
-  h1= title
-  p This was built as ... a full write up is found&#32;
-    a( href='/report' ) here.
-
-```
-
-- Uses a PUG validator
-
-
-Talk about grunt
-
-Dynamically compiling each page enables less code reuse, ect <WHY ARE HTML TEMPLATING LANGUAGES GOOD> HTML templating language called [Pug](https://pugjs.org/api/getting-started.html) (formerly called [Jade](https://www.npmjs.com/package/jade)). _"Pug  is a high performance template engine heavily influenced by Haml and implemented with JavaScript for node and browsers."_ [\[1\]](https://github.com/pugjs/pug).
-
-Talk more about PUG
-
-  - this is either inserting data into templates on the server side and delivering dynamic pages or requesting data from the server and inserting into existing pages on the client side
-
-  - C means you've created a simple dynamic delivery system or you have used a framework in a simple way
-
-  - B means you've organised dynamic delivery in a more sophisticated way, either doing more of your own programming or using more features of a framework
-
-  - A means you've put in a lot of programming effort or become very fluent in using your chosen framework
+Project is mainly written in *Pug* an *HTML* templating language, but more on that [later checkurl](#dynamic_pages). Lets move onto the style of the website.
 
 
 ## CSS
 
-Talk about SCSS
-- CSS at top via a CDN probs
+### Framework
 
-Talk about the structure of our SCSS
+The website style is based on a *CSS* framework that I built called [*SimpleStyle*](https://github.com/harrymt/simplestyle). *SimpleStyle* is separated into another [repository](https://github.com/harrymt/simplestyle/tree/master/scss), but for the website release, it is included in the repo as a `.zip` file.
 
-Talk about the styleguide
+### SCSS
 
-Talk about how the SCSS is processed using grunt
+The framework uses [*SCSS*](http://sass-lang.com) - *'SCSS or SASS is an extension of CSS, adding nested rules, variables, mixins, selector inheritance, and more.'*[\[x\]](http://sass-lang.com). *SCSS* files are processed using *Ruby*, and in this project *SCSS* files are compiled using a *JavaScript* task runner called *Grunt* (more on this [later checkurl](#JavaScriptTaskRunner)).
 
-- Dont use lots of whitespace, add more columns
-- Uses a CSS framework I designed
-- Uses [SCSS](http://sass-lang.com/)
-  - Styleguide of: https://github.com/airbnb/css
-  - Uses scss-lint here https://www.npmjs.com/package/grunt-scss-lint
+The framework is served to the website via a Content Delivery Network or *CDN* for quick content delivery. For example, this is how *SimpleStyle* is added in our *Pug* (*HTML*) file.
+
+```pug
+// head.pug
+
+head
+  // .. title and meta tags ..
+  link( rel='stylesheet', href='//rawgit.com/harrymt/simplestyle/master/simplestyle.min.css' )
+  link( rel='stylesheet', href='/css/style.css' )
+```
+
+Notice how the `simplestyle.min.css` contains `min`. This is a standard way of showing that your files are *minified*. Minifying files is a post-process that strips the non-essential parts of a file. In a `.css` file this would mean removing comments, whitespace and shortening various styles (e.g. `#ffffff` to `#fff`).
+
+When we process a `.scss` file into a `.css` file minification comes for free. This means when our files are served to a client, they take up less space as their filesize is lower.
+
+### Standards
+
+Style standards are based on the previously mentioned [coding guide](http://codeguide.co/) and specific *SCSS* standards are based on a single style guide from [AirBnB](https://github.com/airbnb/css). To enforce these styles a *linter* is used for validation in the build process. The [`scss-lint`]( https://www.npmjs.com/package/grunt-scss-lint) *Ruby* gem is used with *Grunt* during *SCSS* compile time.
+
+JavaScript plays a large part in this project: server-side, client-side and during the build process. First we will talk about Client-Side JavaScript.
 
 
+## JavaScript
 
-## JS
+CLIENT SIDE ONLY
 
-Talk about mocha tests
-
-- If js is disabled a banner message is displayed
-- Add async to js files
-- Uses [Mocha](https://github.com/mochajs/mocha) for unit tests
-- Experiment with showing off popular algorithms! As part of software job practice! Visulise them!
-- QUnit for tests, JSlint for linting
 - StyleGuide https://google.github.io/styleguide/jsguide.html
-
-Rendering the report from markdown to pdf
-
-### Best Practices
-
 - Douglas Crockford JS best practices
   - Use Strict mode
   - Make field and methods private
-  - Avoid using this keywrod
-  - Use Power consutrctors to avoid the new keyword
-  - Inheritence is different
-  - New ES6 features (not neccessarily well supported cross brower )
+  - Avoid using this keyword
+  - Use Power constructors to avoid the new keyword
+  - Inheritance is different
+  - New ES6 features (not necessarily well supported cross browser )
+
+- If js is disabled a banner message is displayed
+- Add async to js files
+- svg-animation, png animation
+- database interaction
+
+
+### Build Process
+Grunt *JavaScript* Task Runner
+
+
+
+## PNG
+- PNG:
+  - Working with bitmap graphics in Gimp or Krita
+  - Show how to convert images to PNG, cropping away unwanted edges, changing resolution
+  - Use basic tools such as using filters or changing colours or combining existing images or creating simple shapes or filling
+  - Gained experience with some more sophisticated tools such as handling layers and transparency, or airbrushing or creating original artwork
 
 
 
@@ -117,6 +120,27 @@ Animate a person icon using svg.
 
 ```
 
+- SVG:
+  - this is working with vector graphics in Inkscape
+  - Created a basic drawing in Inkscape, probably by copying something else
+  - Gained experience with some of Inkscape's features such as shape tools, freehand drawing, simplification
+  - Gained a higher level of experience, e.g. with path editing, grouping, transformations, gradients, patterns, etc., or put a lot of effort into vector artwork
+  -
+
+## Server
+
+Bolierplates are like starting project templates. Some [boilerplates](http://www.nodebootstrap.io) were considered, along with different *JavaScript* frameworks, such as [AngularJS](https://angularjs.org/). But, these are very bloated and I wanted to understand exactly how content was served. Therefore, this project does not use any *JavaScript* frameworks and instead the base code uses *ExpressJS* [application generator](https://expressjs.com/en/starter/generator.html) - a recommended tool for starting a new server.
+
+- port numbers, URL validation, content negotiation for old browsers, sending redirections to browsers, handling UTF-8
+- https and certificates, or web sockets, or cloud hosting, or security issues beyond URL validation, or auto-testing, or cookies, or running under reduced privilege
+
+- Uses [Mocha](https://github.com/mochajs/mocha) for unit tests
+- QUnit for tests, JSlint for linting also client
+-  Rendering the report from markdown to pdf
+- pug html templating
+- database interaction (different module)
+-
+
 ## Database
 
 Why not Mongo DB
@@ -127,10 +151,56 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 - SQLite
 
 
+## Dynamic Pages
+
+### *HTML* Templates
+
+The website is written in a *HTML* templating language called *[Pug](https://pugjs.org)*. *'Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.'* [\[x\]](https://github.com/pugjs/pug). *Pug* makes writing *HTML* code easier by using templates to split the document into tidy sections. For example below is a *Pug* snippet for the `/report` page - notice how we `extend layout.pug` which is the base *HTML* for this page.
+
+```pug
+// report.pug
+
+extends layout.pug
+
+block content
+  h1= title
+  p This was built as ... a full write up is found&#32;
+    a( href='/report' ) here.
+```
+
+The base *HTML* template, `layout.pug` creates a `block` where  `report.pug` can place information specific to `/report`.
+
+```pug
+// layout.pug
+
+doctype html lang="en-GB"
+html
+  include includes/head.pug
+  body
+  block content
+  include includes/footer.pug
+  include includes/foot.pug
+```
+
+Dynamically compiling each page enables less code reuse. Each `.pug` file is validated during the build process with a pug validated *Ruby* gem.
+
+
+### Page Views
+
+Talk about dynamic page views
+
+
+### Markdown Report to PDF
+
+
+
 
 ## Tests
 
-### Performance & general
+
+Talk about mocha JavaScript tests
+
+### Performance & General
 - Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - TODO: add screenshot from lighthouse report @ end
 - Used Browser Calories: https://chrome.google.com/webstore/detail/browser-calories/pdkibgfjegigkoaleelbkdpkgceljfco TODO add screenshot at end
@@ -146,7 +216,7 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 - Compression is used https://www.npmjs.com/package/compression
 - Minification is used
 
-# General Testing
+### General Testing
 - Performance, tests CL production code hosted on heroku
 - Use PhantomJs to automate things you do in the website
 
@@ -166,14 +236,6 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 ===================== SPEC ===================
 
 
-# Topic
-- Web playground!
-- Build an interesting site structure, and adding a server to deliver pages and handle a database.
-- e.g. shopping for sports gear, reviewing cameras, discussing politics, supporting a particular charity or organisation, teaching astronomy, uploading and showing off photos, social media, playing games.
-- Need to demonstrate my grasp of wide varieyu of different technologies.
-- It doesn't necessarily matter if your site doesn't make complete coherent sense in the end.
-
-
 # Requirements
 - Use standard HTML, CSS, JavaScript, PNG, SVG and other integrated client-side technologies, following the advice from the lectures.
 - Node-based server
@@ -187,91 +249,13 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 - Check any restrictions (b) acknowledge them in your report (c) adapt them to follow the standards and advice in the lectures where necessary and (d) explain your added value (e.g. "I just copied it and learnt how to use it" or "I changed it a little" or "I understood it fully and re-wrote it").
 
 
-# Marks
-
-- X for HTML (out of 10)
-- X for CSS (out of 10)
-- X for JS (out of 10)
-- X for PNG (out of 10)
-- X for SVG (out of 10)
-- X for Server (out of 10)
-- X for Database (out of 10)
-- X for Dynamic pages (out of 10)
-- X for Depth (out of 40)
-Total: out of 120
-
-Key:
-X means you have done nothing in this area
-D means you started but got stuck or ran out of time
-C means you have done basic work
-B means you have done some solid work
-A means you have done sophisticated or extensive work
-? means you don't want to estimate
-
-
-## Mark breakdown
-
-- HTML:
-  - Used XHTML delivery, or a validator, to make sure your pages are correct
-  - Investigated a variety of different issues and gained a general high level of confidence with the structure of HTML pages (or with generating HTML via a framework)
-
-- CSS:
-  - No inline styles
-  - Investigated a variety of different issues and gained a general high level of confidence with CSS style (or with generating CSS via a framework)
-
-- JS:
-  - Client-side JS for effects or animation or interaction, including use of client-side frameworks, but excluding aspects which are to do with dynamic page construction
-  - Written a substantial script yourself, or written a number of script functions with different issues involved, or gained a medium amount of experience with client-side frameworks
-  - Gained a high level of understanding of how client-side JavaScript works, or a high level of expertise in using client-side frameworks
-
-- PNG:
-  - Working with bitmap graphics in Gimp or Krita
-  - Show how to convert images to PNG, cropping away unwanted edges, changing resoluation
-  - Use basic tools such as using filters or changing colours or combining existing images or creating simple shapes or filling
-  - Gained experience with some more sophisticated tools such as handling layers and transparency, or airbrushing or creating original artwork
-
-- SVG:
-  - this is working with vector graphics in Inkscape
-  - Created a basic drawing in Inkscape, probably by copying something else
-  - Gained experience with some of Inkscape's features such as shape tools, freehand drawing, simplification
-  - Gained a higher level of experience, e.g. with path editing, grouping, transformations, gradients, patterns, etc., or put a lot of effort into vector artwork
-
-- Server:
-  - this is creating or adapting a server, either programming it yourself or using express and its add-ons
-  - means you've created a server by minimally adapting the one provided, or closely following a tutorial to set up express
-  - B means you've dealt with things like port numbers, URL validation, content negotiation for old browsers, sending redirections to browsers, handling UTF-8
-  - A means you've dealt with things like https and certificates, or web sockets, or cloud hosting, or security issues beyond URL validation, or auto-testing, or cookies, or running under reduced privilege
-
-- Database:
-  - C means you've manually created a database, and then extracted data from it in your server
-  - B means you've managed to update or insert data as well as extract it, and you've got the hang of callbacks for getting things to happen in the right order
-  - A means you've gained a lot of experience with SQL, or you've put a lot of effort into organising database access (e.g. into a separate server-side module) or you've put a lot of effort into database design or details of handling your data
-
-- Dynamic pages:
-  - this is either inserting data into templates on the server side and delivering dynamic pages or requesting data from the server and inserting into existing pages on the client side
-  - C means you've created a simple dynamic delivery system or you have used a framework in a simple way
-  - B means you've organised dynamic delivery in a more sophisticated way, either doing more of your own programming or using more features of a framework
-  - A means you've put in a lot of programming effort or become very fluent in using your chosen framework
-
-## Additional work
-
-Can subsitute one part for another (or just do more on one)
-
-- animation done using CSS can count a little towards the JS heading
-- using canvas, including its vector features, can take the place of conventional SVG work
-- something clever with web sockets for a chat or game application might take the place of conventional dynamic page delivery
-
-Understanding something properly!
-If you have used a framework, making it do what you want counts for more than just producing a site that looks like most of the other sites that use that framework.
-
 
 ## How marking will work
 
-- install node modules needed (otherwise server should be ready
+- install node modules needed
 - ZIP file should contain everything, e.g. downloaded images, dont include node_modules or git repo
 
-- Submit report as a webpage or PDF? Use online Latex report???? Add option to download PDF online, e.g. d.o.server.com/playground/report!
-
+- Submit report as a webpage and PDF
 - No marks for report.
 - In PNG heading, describe how you created it!! (maybe make it online in a section?)
 
@@ -280,6 +264,5 @@ If you have used a framework, making it do what you want counts for more than ju
 - Write something longer to explain overall aim and design
 - Highlight things that I am proud of
 - Anything that took a long time, but didn't make it into the site
-
 
 
