@@ -15,6 +15,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 - TODO: Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator) - Write about it in the [HTML](#html) section
 - TODO: Check website using these services: https://github.com/Brunty/checker-services
+- TODO: Update SEO https://pro.letsvalidate.com/webtechnologies.herokuapp.com
 
 
 ## Setup
