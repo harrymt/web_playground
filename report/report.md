@@ -6,20 +6,20 @@ The website serves as a place to set the best practices for the web, lets me dem
 
 ### Contents
 
-1. [HTML](#html)
-2. [CSS](#css)
-3. [JavaScript](#client-side-javascript)
-4. [PNG](#png)
-5. [SVG](#svg)
-6. [Server](#server)
-7. [Database](#database)
-8. [Dynamic Pages](#dynamic_pages)
-9. [Tests](#tests)
-10. [Security](#security)
+1. HTML
+2. CSS
+3. JavaScript
+4. PNG
+5. SVG
+6. Server
+7. Database
+8. Dynamic Pages
+9. Tests
+10. Security
 
 
 
-<h2 id="html">HTML</h2>
+## HTML
 
 The server serves *HTML5* ([Polyglot *HTML*](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can with this content negotiation handled server-side.
 
