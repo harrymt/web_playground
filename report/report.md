@@ -19,7 +19,7 @@ The website serves as a place to set the best practices for the web, lets me dem
 
 
 
-## HTML
+<h2 id="html">HTML</h2>
 
 The server serves *HTML5* ([Polyglot *HTML*](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can with this content negotiation handled server-side.
 
@@ -84,7 +84,10 @@ CLIENT SIDE ONLY
 ### Build Process
 Grunt *JavaScript* Task Runner
 
-
+- Grunt task overview
+- Each task
+  - Auto screenshot
+  - Deploy!
 
 ## PNG
 - PNG:
