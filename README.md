@@ -7,6 +7,7 @@ Harry's web playground, demonstrating variety of website development techniques 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
 - TODO: Add show source next to png, svg
+
 - TODO: Link to the stylesheet project, include in release?
 - TODO: To stop using some weird node_modules/grunt command, add grunt to npm script, so you do npm run grunt ... https://gruntjs.com/blog/2016-02-11-grunt-1.0.0-rc1-released#npm-scripts
 - TODO: Add humans.txt and others, based on https://github.com/h5bp/html5-boilerplate/tree/master/dist
