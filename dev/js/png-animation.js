@@ -1,6 +1,6 @@
 
 //
-// SVG animation
+// PNG animation
 //
 (function() {
     "use strict";

@@ -77,7 +77,7 @@ CLIENT SIDE ONLY
 
 - If js is disabled a banner message is displayed
 - Add async to js files
-- svg-animation, png animation
+- svg animation, png-animation.js
 - database interaction
 
 

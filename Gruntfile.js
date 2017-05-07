@@ -64,7 +64,7 @@ module.exports = function (grunt) {
         separator: ';'
       },
       dist: {
-        src: ['dev/js/util.js', 'dev/js/svg-animation.js', 'dev/js/main.js'],
+        src: ['dev/js/util.js', 'dev/js/png-animation.js', 'dev/js/main.js'],
         dest: 'public/js/main.min.js'
       }
     },
