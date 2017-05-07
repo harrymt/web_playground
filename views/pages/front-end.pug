@@ -2,29 +2,106 @@ extends ../layout.pug
 
 block content
   h1= title
-  p Welcome to title
+  p TODO: Take from report.md
 
   h2#html Hyper Text Markup Language
-  p Details about how the html was constructed.
+  p TODO: Take from report.md
 
   h2#css Cascading StyleSheet
-  p Details about how the css works.
+  p TODO: Take from report.md
 
-  h2#js Javascript
-  p Details about how javascript works.
+  h2#js JavaScript
+  p TODO: Take from report.md
 
   h2#png PNG
-  p Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city.
-  canvas#png-example
+  .row
+    .half
+      p Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city.
+      p Source code for drawing the droplets is shown on the right.
+      canvas#png-example
+    .half
+      :markdown-it
+        ```js
+        // Animation Loop
+        function update() {
+            clear_screen();
+
+            fillStyle = blue;
+            animate_rain();
+            draw_rain();
+
+            fillStyle = grey;
+            animate_buildings();
+            draw_buildings();
+        }
+
+        function animate_rain() {
+          for(var i = 0; i &lt; RAIN_N; i++) {
+            rain[i]++;
+            if(rain[i] &gt; HEIGHT) {rain[i] = 0}
+          }
+        }
+
+        function draw_rain() {
+            var x = 0;
+            for(var y = 0; y &lt; RAIN_N; y++) {
+                fillRect(x, y + rain[y], drops, drops);
+                x += drops + 10;
+            }
+        }
+        ```
 
   h2#svg SVG
-  p Here are some animated loading icons, created in Inkscape, then animated using SVG animations.
-  .svgs
-    img( src='/svg/spinnera.svg', alt='Spinner-A' )
-    img( src='/svg/spinnerb.svg', alt='Spinner-B' )
-    img( src='/svg/spinnerc.svg', alt='Spinner-C' )
-    img( src='/svg/spinnerd.svg', alt='Spinner-D' )
-  p The top navigation drop-down icon is also an SVG, (
-    svg.icon.icon-circle-down
-      use( xlink:href='#icon-circle-down' )
-    =' ) which is preferred over a font, as SVGs load faster and do not require external fonts to be loaded.'
+  .row
+    .half
+      p Here are some animated loading icons, created in Inkscape, then animated using SVG animations.
+      .svgs
+        img( src='/svg/spinnera.svg', alt='Spinner-A' )
+        img( src='/svg/spinnerb.svg', alt='Spinner-B' )
+        img( src='/svg/spinnerc.svg', alt='Spinner-C' )
+        img( src='/svg/spinnerd.svg', alt='Spinner-D' )
+    .half
+      :markdown-it
+        ```xml
+        <!-- First SVG animation -->
+        <?xml version="1.0" encoding="utf-8"?>
+        <svg x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40"">
+
+          <!-- Created in Inkscape -->
+          <!-- Circle -->
+          <path opacity="0.5" fill="#607d8b" d="M20.201,5.169c-8.254, ... ,31.749z"/>
+
+          <!-- Rotating cube -->
+          <path fill="#607d8b" d="M26.013,10.047l1.654-2. ... ,10.047z">
+
+          <!-- Animated -->
+            <!-- Rotate cube -->
+            <animateTransform attributeType="xml" attributeName="transform"
+              type="rotate"
+              values="0 20 20; 360 20 20; 0 20 20"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+          </path>
+        </svg>
+        ```
+  .row
+    .half
+      p The top navigation drop-down icon is also an SVG, (
+        svg.icon.icon-circle-down
+          use( xlink:href='#icon-circle-down' )
+        =' ) which is preferred over a font, as SVGs load faster and do not require external fonts to be loaded.'
+    .half
+      :markdown-it
+          ```xml
+          <!-- Arrow down, SVG definition -->
+          <svg class='svg-definition' version='1.1'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <defs>
+              <symbol id='icon-circle-down' viewbox='0 0 32 32'>
+                <title>circle-down</title>
+                <path d='M9.914 11.086l-2.829 2.829 8.914 8.914
+                    8.914-8.914-2.828-2.828-6.086 6.086z'/>
+            </defs>
+          </svg>
