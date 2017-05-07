@@ -6,16 +6,18 @@ The website serves as a place to set the best practices for the web, lets me dem
 
 ### Contents
 
-1. HTML
-2. CSS
-3. JavaScript
-4. PNG
-5. SVG
-6. Server
-7. Database
-8. Dynamic Pages
-9. Tests
-10. Security
+1. Front-End
+    - HTML
+    - CSS
+    - JavaScript
+    - PNG
+    - SVG
+2. Back-End
+    - Server
+    - Database
+    - Dynamic Pages
+    - Tests
+    - Security
 
 
 
