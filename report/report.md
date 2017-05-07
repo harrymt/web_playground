@@ -2,7 +2,7 @@
 *Written by Harry Mumford-Turner for the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).*
 
 ## Introduction
-The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, each section is considered to be of A grade.
+The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, each section is A grade.
 
 ### Contents
 
@@ -144,7 +144,7 @@ Bolierplates are like starting project templates. Some [boilerplates](http://www
 -  Rendering the report from markdown to pdf
 - pug html templating
 - database interaction (different module)
--
+- Heroku deployment!
 
 ## Database
 
@@ -189,6 +189,7 @@ html
 
 Dynamically compiling each page enables less code reuse. Each `.pug` file is validated during the build process with a pug validated *Ruby* gem.
 
+*Pug* uses XXXX to extend *Pug*. I am using https://highlightjs.org ..
 
 ### Page Views
 
