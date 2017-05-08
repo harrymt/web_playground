@@ -1,7 +1,7 @@
 {
   "name": "web-playground",
   "version": "0.0.2",
-  "description": "Exploring and showing off lots of different web technologies.",
+  "description": "Exploring and showing off different web technologies.",
   "main": "app.js",
   "repository": {
     "type": "git",
