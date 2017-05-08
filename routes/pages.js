@@ -16,7 +16,7 @@ module.exports = router;
 
 // Generate sitemap.xml
 sitemap({
-  sitemap: 'sitemap.xml', // path for .xml
+  sitemap: 'public/sitemap.xml', // path for .xml
   route: {
     'ALL': {
       lastmod: '2017-05-15',

@@ -5,6 +5,9 @@
 (function() {
   "use strict";
 
+  // Enable syntax highlighting
+  hljs.initHighlightingOnLoad();
+
   $(document).ready(function() {
     handleHits();
   });
@@ -30,5 +33,4 @@
       }
     });
   }
-
 })();
