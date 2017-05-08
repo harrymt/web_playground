@@ -3,10 +3,12 @@ extends ../layout.pug
 block content
   h1=title
   p The report below is written in Markdown (report.md).
-  p A PDF version can be generated
-    =' '
-    a.btn.btn-inline#js-load-report( href='/report/pdf/' ) here
-    ='.'
+
+  .row
+    .half
+      p A PDF version of this markdown file can be generated server-side using a nodejs module.
+    .half
+      a.button#js-load-report( href='/report/pdf/' ) PDF version
 
   ps
   hr
