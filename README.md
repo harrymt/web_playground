@@ -1,19 +1,21 @@
 # Web Playground
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
+[![NodeJS dependencies](https://david-dm.org/harrymt/web_playground.svg)](https://david-dm.org)
 
 Harry's web playground, demonstrating variety of website development techniques using best practices and standards.
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
+- TODO: Add information about how I edited images in report, use gimp, show some screenshots
+- TODO: Say I worked alone for this project.
+- TODO: Fix svg spinners on edge
 - TODO: To stop using some weird node_modules/grunt command, add grunt to npm script, so you do npm run grunt ... https://gruntjs.com/blog/2016-02-11-grunt-1.0.0-rc1-released#npm-scripts
-- TODO: Add humans.txt and others, based on https://github.com/h5bp/html5-boilerplate/tree/master/dist
 - TODO: Run static analysis tools on CSS, HTML and Javascript https://github.com/mre/awesome-static-analysis#css
 - TODO: Rename webtechnologies.herokuapp.com to web_playground.herokuapp.com
-
-- TODO: Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator) - Write about it in the [HTML](#html) section
 - TODO: Check website using these services: https://github.com/Brunty/checker-services
-- TODO: Update SEO https://pro.letsvalidate.com/webtechnologies.herokuapp.com
+- TODO: - Check if pug can be syntaxed highlighted - In report see if we can syntax highlight stuff
+- TODO: Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator) - Write about it in the [HTML](#html) section, https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F validated
 - TODO: Place a .zip copy of SimpleStyle in release
 
 
