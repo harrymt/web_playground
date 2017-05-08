@@ -31,12 +31,11 @@ var app = express().use(function (req, res, next) {
   next();
 });
 
-
 // Setup our database API to get the number of hits.
 app.use('/hits', database.hits);
 app.use('/hit', database.trackHit);
 
-// Secure the Express app by setting various HTTP headers.
+// Secure the Express app by setting HTTP headers.
 app.use(helmet());
 
 // Compress all routes.
@@ -71,6 +70,7 @@ app.use(security.handleContent);
  * Route every other page.
  */
 app.use('/', pages);
+
 
 
 /*

@@ -3,6 +3,8 @@
 
 var express = require('express');
 var router = express.Router();
+var sitemap = require('express-sitemap');
+
 
 /* GET pages. */
 router.get('/', function(req, res, next) { res.render('index', { title: 'Home'}); });
@@ -11,3 +13,16 @@ router.get('/back-end', function(req, res, next) { res.render('pages/back-end', 
 router.get('/report', function(req, res, next) {  res.render('pages/report', { title: 'Report'}); });
 
 module.exports = router;
+
+// Generate sitemap.xml
+sitemap({
+  sitemap: 'sitemap.xml', // path for .xml
+  route: {
+    'ALL': {
+      lastmod: '2017-05-15',
+      changefreq: 'always',
+      priority: 1.0,
+    }
+  },
+  generate: router,
+}).toFile();
