@@ -8,8 +8,7 @@
   var sqlite3 = require('sqlite3').verbose();
 
   /**
-   * Check we can connect to the database
-   * ':memory:' in memory DB or data.db TODO change to memory?
+   * Check we can connect to the database.
    */
   var db = new sqlite3.Database('data.db', function(err, open) {
     if (err) {
