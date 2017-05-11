@@ -1,0 +1,44 @@
+extends layout.pug
+
+block content
+  h1 Web Playground
+  p This was
+    =' '
+    a( href='//www.harrymt.com' ) built
+    =' '
+    | as part of the University of Bristol unit,
+    =' '
+    a( href='//www.bris.ac.uk/unit-programme-catalogue/UnitDetails.jsa?ayrCode=16%2F17&unitCode=COMS32500' ) web technologies
+    |.
+  p A range of different technologies in the Front-End and Back-End were explored and evaluated. A full write up is found
+    =' '
+    a( href='/report' ) here
+    |.
+  h2 Front-End
+  .row
+    .half
+      a.button( href='/front-end#html' ) HTML
+    .half
+      a.button( href='/front-end#css' ) CSS
+  .row
+    .half
+      a.button( href='/front-end#js' ) JavaScript
+    .half
+      a.button( href='/front-end#png' ) PNG
+  .row
+    .full
+      a.button( href='/front-end#svg' ) SVG
+  h2 Back-End
+  .row
+    .half
+      a.button( href='/front-end#html' ) Server
+    .half
+      a.button( href='/front-end#database' ) Database
+  .row
+    .half
+      a.button( href='/front-end#dynamic' ) Dynamic Pages
+    .half
+      a.button( href='/front-end#security' ) Security
+  .row
+    .full
+      a.button( href='/front-end#testing' ) Testing
