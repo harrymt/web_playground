@@ -6,7 +6,10 @@
   "use strict";
 
   // Enable syntax highlighting
-  hljs.initHighlightingOnLoad();
+  if(hljs !== undefined && hljs !== null) {
+    hljs.initHighlightingOnLoad();
+  }
+
 
   $(document).ready(function() {
     handleHits();
