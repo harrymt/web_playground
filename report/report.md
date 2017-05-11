@@ -4,6 +4,8 @@
 ## Introduction
 The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, I worked alone and each section is of grade A quality.
 
+![Screenshot](http://webtechnologies.herokuapp.com/images/screenshot.png "Website Homepage Screenshot")
+
 ### Contents
 
 1. Front-End
@@ -19,8 +21,6 @@ The website serves as a place to set the best practices for the web, lets me dem
     - Tests
     - Security
 
-
-![Screenshot](http://webtechnologies.herokuapp.com/images/screenshot.png "Website Homepage Screenshot")
 
 
 ## HTML
@@ -310,17 +310,8 @@ Talk about dynamic page views
 Talk about mocha JavaScript tests
 
 ### Performance & General
-- Install the Chrome extension [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- TODO: add screenshot from lighthouse report @ end
-- Used Browser Calories: https://chrome.google.com/webstore/detail/browser-calories/pdkibgfjegigkoaleelbkdpkgceljfco TODO add screenshot at end
-- TODO https://developers.google.com/speed/pagespeed/
-- TODO:
-  - https://varvy.com/pagespeed/
-  - http://www.webbloatscore.com/
-  - http://pagelocity.com/
-  - http://perfaudit.com/
-  - http://yellowlab.tools/
-  - https://www.sitespeed.io/documentation/
+
+Take from readme.
 
 - Compression is used https://www.npmjs.com/package/compression
 - Minification is used
