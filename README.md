@@ -7,16 +7,22 @@ Harry's web playground, demonstrating variety of website development techniques 
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
+
+### Submission
+- .zip file with everything except .git, LICENSE and node_modules
+- include report.pdf outside of .zip file
+- include SimpleStyle .zip also outside of project .zip
+- `npm install`
+
+### TODO
+
 - TODO: Check webfonts open sans based on [Yellow Lab Tools](http://yellowlab.tools/result/epnxv11dfg) report
 - TODO: Add information about how I edited images in report, use gimp, show some screenshots
-- TODO: Say I worked alone for this project.
 - TODO: Fix svg spinners on edge
 - TODO: To stop using some weird node_modules/grunt command, add grunt to npm script, so you do npm run grunt ... https://gruntjs.com/blog/2016-02-11-grunt-1.0.0-rc1-released#npm-scripts
 - TODO: Run static analysis tools on CSS, HTML and Javascript https://github.com/mre/awesome-static-analysis#css
-- TODO: Check website using these services: https://github.com/Brunty/checker-services
 - TODO: - Check if pug can be syntaxed highlighted - In report see if we can syntax highlight stuff
 - TODO: Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator) - Write about it in the [HTML](#html) section, https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F validated
-- TODO: Place a .zip copy of SimpleStyle in release
 
 
 ## Setup
