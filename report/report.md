@@ -2,7 +2,7 @@
 *Written by Harry Mumford-Turner for the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).*
 
 ## Introduction
-The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, each section is A grade.
+The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, I worked alone and each section is of grade A quality.
 
 ### Contents
 
@@ -31,7 +31,7 @@ The *HTML* is [*HTML5* compliant](https://www.w3.org/TR/html5/), tested using th
 
 The *HTML*, *CSS* and *JavaScript* all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the *JavaScript* is located at the bottom of the *HTML*, before the `</body>` tag, to not block the rest of Document Object Model (DOM) rendering of the page.
 
-Project is mainly written in *Pug* an *HTML* templating language, but more on that [later checkurl](#dynamic_pages). Lets move onto the style of the website.
+Project is mainly written in an *HTML* templating language called *Pug*, but more on that later. Lets move onto the style of the website.
 
 
 ## CSS
@@ -42,11 +42,11 @@ The website style is based on a *CSS* framework that I built called [*SimpleStyl
 
 ### SCSS
 
-The framework uses [*SCSS*](http://sass-lang.com) - *'SCSS or SASS is an extension of CSS, adding nested rules, variables, mixins, selector inheritance, and more.'*[\[x\]](http://sass-lang.com). *SCSS* files are processed using *Ruby*, and in this project *SCSS* files are compiled using a *JavaScript* task runner called *Grunt* (more on this [later checkurl](#JavaScriptTaskRunner)).
+The framework uses [*SCSS*](http://sass-lang.com) - *'SCSS or SASS is an extension of CSS, adding nested rules, variables, mixins, selector inheritance, and more.'* [\[1\]](http://sass-lang.com). *SCSS* files are processed using *Ruby*, and in this project *SCSS* files are compiled using a *JavaScript* task runner called *Grunt* (more on this later).
 
 The framework is served to the website via a Content Delivery Network or *CDN* for quick content delivery. For example, this is how *SimpleStyle* is added in our *Pug* (*HTML*) file.
 
-```pug
+```jade
 // head.pug
 
 head
@@ -59,7 +59,7 @@ Notice how the `simplestyle.min.css` contains `min`. This is a standard way of s
 
 When we process a `.scss` file into a `.css` file minification comes for free. This means when our files are served to a client, they take up less space as their filesize is lower.
 
-### Standards
+### CSS Standards
 
 Style standards are based on the previously mentioned [coding guide](http://codeguide.co/) and specific *SCSS* standards are based on a single style guide from [AirBnB](https://github.com/airbnb/css). To enforce these styles a *linter* is used for validation in the build process. The [`scss-lint`]( https://www.npmjs.com/package/grunt-scss-lint) *Ruby* gem is used with *Grunt* during *SCSS* compile time.
 
@@ -68,32 +68,133 @@ JavaScript plays a large part in this project: server-side, client-side and duri
 
 ## JavaScript
 
-CLIENT SIDE ONLY
+NodeJS server component uses server-side JavaScript, but this section talks about the client-side JavaScript.
 
-- StyleGuide https://google.github.io/styleguide/jsguide.html
-- Douglas Crockford JS best practices
-  - Use Strict mode
-  - Make field and methods private
-  - Avoid using this keyword
-  - Use Power constructors to avoid the new keyword
-  - Inheritance is different
-  - New ES6 features (not necessarily well supported cross browser )
+The JavaScript code (both client-side and server-side) is based on [Google's JavaScript styleguide](https://google.github.io/styleguide/jsguide.html) also adhering to some of Douglas Crockford JavaScript best practices. For example, using 'strict' mode to enforce certain standards.
 
-- If js is disabled a banner message is displayed
-- Add async to js files
-- svg animation, png-animation.js
-- database interaction
+The main features for this project are the PNG animation in `/dev/js/png-animation.js`, database interaction in `/dev/js/main.js` and the build process using *GruntJS* in `/Gruntfile.js`.
+
+### PNG Animation
+
+Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city. The animation is found on the `/front-end` page.
+
+
+### Database Interaction
+
+I use *JQuery* to get a value in an * Database using a simple `GET` request to our *API*. This data is then set to a `hits` variable in the footer, which displays the number of hits the website has had. On a page load, a `POST` request to our *API* tracks a `hit` to the website.
+
+```javascript
+/**
+ * Load the number of hits.
+ */
+var getHits = $.getJSON("/hits", function( data ) {
+  $(".js-hits").text(data);
+});
+
+/**
+ * Track a hit
+ */
+$.post("/hit", function( data ) {
+  if(!data) {
+    console.log("Error unable to count number of hits.");
+  }
+});
+```
+
+
+Other client-side JavaScript features include:
+- if users have disabled JavaScript, a banner displays telling them to enable it.
+- all `<script>` tags have `async` added, to allow JavaScript files to be processed asynchronously.
+- code syntax highlighting uses [HighlightJS](https://highlightjs.org).
 
 
 ### Build Process
-Grunt *JavaScript* Task Runner
 
-- Grunt task overview
-- Each task
-  - Auto screenshot
-  - Deploy!
+Grunt is a *JavaScript* Task Runner that handles all the developer operations. The `Gruntfile.js` lists all the tasks and their actions.
+
+
+```javascript
+  // Gruntfile.js
+
+  //
+  // $ grunt server
+  //
+  // Runs the NodeJS server task, starting a dev server on localhost:3001
+  //
+  grunt.registerTask('server', ['exec:server']);
+
+  //
+  // $ grunt lint
+  //
+  // Validates PUG and SCSS files with following subtasks
+  //    puglint: validates .pug files against rules
+  //    scsslint: validates .scss files against rules
+  //
+  grunt.registerTask('lint', ['puglint', 'scsslint']);
+
+  //
+  // $ grunt build
+  //
+  // Builds all files with the following sub tasks:
+  //    concat: concatenates js files to a single file
+  //    uglify: minifies the single js file
+  //    sass: turn .scss files into a single .css file, minifying in the process
+  //    imagemin: minifies the images by reducing filesize
+  //    svgmin: minifies svg files to reduce filezie
+  //
+  grunt.registerTask('build', ['concat', 'uglify', 'sass', 'imagemin', 'svgmin']);
+
+  //
+  // $ grunt 'commit-warn'
+  //
+  // Check that we have commmited before running another task, like deploying.
+  //
+  grunt.registerTask('commit-warn', function() {
+    grunt.log.warn("Make sure you have commited changes!");
+    var seconds = 2;
+    grunt.log.warn("Sleeping for " + seconds + " seconds, just to be sure.");
+    sleep(seconds);
+    grunt.log.ok("Continuing...");
+  });
+
+  //
+  // $ grunt screenshot
+  //
+  // Take a screenshot then commit it to the repo with following sub tasks:
+  //    pageres: renders the DOM and takes a screenshot
+  //    exec:git_commit_screenshot: runs a git shell command to commit screenshot
+  //    exec:git_push: runs a git shell command to push to repo
+  //
+  grunt.registerTask('screenshot', ['pageres', 'exec:git_commit_screenshot', 'exec:git_push']);
+
+  //
+  // $ grunt push
+  //
+  // Runs various git commands to push to repo.
+  //
+  grunt.registerTask('push', ['exec:git_checkout_heroku', 'exec:git_pull', 'exec:git_checkout_master', 'exec:git_push_heroku']);
+
+  //
+  // $ grunt deploy
+  //
+  // Deploys to a heroku server, takes a screenshot then run page insight tests.
+  //
+  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'lint', 'build', 'push', 'screenshot', 'pagespeed']);
+
+  //
+  // $ grunt
+  //
+  // Lints, builds then starts a local server.
+  // What you expect the default task to do.
+  //
+  grunt.registerTask('default', ['lint', 'build', 'exec:server']);
+```
+
+- More about how grunt works, TODO take from readme.md?
+
 
 ## PNG
+
 - PNG:
   - Working with bitmap graphics in Gimp or Krita
   - Show how to convert images to PNG, cropping away unwanted edges, changing resolution
@@ -110,7 +211,7 @@ Grunt *JavaScript* Task Runner
 
 Animate a person icon using svg.
 
-```scss
+```css
 
 .svg-icon {
   height: 100px;
@@ -140,7 +241,7 @@ Bolierplates are like starting project templates. Some [boilerplates](http://www
 
 - port numbers, URL validation, content negotiation for old browsers, sending redirections to browsers, handling UTF-8
 - https and certificates, or web sockets, or cloud hosting, or security issues beyond URL validation, or auto-testing, or cookies, or running under reduced privilege
-
+- gzip compression
 - Uses [Mocha](https://github.com/mochajs/mocha) for unit tests
 - QUnit for tests, JSlint for linting also client
 -  Rendering the report from markdown to pdf
@@ -162,9 +263,9 @@ http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mo
 
 ### *HTML* Templates
 
-The website is written in a *HTML* templating language called *[Pug](https://pugjs.org)*. *'Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.'* [\[x\]](https://github.com/pugjs/pug). *Pug* makes writing *HTML* code easier by using templates to split the document into tidy sections. For example below is a *Pug* snippet for the `/report` page - notice how we `extend layout.pug` which is the base *HTML* for this page.
+The website is written in a *HTML* templating language called *[Pug](https://pugjs.org)*. *'Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.'* [\[2\]](https://github.com/pugjs/pug). *Pug* makes writing *HTML* code easier by using templates to split the document into tidy sections. For example below is a *Pug* snippet for the `/report` page - notice how we `extend layout.pug` which is the base *HTML* for this page.
 
-```pug
+```jade
 // report.pug
 
 extends layout.pug
@@ -177,7 +278,7 @@ block content
 
 The base *HTML* template, `layout.pug` creates a `block` where  `report.pug` can place information specific to `/report`.
 
-```pug
+```jade
 // layout.pug
 
 doctype html lang="en-GB"
@@ -240,6 +341,10 @@ Talk about mocha JavaScript tests
 
 
 
+## Bibliography
+
+- [\[1\]](http://sass-lang.com) SASS Language
+- [\[2\]](https://github.com/pugjs/pug) PUGJS Language
 
 ===================== SPEC ===================
 
