@@ -20,6 +20,8 @@ The website serves as a place to set the best practices for the web, lets me dem
     - Security
 
 
+![Screenshot](http://webtechnologies.herokuapp.com/images/screenshot.png "Website Homepage Screenshot")
+
 
 ## HTML
 
