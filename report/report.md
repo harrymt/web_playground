@@ -25,13 +25,9 @@ The website serves as a place to set the best practices for the web, lets me dem
 
 ## HTML
 
-The server serves *HTML5* ([Polyglot *HTML*](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can with this content negotiation handled server-side.
+The server serves *HTML5* ([Polyglot *HTML*](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can with this content negotiation handled server-side. The *HTML* is [*HTML5* compliant](https://www.w3.org/TR/html5/) and is tested using the W3C [HTML5 validator](https://validator.w3.org/nu).
 
-The *HTML* is [*HTML5* compliant](https://www.w3.org/TR/html5/), tested using the W3C [HTML5 validator](https://validator.w3.org/nu).
-
-The *HTML*, *CSS* and *JavaScript* all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the *JavaScript* is located at the bottom of the *HTML*, before the `</body>` tag, to not block the rest of Document Object Model (DOM) rendering of the page.
-
-Project is mainly written in an *HTML* templating language called *Pug*, but more on that later. Lets move onto the style of the website.
+The *HTML*, *CSS* and *JavaScript* all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the *JavaScript* is located at the bottom of the *HTML*, before the `</body>` tag, to not block the rest of Document Object Model (DOM) rendering of the page. Finally the project is mainly written in an *HTML* templating language called *Pug*, but more on that later. Lets move onto the style of the website.
 
 
 ## CSS
@@ -194,7 +190,7 @@ Grunt is a *JavaScript* Task Runner that handles all the developer operations. T
 
 
 ## PNG
-
+ describe how you created it
 - PNG:
   - Working with bitmap graphics in Gimp or Krita
   - Show how to convert images to PNG, cropping away unwanted edges, changing resolution
@@ -256,7 +252,7 @@ http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
 
 http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/
 
-- SQLite
+- Embedded database using SQLite
 
 
 ## Dynamic Pages
@@ -324,49 +320,22 @@ Take from readme.
 
 ## Security
 
-- Based on: http://expressjs.com/en/advanced/best-practice-security.html
-- Uses [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
-- Uses [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
-- Uses the tag for external links `rel='noopener'` https://developers.google.com/web/tools/lighthouse/audits/noopener
-- Site runs on HTTPS: https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https
+The website considers several security issues looking at the server (ExpressJS) [best practices](http://expressjs.com/en/advanced/best-practice-security.html), using the following:
 
+- [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
+- [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
+- External links use `rel='noopener'` based on [Google's Lighthouse Audit](https://developers.google.com/web/tools/lighthouse/audits/noopener).
+- Site runs on HTTPS to prevent attackers from exploting communications between this website and the users' browser, as reccommended by Googles [Web Fundementals security section](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+
+Finally, these online services rates the secuirity of the web playgorundplayground.
+
+- 80/100 [SSL Security Check](https://www.ssllabs.com/ssltest/analyze.html?d=webtechnologies.herokuapp.com)
+- 60/100 [CryptCheck](https://tls.imirhil.fr/https/webtechnologies.herokuapp.com)
+- 40/100 [Security Headers](https://securityheaders.io/?q=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F&followRedirects=on)
 
 
 ## Bibliography
 
 - [\[1\]](http://sass-lang.com) SASS Language
 - [\[2\]](https://github.com/pugjs/pug) PUGJS Language
-
-===================== SPEC ===================
-
-
-# Requirements
-- Use standard HTML, CSS, JavaScript, PNG, SVG and other integrated client-side technologies, following the advice from the lectures.
-- Node-based server
-- DB embedded, preferably SQLite
-- Design can be desktop-first or mobile-first, and you can use client-side or server-side techniques for creating dynamic pages.
-- You can write everything yourself, or use any existing JavaScript-based frameworks or libraries or modules or scripts that you like.
-- You should use open source tools as much as possible.
-
-# Resources
-- When reusing stuff.
-- Check any restrictions (b) acknowledge them in your report (c) adapt them to follow the standards and advice in the lectures where necessary and (d) explain your added value (e.g. "I just copied it and learnt how to use it" or "I changed it a little" or "I understood it fully and re-wrote it").
-
-
-
-## How marking will work
-
-- install node modules needed
-- ZIP file should contain everything, e.g. downloaded images, dont include node_modules or git repo
-
-- Submit report as a webpage and PDF
-- No marks for report.
-- In PNG heading, describe how you created it!! (maybe make it online in a section?)
-
-- Report should give estimated grades under each heading and list things ive done + JUSTIFY ESTIMATE
-
-- Write something longer to explain overall aim and design
-- Highlight things that I am proud of
-- Anything that took a long time, but didn't make it into the site
-
 
