@@ -100,7 +100,6 @@ $.post("/hit", function( data ) {
 
 Other client-side JavaScript features include:
 - if users have disabled JavaScript, a banner displays telling them to enable it.
-- all `<script>` tags have `async` added, to allow JavaScript files to be processed asynchronously.
 - code syntax highlighting uses [HighlightJS](https://highlightjs.org).
 
 
