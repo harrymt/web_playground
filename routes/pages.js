@@ -17,6 +17,8 @@ module.exports = router;
 // Generate sitemap.xml
 sitemap({
   sitemap: 'public/sitemap.xml', // path for .xml
+  robots: 'public/robots.txt',
+  http: "https",
   route: {
     'ALL': {
       lastmod: '2017-05-15',

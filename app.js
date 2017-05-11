@@ -38,7 +38,7 @@ app.use('/hit', database.trackHit);
 // Secure the Express app by setting HTTP headers.
 app.use(helmet());
 
-// Compress all routes.
+// Compress all content.
 app.use(compression());
 
 

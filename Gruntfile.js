@@ -30,7 +30,6 @@ module.exports = function (grunt) {
     exec: {
       server: 'node server',
       gitstatus: 'git status',
-      screenshot: 'grunt pageres',
       git_commit_screenshot: 'git commit -am "Auto generated screenshot"',
       git_push: 'git push',
       git_checkout_heroku: 'git checkout heroku/master',
@@ -179,31 +178,79 @@ module.exports = function (grunt) {
     }
   });
 
+
+  //
+  // $ grunt server
+  //
+  // Runs the NodeJS server task, starting a dev server on localhost:3001
+  //
   grunt.registerTask('server', ['exec:server']);
 
-  // Validate Pug and SCSS files
+
+  //
+  // $ grunt lint
+  //
+  // Validates PUG and SCSS files with following subtasks
+  //    puglint: validates .pug files against rules
+  //    scsslint: validates .scss files against rules
+  //
   grunt.registerTask('lint', ['puglint', 'scsslint']);
 
-  // Minify and create CSS files
+  //
+  // $ grunt build
+  //
+  // Builds all files with the following sub tasks:
+  //    concat: concatenates js files to a single file
+  //    uglify: minifies the single js file
+  //    sass: turn .scss files into a single .css file, minifying in the process
+  //    imagemin: minifies the images by reducing filesize
+  //    svgmin: minifies svg files to reduce filezie
+  //
   grunt.registerTask('build', ['concat', 'uglify', 'sass', 'imagemin', 'svgmin']);
 
-  // Check that we have commmited before a task
+  //
+  // $ grunt 'commit-warn'
+  //
+  // Check that we have commmited before running another task, like deploying.
+  //
   grunt.registerTask('commit-warn', function() {
-    grunt.log.warn("Make sure you have commited changes before deploying!");
+    grunt.log.warn("Make sure you have commited changes!");
     var seconds = 2;
     grunt.log.warn("Sleeping for " + seconds + " seconds, just to be sure.");
     sleep(seconds);
-    grunt.log.ok("Continuing with deploying...");
+    grunt.log.ok("Continuing...");
   });
 
-  // Take a screenshot then commit it to the repo
-  grunt.registerTask('screenshot', ['exec:screenshot', 'exec:git_commit_screenshot', 'exec:git_push']);
+  //
+  // $ grunt screenshot
+  //
+  // Take a screenshot then commit it to the repo with following sub tasks:
+  //    pageres: renders the DOM and takes a screenshot
+  //    exec:git_commit_screenshot: runs a git shell command to commit screenshot
+  //    exec:git_push: runs a git shell command to push to repo
+  //
+  grunt.registerTask('screenshot', ['pageres', 'exec:git_commit_screenshot', 'exec:git_push']);
 
+  //
+  // $ grunt push
+  //
+  // Runs various git commands to push to repo.
+  //
   grunt.registerTask('push', ['exec:git_checkout_heroku', 'exec:git_pull', 'exec:git_checkout_master', 'exec:git_push_heroku']);
 
-  // Deploy to heroku server, take screenshot then run page insight tests
+  //
+  // $ grunt deploy
+  //
+  // Deploys to a heroku server, takes a screenshot then run page insight tests.
+  //
   grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'lint', 'build', 'push', 'screenshot', 'pagespeed']);
 
-  // Do what you expect the default task to do
+  //
+  // $ grunt
+  //
+  // Lints, builds then starts a local server.
+  // What you expect the default task to do.
+  //
   grunt.registerTask('default', ['lint', 'build', 'exec:server']);
+
 };
