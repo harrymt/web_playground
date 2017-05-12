@@ -242,6 +242,7 @@ module.exports = function (grunt) {
   // $ grunt deploy
   //
   // Deploys to a heroku server, takes a screenshot then run page insight tests.
+  // Requires Heroku CLI installed, a Heroku account and `heroku login`
   //
   grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'lint', 'build', 'push', 'screenshot', 'pagespeed']);
 

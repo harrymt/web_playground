@@ -34,11 +34,18 @@ The *HTML*, *CSS* and *JavaScript* all follow a [coding guide](http://codeguide.
 
 ### Framework
 
-The website style is based on a *CSS* framework that I built called [*SimpleStyle*](https://github.com/harrymt/simplestyle). *SimpleStyle* is separated into another [repository](https://github.com/harrymt/simplestyle/tree/master/scss), but for the website release, it is included in the repo as a `.zip` file.
+The website style is based on a *CSS* framework that I built called [*SimpleStyle*](https://github.com/harrymt/simplestyle).
 
-### SCSS
+![SimpleStyle Screenshot](http://webtechnologies.herokuapp.com/images/simplestyle-screenshot.png "SimpleStyle Screenshot")
 
-The framework uses [*SCSS*](http://sass-lang.com) - *'SCSS or SASS is an extension of CSS, adding nested rules, variables, mixins, selector inheritance, and more.'* [\[1\]](http://sass-lang.com). *SCSS* files are processed using *Ruby*, and in this project *SCSS* files are compiled using a *JavaScript* task runner called *Grunt* (more on this later).
+*SimpleStyle* is separated into another [repository](https://github.com/harrymt/simplestyle/tree/master/scss), but for the website release, it is included in the repo as a `.zip` file.
+
+### SASS
+
+The framework uses [*SASS*](http://sass-lang.com) - *'SASS or SCSS is an extension of CSS, adding nested rules, variables, mixins, selector inheritance, and more.'* [\[1\]](http://sass-lang.com). *SASS* files are processed using *Ruby*, and in this project *SASS* files are compiled using a *JavaScript* task runner called *Grunt* (more on this later).
+
+![SASS](http://webtechnologies.herokuapp.com/images/simplestyle-screenshot.png "SASS framework")
+
 
 The framework is served to the website via a Content Delivery Network or *CDN* for quick content delivery. For example, this is how *SimpleStyle* is added in our *Pug* (*HTML*) file.
 
@@ -53,11 +60,11 @@ head
 
 Notice how the `simplestyle.min.css` contains `min`. This is a standard way of showing that your files are *minified*. Minifying files is a post-process that strips the non-essential parts of a file. In a `.css` file this would mean removing comments, whitespace and shortening various styles (e.g. `#ffffff` to `#fff`).
 
-When we process a `.scss` file into a `.css` file minification comes for free. This means when our files are served to a client, they take up less space as their filesize is lower.
+When we process a SASS `.scss` file into a `.css` file minification comes for free. This means when our files are served to a client, they take up less space as their filesize is lower.
 
 ### CSS Standards
 
-Style standards are based on the previously mentioned [coding guide](http://codeguide.co/) and specific *SCSS* standards are based on a single style guide from [AirBnB](https://github.com/airbnb/css). To enforce these styles a *linter* is used for validation in the build process. The [`scss-lint`]( https://www.npmjs.com/package/grunt-scss-lint) *Ruby* gem is used with *Grunt* during *SCSS* compile time.
+Style standards are based on the previously mentioned [coding guide](http://codeguide.co/) and specific *SASS* standards are based on a single style guide from [AirBnB](https://github.com/airbnb/css). To enforce these styles a *linter* is used for validation in the build process. The [`scss-lint`]( https://www.npmjs.com/package/grunt-scss-lint) *Ruby* gem is used with *Grunt* during *SASS* compile time.
 
 JavaScript plays a large part in this project: server-side, client-side and during the build process. First we will talk about Client-Side JavaScript.
 
@@ -68,16 +75,16 @@ NodeJS server component uses server-side JavaScript, but this section talks abou
 
 The JavaScript code (both client-side and server-side) is based on [Google's JavaScript styleguide](https://google.github.io/styleguide/jsguide.html) also adhering to some of Douglas Crockford JavaScript best practices. For example, using 'strict' mode to enforce certain standards.
 
-The main features for this project are the PNG animation in `/dev/js/png-animation.js`, database interaction in `/dev/js/main.js` and the build process using *GruntJS* in `/Gruntfile.js`.
+The main features for this project are the PNG animation in `/dev/js/png-animation.js`, database interaction in `/dev/js/main.js` and the build process using *Grunt* in `/Gruntfile.js`.
 
 ### PNG Animation
 
-Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city. The animation is found on the `/front-end` page.
+Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city. The animation is found on the [`/front-end`](https://webtechnologies.herokuapp.com/front-end#png) page.
 
 
 ### Database Interaction
 
-I use *JQuery* to get a value in an * Database using a simple `GET` request to our *API*. This data is then set to a `hits` variable in the footer, which displays the number of hits the website has had. On a page load, a `POST` request to our *API* tracks a `hit` to the website.
+I use *JQuery* to get a value in an embedded *SQLite* Database using a simple `GET` request to our *API*. This data is then set to a `hits` variable in the footer, which displays the number of hits the website has had. On a page load, a `POST` request to our *API* tracks a `hit` to the website.
 
 ```javascript
 /**
@@ -100,13 +107,22 @@ $.post("/hit", function( data ) {
 
 Other client-side JavaScript features include:
 - if users have disabled JavaScript, a banner displays telling them to enable it.
-- code syntax highlighting uses [HighlightJS](https://highlightjs.org).
+- code syntax highlighting using [HighlightJS](https://highlightjs.org).
 
 
 ### Build Process
 
-Grunt is a *JavaScript* Task Runner that handles all the developer operations. The `Gruntfile.js` lists all the tasks and their actions.
+Grunt is a *JavaScript* Task Runner that handles all developer operations. The `Gruntfile.js` lists all the tasks and their actions.
 
+![Grunt](http://webtechnologies.herokuapp.com/images/grunt-logo.png "Grunt Logo")
+
+After installing the node modules with `npm install` simply run the grunt tasks with one of two ways:
+
+1. `grunt <task>`
+  - (if the `grunt-cli`](https://gruntjs.com/using-the-cli) is installed `npm install -g grunt-cli`)
+2. `node_modules/grunt-cli/bin/grunt <task>`
+
+`Gruntfile.js` defines the list of grunt tasks, detailed below.
 
 ```javascript
   // Gruntfile.js
@@ -173,6 +189,7 @@ Grunt is a *JavaScript* Task Runner that handles all the developer operations. T
   // $ grunt deploy
   //
   // Deploys to a heroku server, takes a screenshot then run page insight tests.
+  // Requires Heroku CLI installed, a Heroku account and `heroku login`
   //
   grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'lint', 'build', 'push', 'screenshot', 'pagespeed']);
 
@@ -185,17 +202,29 @@ Grunt is a *JavaScript* Task Runner that handles all the developer operations. T
   grunt.registerTask('default', ['lint', 'build', 'exec:server']);
 ```
 
-- More about how grunt works, TODO take from readme.md?
+This process saves time and makes it easy for new developers to get started. For example, to build the site making sure all code adheres to standards and to preview it, simply clone the repo, then type the following commands.
+
+- `npm install` to install all node dependencies (and grunt)
+- `node_modules/grunt-cli/bin/grunt <task>`
 
 
 ## PNG
- describe how you created it
-- PNG:
-  - Working with bitmap graphics in Gimp or Krita
-  - Show how to convert images to PNG, cropping away unwanted edges, changing resolution
-  - Use basic tools such as using filters or changing colours or combining existing images or creating simple shapes or filling
-  - Gained experience with some more sophisticated tools such as handling layers and transparency, or airbrushing or creating original artwork
 
+I manipulated Portable Network Graphics using two methods. First, with JavaScript and HTML5 canvas to provide a PNG animation. Second, using Gimp demonstrating different methods for image manipulation.
+
+### Animation
+
+Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city. See a [demo online](https://webtechnologies.herokuapp.com/front-end#png) with a source code snippet.
+
+![PNG animation](http://webtechnologies.herokuapp.com/images/png-animation.png "PNG animation")
+
+
+### GIMP
+
+- Working with bitmap graphics in Gimp or Krita
+- Show how to convert images to PNG, cropping away unwanted edges, changing resolution
+- Use basic tools such as using filters or changing colours or combining existing images or creating simple shapes or filling
+- Gained experience with some more sophisticated tools such as handling layers and transparency, or airbrushing or creating original artwork
 
 
 ## SVG
@@ -310,6 +339,7 @@ Take from readme.
 
 - Compression is used https://www.npmjs.com/package/compression
 - Minification is used
+- All images are crushed to reduce filesize
 
 ### General Testing
 - Performance, tests CL production code hosted on heroku
