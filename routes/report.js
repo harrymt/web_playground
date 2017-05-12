@@ -13,7 +13,8 @@ router.get('/report/pdf', function(req, res, next) {
   markdownpdf({
     remarkable: {
       linkify: true
-    }
+    },
+    cssPath: "public/css/style.css"
   }).from("report/report.md").to("report/report.pdf", function () {
     console.log("Successfully rendered report.");
 
