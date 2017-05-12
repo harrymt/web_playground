@@ -1,4 +1,4 @@
-# Overview
+# Web Playground Overview
 *Written by Harry Mumford-Turner for the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).*
 
 
@@ -8,6 +8,8 @@ The website serves as a place to set the best practices for the web, lets me dem
 Note: for marking purposes, I worked alone and each section is of grade A quality.
 
 ![Screenshot](http://webtechnologies.herokuapp.com/images/screenshot.png "Website Homepage Screenshot")
+
+<div style="page-break-after: always;"></div>
 
 ### Contents
 
