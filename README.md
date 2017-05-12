@@ -14,6 +14,10 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 - include SimpleStyle .zip also outside of project .zip
 - `npm install`
 
+### Possible Future Additions
+
+- Run static analysis [tools](https://github.com/mre/awesome-static-analysis#css) on CSS, HTML and Javascript
+
 ### TODO
 
 - TODO: Add information about how I edited images in report, use gimp, show some screenshots
