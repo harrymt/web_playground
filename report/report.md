@@ -14,21 +14,23 @@ Note: for marking purposes, I worked alone and each section is of grade A qualit
 ### Contents
 
 1. Front-End
-    - HTML
-    - CSS
-    - JavaScript
-    - PNG
-    - SVG
+    - 1.1 HTML
+    - 1.2 CSS
+    - 1.3 JavaScript
+    - 1.4 PNG
+    - 1.5 SVG
 2. Back-End
-    - Server
-    - Database
-    - Dynamic Pages
-    - Performance
-    - Security
+    - 2.1 Server
+    - 2.2 Database
+    - 2.3 Dynamic Pages
+    - 2.4 Performance
+    - 2.5 Security
 
 <div style="page-break-after: always;"></div>
 
-## HTML
+# 1. Front-End
+
+## 1.1 HTML
 
 The server serves *HTML5* ([Polyglot *HTML*](https://www.w3.org/TR/2011/WD-html-polyglot-20110405/#dfn-polyglot-markup)) content when it can with this content negotiation handled server-side. The *HTML* is [*HTML5* compliant](https://www.w3.org/TR/html5/) and is tested using the W3C [HTML5 validator](https://validator.w3.org/nu).
 
@@ -36,7 +38,7 @@ The *HTML*, *CSS* and *JavaScript* all follow a [coding guide](http://codeguide.
 
 <div style="page-break-after: always;"></div>
 
-## CSS
+## 1.2 CSS
 
 ### Framework
 
@@ -78,7 +80,7 @@ JavaScript plays a large part in this project: server-side, client-side and duri
 
 <div style="page-break-after: always;"></div>
 
-## JavaScript
+## 1.3 JavaScript
 
 NodeJS server component uses server-side JavaScript, but this section talks about the client-side JavaScript.
 
@@ -134,81 +136,67 @@ After installing the node modules with `npm install` simply run the grunt tasks 
 `Gruntfile.js` defines the list of grunt tasks, detailed below.
 
 ```javascript
-  // Gruntfile.js
+// Gruntfile.js
 
-  //
-  // $ grunt server
-  //
-  // Runs the NodeJS server task, starting a dev server on localhost:3001
-  //
-  grunt.registerTask('server', ['exec:server']);
+// $ grunt server
+//
+// Runs the NodeJS server task, starting a dev server on localhost:3001
+//
+grunt.registerTask('lint', ['puglint', 'scsslint']);
 
-  //
-  // $ grunt lint
-  //
-  // Validates PUG and SCSS files with following subtasks
-  //    puglint: validates .pug files against rules
-  //    scsslint: validates .scss files against rules
-  //
-  grunt.registerTask('lint', ['puglint', 'scsslint']);
+// $ grunt lint
+//
+// Validates PUG and SCSS files with following subtasks
+//    puglint: validates .pug files against rules
+//    scsslint: validates .scss files against rules
+//
+grunt.registerTask('lint', ...);
 
-  //
-  // $ grunt build
-  //
-  // Builds all files with the following sub tasks:
-  //    concat: concatenates js files to a single file
-  //    uglify: minifies the single js file
-  //    sass: turn .scss files into a single .css file, minifying in the process
-  //    imagemin: minifies the images by reducing filesize
-  //    svgmin: minifies svg files to reduce filezie
-  //
-  grunt.registerTask('build', ['concat', 'uglify', 'sass', 'imagemin', 'svgmin']);
+// $ grunt build
+//
+// Builds all files with the following sub tasks:
+//    concat: concatenates js files to a single file
+//    uglify: minifies the single js file
+//    sass: turn .scss files into a single .css file, minifying in the process
+//    imagemin: minifies the images by reducing filesize
+//    svgmin: minifies svg files to reduce filesize
+//
+grunt.registerTask('build', ...);
 
-  //
-  // $ grunt 'commit-warn'
-  //
-  // Check that we have commmited before running another task, like deploying.
-  //
-  grunt.registerTask('commit-warn', function() {
-    grunt.log.warn("Make sure you have commited changes!");
-    var seconds = 2;
-    grunt.log.warn("Sleeping for " + seconds + " seconds, just to be sure.");
-    sleep(seconds);
-    grunt.log.ok("Continuing...");
-  });
+// $ grunt 'commit-warn'
+//
+// Check that we have commmited before running another task, like deploying.
+//
+grunt.registerTask('commit-warn', ...);
 
-  //
-  // $ grunt screenshot
-  //
-  // Take a screenshot then commit it to the repo with following sub tasks:
-  //    pageres: renders the DOM and takes a screenshot
-  //    exec:git_commit_screenshot: runs a git shell command to commit screenshot
-  //    exec:git_push: runs a git shell command to push to repo
-  //
-  grunt.registerTask('screenshot', ['pageres', 'exec:git_commit_screenshot', 'exec:git_push']);
+// $ grunt screenshot
+//
+// Take a screenshot then commit it to the repo with following sub tasks:
+//    pageres: renders the DOM and takes a screenshot
+//    exec:git_commit_screenshot: runs a git shell command to commit screenshot
+//    exec:git_push: runs a git shell command to push to repo
+//
+grunt.registerTask('screenshot', ...);
 
-  //
-  // $ grunt push
-  //
-  // Runs various git commands to push to repo.
-  //
-  grunt.registerTask('push', ['exec:git_checkout_heroku', 'exec:git_pull', 'exec:git_checkout_master', 'exec:git_push_heroku']);
+// $ grunt push
+//
+// Runs various git commands to push to repo.
+//
+grunt.registerTask('push', ... );
 
-  //
-  // $ grunt deploy
-  //
-  // Deploys to a heroku server, takes a screenshot then run page insight tests.
-  // Requires Heroku CLI installed, a Heroku account and `heroku login`
-  //
-  grunt.registerTask('deploy', ['exec:gitstatus', 'commit-warn', 'lint', 'build', 'push', 'screenshot', 'pagespeed']);
+// $ grunt deploy
+//
+// Deploys to a heroku server, takes a screenshot then run page insight tests.
+// Requires Heroku CLI installed, a Heroku account and `heroku login`
+//
+grunt.registerTask('deploy', ...);
 
-  //
-  // $ grunt
-  //
-  // Lints, builds then starts a local server.
-  // What you expect the default task to do.
-  //
-  grunt.registerTask('default', ['lint', 'build', 'exec:server']);
+// $ grunt
+//
+// Lints, builds then starts a local server.
+// What you expect the default task to do.
+//
+grunt.registerTask('default', ...);
 ```
 
 This process saves time and makes it easy for new developers to get started. For example, to build the site making sure all code adheres to standards and to preview it, simply clone the repo, then type the following commands.
@@ -217,7 +205,7 @@ This process saves time and makes it easy for new developers to get started. For
 - `node_modules/grunt-cli/bin/grunt <task>`
 
 
-## PNG
+## 1.4 PNG
 
 I manipulated Portable Network Graphics using two methods. First, using Gimp demonstrating different methods for image manipulation. Second, with JavaScript and HTML5 canvas to provide a PNG animation.
 
@@ -258,7 +246,7 @@ Using HTML5 Canvas, shapes are programatically displayed and a simple animation 
 ![PNG animation](http://webtechnologies.herokuapp.com/images/png-animation.png "PNG animation")
 
 
-## SVG
+## 1.5 SVG
 
 Similarly to the PNG section, I tried two different methods for manipulating Scalable Vector Graphics. First, I experimented with drawing SVG animation using Inkscape, second I drew some SVG icons and animated these using CSS and SVG xml animations.
 
@@ -287,9 +275,7 @@ Inkscape has a powerful feature called Simplify. If we add some colour to our pr
 
 ### Animation
 
-I drew some basic shapes using Inkscape and copied their `.svg` file and added some basic animation to them.
-
-For example, this is the [first spinner](https://webtechnologies.herokuapp.com/front-end#svg) code as demonstrated on the website.
+I drew some basic shapes using Inkscape and copied their `.svg` file and added some basic animation to them. For example, this is the [first spinner](https://webtechnologies.herokuapp.com/front-end#svg) code as demonstrated on the website.
 
 ![SVG animation](http://webtechnologies.herokuapp.com/images/svg-animation.png "SVG animation")
 
@@ -297,14 +283,7 @@ For example, this is the [first spinner](https://webtechnologies.herokuapp.com/f
 <!-- First SVG animation -->
 <?xml version="1.0" encoding="utf-8"?>
 <svg x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40"">
-
-  <!-- Created in Inkscape -->
-  <!-- Circle -->
-  <path opacity="0.5" fill="#607d8b" d="M20.201,5.169c-8.254, ... ,31.749z"/>
-
-  <!-- Rotating cube -->
-  <path fill="#607d8b" d="M26.013,10.047l1.654-2. ... ,10.047z">
-
+  <!-- ... -->
   <!-- Animated -->
     <!-- Rotate cube -->
     <animateTransform attributeType="xml" attributeName="transform"
@@ -335,8 +314,11 @@ CSS animation wasn't added to the website however, I experimented with different
 }
 
 ```
+<div style="page-break-after: always;"></div>
 
-## Server
+# 2. Back-End
+
+## 2.1 Server
 
 The server is written in JavaScript and uses *NodeJS* with *ExpressJS* as the web server. Some [boilerplates](http://www.nodebootstrap.io) (a project template) were considered, along with different *JavaScript* frameworks, such as [AngularJS](https://angularjs.org/). But, these boilerplates were very bloated and I wanted to understand exactly how content was served. Therefore, this project does not use any *JavaScript* frameworks and instead the base code uses the nodejs server (*ExpressJS*) [application generator](https://expressjs.com/en/starter/generator.html) - a recommended tool for starting a new server.
 
@@ -349,7 +331,7 @@ All server-side JavaScript is linted using JSLint.
 The report is written in a Markdown file for easy editing, and a PUG Filter renders the markdown file in the `/report` section. A button was added to render the report to a PDF on demand, using a node module `markdown-to-pdf`.
 
 
-## Database
+## 2.2 Database
 
 A database is used to count the number of views on this website.
 
@@ -364,7 +346,7 @@ The number of views a website has is accessed by JavaScript on a page load and p
 On a new page load, the number is accessed server-side, incremented and inserted back into the database.
 
 
-## Dynamic Pages
+## 2.3 Dynamic Pages
 
 The website is written in a *HTML* templating language called *[Pug](https://pugjs.org)*. *'Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.'* [\[2\]](https://github.com/pugjs/pug). *Pug* makes writing *HTML* code easier by using templates to split the document into tidy sections. For example below is a *Pug* snippet for the `/report` page - notice how we `extend layout.pug` which is the base *HTML* for this page.
 
@@ -398,7 +380,7 @@ Dynamically compiling each page enables less code reuse. Each `.pug` file is val
 *Pug* uses a filter to extend *Pug* syntax by adding code highlighting provided by https://highlightjs.org.
 
 
-## Performance
+## 2.4 Performance
 
 The website performance is improved by using: a [compression node module](https://www.npmjs.com/package/compression), code and image minification, and finally by thoroughly evaluating performance by using the following services.
 
@@ -422,7 +404,7 @@ The website performance is improved by using: a [compression node module](https:
 - [Page Speed Optimization](https://varvy.com/pagespeed/)
 
 
-## Security
+## 2.5 Security
 
 The website considers several security issues looking at the server (ExpressJS) [best practices](http://expressjs.com/en/advanced/best-practice-security.html) and using the following tools:
 
