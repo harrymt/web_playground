@@ -32,10 +32,10 @@ Install [dependencies](#dependencies) and read about [grunt](#grunt) first!
 
 - Install [NodeJS](https://nodejs.org/en/)
 - Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/).
-- Install global SCSS linting with:
+- (optional) Install global SCSS linting with:
 	- `gem update --system && gem install scss_lint`
 	- OR: `sudo apt-get install scss_lint`
-- Not needed? Install [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
+- Install [sqlite3](https://www.sqlite.org/download.html) is setup and added to your PATH
 
 
 
