@@ -213,7 +213,7 @@ After installing the node modules with `npm install` simply run the grunt tasks 
 
 This process saves time and makes it easy for new developers to get started. For example, to build the site making sure all code adheres to standards and to preview it, simply clone the repo, then type the following commands.
 
-- `npm install` to install all node dependencies (and grunt)
+- `npm install` to install all node dependencies
 - `node_modules/grunt-cli/bin/grunt <task>`
 
 
@@ -402,7 +402,24 @@ Dynamically compiling each page enables less code reuse. Each `.pug` file is val
 
 The website performance is improved by using: a [compression node module](https://www.npmjs.com/package/compression), code and image minification, and finally by thoroughly evaluating performance by using the following services.
 
-<README INSERT TODO>
+- < 32% per load [Content served - Browser Calories](https://chrome.google.com/webstore/detail/browser-calories/pdkibgfjegigkoaleelbkdpkgceljfco)
+- 99/100 [Mobile SEO](https://varvy.com/)
+- 95/100 [Yellow Lab Tools](http://yellowlab.tools/result/epshsg8xmb)
+- 90/100 desktop, 74/100 mobile [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F)
+- 89/100 [Lets Validate](https://pro.letsvalidate.com/webtechnologies.herokuapp.com)
+- 89/100 [Web Bloat score](http://www.webbloatscore.com?url=https://webtechnologies.herokuapp.com/)
+- 87/100 [Coach Panel](https://chrome.google.com/webstore/detail/coach-panel/olecfjmnejnkjipoicfpneceppjeaemo)
+- 86/100 [PageLocity](http://pagelocity.com/analyzer?url=https%3A%2F%2Fwebtechnologies.herokuapp.com)
+- 85/100 [Progressive Web App LightHouse](https://developers.google.com/web/tools/lighthouse/)
+- 74/100 [Mobile Speed](https://varvy.com/mobile/)
+- 50/100 [Mozilla Observatory](https://observatory.mozilla.org/analyze.html?host=webtechnologies.herokuapp.com)
+
+
+### Validators
+- [Nu HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F)
+- [GZip Enabled](https://checkgzipcompression.com/?url=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F)
+- [SEO Rich Preview](https://richpreview.com/?url=https://webtechnologies.herokuapp.com/)
+- [Page Speed Optimization](https://varvy.com/pagespeed/)
 
 
 ## Security
