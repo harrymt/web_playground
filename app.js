@@ -36,11 +36,14 @@ app.use('/hits', database.hits);
 app.use('/hit', database.trackHit);
 
 // Secure the Express app by setting HTTP headers.
-app.use(helmet());
+app.use(helmet({
+  hsts: {
+    maxAge: 31536000
+  }
+}));
 
 // Compress all content.
 app.use(compression());
-
 
 // View engine setup.
 app.set('views', path.join(__dirname, 'views'));
