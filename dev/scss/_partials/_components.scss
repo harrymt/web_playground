@@ -22,3 +22,9 @@ abbr[title]::after,
 a[href]::after {
   content: "";
 }
+
+.main .block_colour {
+  background-image: url("/images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

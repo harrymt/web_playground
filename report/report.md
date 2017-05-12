@@ -3,7 +3,9 @@
 
 
 ## Introduction
-The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, I worked alone and each section is of grade A quality.
+The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality.
+
+Note: for marking purposes, I worked alone and each section is of grade A quality.
 
 ![Screenshot](http://webtechnologies.herokuapp.com/images/screenshot.png "Website Homepage Screenshot")
 
@@ -216,10 +218,32 @@ I manipulated Portable Network Graphics using two methods. First, using Gimp dem
 
 ### GIMP
 
-- Working with bitmap graphics in Gimp or Krita
-- Show how to convert images to PNG, cropping away unwanted edges, changing resolution
-- Use basic tools such as using filters or changing colours or combining existing images or creating simple shapes or filling
-- Gained experience with some more sophisticated tools such as handling layers and transparency, or airbrushing or creating original artwork
+I experimented with the GNU Image Manipulation Program (GIMP) to create a header image for the web playground. I wanted to aim for an abstract art piece demonstrating different pieces of code coming together creating a whole.
+
+I started by using the *gradient tool* to create gradient between two colours. This served as the background for the code blocks.
+
+![Gimp gradient](http://webtechnologies.herokuapp.com/images/gimp-gradient.png "Gimp gradient")
+
+Next I created squares to act as the code blocks using the rectangle tool. I added these on separate layers, to nicely separate each section of the image.
+
+![Gimp layers](http://webtechnologies.herokuapp.com/images/gimp-layers.png "Gimp layers")
+
+Using layers enabled me to quickly tweak different parts of the image.
+
+![Gimp smudge tool](http://webtechnologies.herokuapp.com/images/gimp-smudge-tool.png "Gimp smudge tool")
+
+Then I used the smudge tool to blend the blocks with the gradient image.
+
+![Gimp different shapes](http://webtechnologies.herokuapp.com/images/gimp-diff-shapes.png "Gimp different shapes")
+
+To finish I added a cartoon filter to the blocks, creating an abstract art effect.
+
+![Gimp cartoon filter](http://webtechnologies.herokuapp.com/images/gimp-cartoon-filter.png "Gimp cartoon filter")
+
+This worked well with the different smudged shapes and created a decent image to use as the banner.
+
+![Gimp final product](http://webtechnologies.herokuapp.com/images/background.png "Gimp final product")
+
 
 ### Animation
 
