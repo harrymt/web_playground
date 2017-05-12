@@ -6,11 +6,15 @@ var router = express.Router();
 
 /* Render, then GET report as PDF. */
 router.get('/report/pdf', function(req, res, next) {
-  var markdownpdf = require("markdown-pdf"), fs = require("fs")
+  var markdownpdf = require("markdown-pdf"), fs = require("fs");
 
   console.log("Trying to render report.");
 
-  markdownpdf().from("report/report.md").to("report/report.pdf", function () {
+  markdownpdf({
+    remarkable: {
+      linkify: true
+    }
+  }).from("report/report.md").to("report/report.pdf", function () {
     console.log("Successfully rendered report.");
 
     fs.readFile("report/report.pdf", function(err, data) {

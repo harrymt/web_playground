@@ -384,7 +384,7 @@ Take from readme.
 The website considers several security issues looking at the server (ExpressJS) [best practices](http://expressjs.com/en/advanced/best-practice-security.html) and using the following tools:
 
 - [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
-- [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
+- [Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 - External links use `rel='noopener'` based on [Google's Lighthouse Audit](https://developers.google.com/web/tools/lighthouse/audits/noopener).
 - Site runs on HTTPS to prevent attackers from exploting communications between this website and the users' browser, as reccommended by Googles [Web Fundementals security section](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
