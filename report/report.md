@@ -1,6 +1,7 @@
 # Overview
 *Written by Harry Mumford-Turner for the University of Bristol [Web Technologies unit](http://www.bristol.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=COMS32500).*
 
+
 ## Introduction
 The website serves as a place to set the best practices for the web, lets me demonstrates my ability in this area and this report provides an overview of the [website](http://www.github.com/harrymt/web_playground) functionality. Note: for marking purposes, I worked alone and each section is of grade A quality.
 
@@ -210,13 +211,7 @@ This process saves time and makes it easy for new developers to get started. For
 
 ## PNG
 
-I manipulated Portable Network Graphics using two methods. First, with JavaScript and HTML5 canvas to provide a PNG animation. Second, using Gimp demonstrating different methods for image manipulation.
-
-### Animation
-
-Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city. See a [demo online](https://webtechnologies.herokuapp.com/front-end#png) with a source code snippet.
-
-![PNG animation](http://webtechnologies.herokuapp.com/images/png-animation.png "PNG animation")
+I manipulated Portable Network Graphics using two methods. First, using Gimp demonstrating different methods for image manipulation. Second, with JavaScript and HTML5 canvas to provide a PNG animation.
 
 
 ### GIMP
@@ -226,14 +221,58 @@ Using HTML5 Canvas, shapes are programatically displayed and a simple animation 
 - Use basic tools such as using filters or changing colours or combining existing images or creating simple shapes or filling
 - Gained experience with some more sophisticated tools such as handling layers and transparency, or airbrushing or creating original artwork
 
+### Animation
+
+Using HTML5 Canvas, shapes are programatically displayed and a simple animation shows raindrops over a city. See a [demo online](https://webtechnologies.herokuapp.com/front-end#png) with a source code snippet.
+
+![PNG animation](http://webtechnologies.herokuapp.com/images/png-animation.png "PNG animation")
+
 
 ## SVG
 
-- Icons are drawn using SVG rather than loading a font pack, such as FontAwesome icons from https://icomoon.io/app/#/select/image
-- Look at inkscape, different technologies!!!
-- Generate circles in SVG http://www.lugolabs.com/circles
+Similarly to the PNG section, I tried two different methods for manipulating Scalable Vector Graphics. First, I experimented with drawing SVG animation using Inkscape, second I drew some SVG icons and animated these using CSS and SVG xml animations.
 
-Animate a person icon using svg.
+
+### Inkscape
+
+  - this is working with vector graphics in Inkscape
+  - Created a basic drawing in Inkscape, probably by copying something else
+  - Gained experience with some of Inkscape's features such as shape tools, freehand drawing, simplification
+  - Gained a higher level of experience, e.g. with path editing, grouping, transformations, gradients, patterns, etc., or put a lot of effort into vector artwork
+
+### Animation
+
+I drew some basic shapes using Inkscape and copied their `.svg` file and added some basic animation to them.
+
+For example, this is the [first spinner](https://webtechnologies.herokuapp.com/front-end#svg) code as demonstrated on the website.
+
+![SVG animation](http://webtechnologies.herokuapp.com/images/svg-animation.png "SVG animation")
+
+```xml
+<!-- First SVG animation -->
+<?xml version="1.0" encoding="utf-8"?>
+<svg x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40"">
+
+  <!-- Created in Inkscape -->
+  <!-- Circle -->
+  <path opacity="0.5" fill="#607d8b" d="M20.201,5.169c-8.254, ... ,31.749z"/>
+
+  <!-- Rotating cube -->
+  <path fill="#607d8b" d="M26.013,10.047l1.654-2. ... ,10.047z">
+
+  <!-- Animated -->
+    <!-- Rotate cube -->
+    <animateTransform attributeType="xml" attributeName="transform"
+      type="rotate"
+      values="0 20 20; 360 20 20; 0 20 20"
+      dur="3s"
+      repeatCount="indefinite"
+    />
+  </path>
+</svg>
+```
+
+CSS animation wasn't added to the website however, I expreiemented with different ways to animate icons, for example this is how to draw and animate a person icon.
 
 ```css
 
@@ -251,13 +290,6 @@ Animate a person icon using svg.
 }
 
 ```
-
-- SVG:
-  - this is working with vector graphics in Inkscape
-  - Created a basic drawing in Inkscape, probably by copying something else
-  - Gained experience with some of Inkscape's features such as shape tools, freehand drawing, simplification
-  - Gained a higher level of experience, e.g. with path editing, grouping, transformations, gradients, patterns, etc., or put a lot of effort into vector artwork
-  -
 
 ## Server
 
@@ -349,14 +381,14 @@ Take from readme.
 
 ## Security
 
-The website considers several security issues looking at the server (ExpressJS) [best practices](http://expressjs.com/en/advanced/best-practice-security.html), using the following:
+The website considers several security issues looking at the server (ExpressJS) [best practices](http://expressjs.com/en/advanced/best-practice-security.html) and using the following tools:
 
 - [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
 - [Transport Layer Security](TLS)(https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 - External links use `rel='noopener'` based on [Google's Lighthouse Audit](https://developers.google.com/web/tools/lighthouse/audits/noopener).
 - Site runs on HTTPS to prevent attackers from exploting communications between this website and the users' browser, as reccommended by Googles [Web Fundementals security section](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
-Finally, these online services rates the secuirity of the web playgorundplayground.
+Finally, these online services rate the security level of the web playground.
 
 - 80/100 [SSL Security Check](https://www.ssllabs.com/ssltest/analyze.html?d=webtechnologies.herokuapp.com)
 - 60/100 [CryptCheck](https://tls.imirhil.fr/https/webtechnologies.herokuapp.com)
