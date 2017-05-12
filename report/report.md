@@ -45,7 +45,7 @@ The website style is based on a *CSS* framework that I built called [*SimpleStyl
 
 The framework uses [*SASS*](http://sass-lang.com) - *'SASS or SCSS is an extension of CSS, adding nested rules, variables, mixins, selector inheritance, and more.'* [\[1\]](http://sass-lang.com). *SASS* files are processed using *Ruby*, and in this project *SASS* files are compiled using a *JavaScript* task runner called *Grunt* (more on this later).
 
-![SASS](http://webtechnologies.herokuapp.com/images/simplestyle-screenshot.png "SASS framework")
+![SASS](http://webtechnologies.herokuapp.com/images/sass-logo.png "SASS Logo")
 
 
 The framework is served to the website via a Content Delivery Network or *CDN* for quick content delivery. For example, this is how *SimpleStyle* is added in our *Pug* (*HTML*) file.
@@ -120,7 +120,7 @@ Grunt is a *JavaScript* Task Runner that handles all developer operations. The `
 After installing the node modules with `npm install` simply run the grunt tasks with one of two ways:
 
 1. `grunt <task>`
-  - (if the `grunt-cli`](https://gruntjs.com/using-the-cli) is installed `npm install -g grunt-cli`)
+  - (if the [`grunt-cli`](https://gruntjs.com/using-the-cli) is installed `npm install -g grunt-cli`)
 2. `node_modules/grunt-cli/bin/grunt <task>`
 
 `Gruntfile.js` defines the list of grunt tasks, detailed below.
