@@ -2,14 +2,57 @@ extends ../layout.pug
 
 block content
   h1= title
-  p TODO: Take from report.md
-  p TODO: Anymore headings that we make in report, add them here and in nav, e.g. testing and security
+  p The server is written in JavaScript, using NodeJS and ExpressJS to server PUG templates.
+  p See the
+    =' '
+    a( href='/report' ) report
+    |
+    | for a full writeup.
 
   h2#server Server
-  p TODO: Take from report.md
+  p The server uses content negotiation for old browsers, sending redirections to browsers, handling UTF-8 and uses HTTPS. GZIP compression is also used to reduce the time it takes to serve content.
 
   h2#database Database
-  p TODO: Take from report.md
+  p A database is used to count the number of views on this website. Database manipulation is done server-side and client-side in JavaScript via an API accessing a separate JavaScript module. An SQLite embedded database is used over a Key-Value-Store such as MongoDB, because KVS are only useful when you want to store arbitrary pieces of JSON.
 
   h2#dynamic Dynamic Pages
-  p TODO: Take from report.md
+  p The website is written in a *HTML* templating language called Pug. 'Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.'. Pug makes writing HTML code easier by using templates to split the document into tidy sections.
+
+  h2#performance Performance
+  p The website performance is improved by using: a compression node module, code and image minification, and finally by thoroughly evaluating performance by using the following services.
+  ul
+    li 95/100
+      =' '
+      a( href='http://yellowlab.tools/result/epshsg8xmb' ) Yellow Lab Tools
+    li 90/100 desktop, 74/100 mobile
+      =' '
+      a( href='https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F' ) Google PageSpeed Insights
+      =' '
+    li 89/100
+      =' '
+      a( href='https://pro.letsvalidate.com/webtechnologies.herokuapp.com' ) Lets Validate
+      =' '
+    li 89/100
+      =' '
+      a( href='http://www.webbloatscore.com?url=https://webtechnologies.herokuapp.com/' ) Web Bloat score
+      =' '
+    li 87/100
+      =' '
+      a( href='https://chrome.google.com/webstore/detail/coach-panel/olecfjmnejnkjipoicfpneceppjeaemo' ) Coach Panel
+      =' '
+    li 86/100
+      =' '
+      a( href='http://pagelocity.com/analyzer?url=https%3A%2F%2Fwebtechnologies.herokuapp.com' ) PageLocity
+      =' '
+    li 85/100
+      =' '
+      a( href='https://developers.google.com/web/tools/lighthouse/' ) Progressive Web App LightHouse
+      =' '
+    li 74/100
+      =' '
+      a( href='https://varvy.com/mobile/' ) Mobile Speed
+      =' '
+    li 50/100
+      =' '
+      a( href='https://observatory.mozilla.org/analyze.html?host=webtechnologies.herokuapp.com' ) Mozilla Observatory
+      =' '

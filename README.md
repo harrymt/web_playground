@@ -8,12 +8,6 @@ Harry's web playground, demonstrating variety of website development techniques 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
 
-### Submission
-- .zip file with everything except .git, LICENSE and node_modules
-- include report.pdf outside of .zip file
-- include SimpleStyle .zip also outside of project .zip
-- `npm install`
-
 ### Possible Future Additions
 
 - Run static analysis [tools](https://github.com/mre/awesome-static-analysis#css) on CSS, HTML and Javascript
@@ -95,8 +89,6 @@ grunt.registerTask('deploy', ['lint', 'build', 'exec:deploy', 'pagespeed']);
 ## Online Testing
 
 ### Score
-
-(Last checked 1pm 08/05/17)
 
 - < 32% per load [Content served - Browser Calories](https://chrome.google.com/webstore/detail/browser-calories/pdkibgfjegigkoaleelbkdpkgceljfco)
 - 99/100 [Mobile SEO](https://varvy.com/)

@@ -2,16 +2,21 @@ extends ../layout.pug
 
 block content
   h1= title
-  p TODO: Take from report.md
+  p HTML, CSS, JS, PNG, SVG and more!
+  p See the
+    =' '
+    a( href='/report' ) report
+    |
+    | for a full writeup.
 
   h2#html Hyper Text Markup Language
-  p TODO: Take from report.md
+  p HTML is this very page you are viewing, its validated and created by PUG.
 
   h2#css Cascading StyleSheet
-  p TODO: Take from report.md
+  p The CSS is pre-processed using SASS and based on SimpleStyle a CSS framework I built.
 
   h2#js JavaScript
-  p TODO: Take from report.md
+  p Animated images, database interaction and Grunt.
 
   h2#png PNG
   .row
@@ -54,7 +59,10 @@ block content
   h2#svg SVG
   .row
     .half
-      p Here are some animated loading icons, created in Inkscape, then animated using SVG animations.
+      p Here are some animated loading icons, created in Inkscape, then animated using SVG animations. Note these animations do not work in Microsoft Edge as described in
+        =' '
+        a( href='https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8487752/' ) this issue
+        ='.'
       .svgs
         img( src='/svg/spinnera.svg', alt='Spinner-A' )
         img( src='/svg/spinnerb.svg', alt='Spinner-B' )
