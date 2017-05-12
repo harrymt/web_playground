@@ -18,14 +18,6 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 
 - Run static analysis [tools](https://github.com/mre/awesome-static-analysis#css) on CSS, HTML and Javascript
 
-### TODO
-
-- TODO: Add information about how I edited images in report, use gimp, show some screenshots
-- TODO: Fix svg spinners on edge
-- TODO: To stop using some weird node_modules/grunt command, add grunt to npm script, so you do npm run grunt ... https://gruntjs.com/blog/2016-02-11-grunt-1.0.0-rc1-released#npm-scripts
-- TODO: - Check if pug can be syntaxed highlighted - In report see if we can syntax highlight stuff
-- TODO: Add [HTML5 linting](https://github.com/mozilla/html5-lint) & [validation](https://www.npmjs.com/package/html-validator) - Write about it in the [HTML](#html) section, https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebtechnologies.herokuapp.com%2F validated
-
 
 ## Setup
 

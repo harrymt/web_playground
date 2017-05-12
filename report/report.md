@@ -23,10 +23,10 @@ Note: for marking purposes, I worked alone and each section is of grade A qualit
     - Server
     - Database
     - Dynamic Pages
-    - Tests
+    - Performance
     - Security
 
-
+<div style="page-break-after: always;"></div>
 
 ## HTML
 
@@ -34,6 +34,7 @@ The server serves *HTML5* ([Polyglot *HTML*](https://www.w3.org/TR/2011/WD-html-
 
 The *HTML*, *CSS* and *JavaScript* all follow a [coding guide](http://codeguide.co/) to aid readability and maintainability. For example, the *JavaScript* is located at the bottom of the *HTML*, before the `</body>` tag, to not block the rest of Document Object Model (DOM) rendering of the page. Finally the project is mainly written in an *HTML* templating language called *Pug*, but more on that later. Lets move onto the style of the website.
 
+<div style="page-break-after: always;"></div>
 
 ## CSS
 
@@ -44,6 +45,8 @@ The website style is based on a *CSS* framework that I built called [*SimpleStyl
 ![SimpleStyle Screenshot](http://webtechnologies.herokuapp.com/images/simplestyle-screenshot.png "SimpleStyle Screenshot")
 
 *SimpleStyle* is separated into another [repository](https://github.com/harrymt/simplestyle/tree/master/scss), but for the website release, it is included in the repo as a `.zip` file.
+
+<div style="page-break-after: always;"></div>
 
 ### SASS
 
@@ -73,6 +76,7 @@ Style standards are based on the previously mentioned [coding guide](http://code
 
 JavaScript plays a large part in this project: server-side, client-side and during the build process. First we will talk about Client-Side JavaScript.
 
+<div style="page-break-after: always;"></div>
 
 ## JavaScript
 
@@ -261,10 +265,25 @@ Similarly to the PNG section, I tried two different methods for manipulating Sca
 
 ### Inkscape
 
-  - this is working with vector graphics in Inkscape
-  - Created a basic drawing in Inkscape, probably by copying something else
-  - Gained experience with some of Inkscape's features such as shape tools, freehand drawing, simplification
-  - Gained a higher level of experience, e.g. with path editing, grouping, transformations, gradients, patterns, etc., or put a lot of effort into vector artwork
+I worked with the Open Source tool *Inkscape*, exploring different techniques. The next images are screen shots of my experimentation with vector design.
+
+
+Drawing freehand regular paths with the Pencil tool was easy enough.
+
+![Inkscape Pencil Tool](http://webtechnologies.herokuapp.com/images/inkscape-pencil-tool.png)
+
+To get more regular shapes I used the Pen tool or Bezier tool.
+
+![Inkscape Pen Tool](http://webtechnologies.herokuapp.com/images/inkscape-pen-tool.png)
+
+I experimented with combing different paths to make new shapes, using the shortcuts `ctrl+k` and `ctrl+Shift+k`, to combine and break shapes.
+
+![Inkscape Combing Paths](http://webtechnologies.herokuapp.com/images/inkscape-combining-paths.png)
+
+Inkscape has a powerful feature called Simplify. If we add some colour to our previous text 'Web', and use Simplify (`ctrl+l`) we can generate creative effects to the text.
+
+![Inkscape Simplify](http://webtechnologies.herokuapp.com/images/inkscape-simplify.png)
+
 
 ### Animation
 
@@ -298,7 +317,7 @@ For example, this is the [first spinner](https://webtechnologies.herokuapp.com/f
 </svg>
 ```
 
-CSS animation wasn't added to the website however, I expreiemented with different ways to animate icons, for example this is how to draw and animate a person icon.
+CSS animation wasn't added to the website however, I experimented with different ways to animate icons, for example this is how to draw and animate a person icon.
 
 ```css
 
@@ -319,31 +338,33 @@ CSS animation wasn't added to the website however, I expreiemented with differen
 
 ## Server
 
-Bolierplates are like starting project templates. Some [boilerplates](http://www.nodebootstrap.io) were considered, along with different *JavaScript* frameworks, such as [AngularJS](https://angularjs.org/). But, these are very bloated and I wanted to understand exactly how content was served. Therefore, this project does not use any *JavaScript* frameworks and instead the base code uses *ExpressJS* [application generator](https://expressjs.com/en/starter/generator.html) - a recommended tool for starting a new server.
+The server is written in JavaScript and uses *NodeJS* with *ExpressJS* as the web server. Some [boilerplates](http://www.nodebootstrap.io) (a project template) were considered, along with different *JavaScript* frameworks, such as [AngularJS](https://angularjs.org/). But, these boilerplates were very bloated and I wanted to understand exactly how content was served. Therefore, this project does not use any *JavaScript* frameworks and instead the base code uses the nodejs server (*ExpressJS*) [application generator](https://expressjs.com/en/starter/generator.html) - a recommended tool for starting a new server.
 
-- port numbers, URL validation, content negotiation for old browsers, sending redirections to browsers, handling UTF-8
-- https and certificates, or web sockets, or cloud hosting, or security issues beyond URL validation, or auto-testing, or cookies, or running under reduced privilege
-- gzip compression
-- Uses [Mocha](https://github.com/mochajs/mocha) for unit tests
-- QUnit for tests, JSlint for linting also client
--  Rendering the report from markdown to pdf
-- pug html templating
-- database interaction (different module)
-- Heroku deployment!
+The server uses content negotiation for old browsers, sending redirections to browsers, handling UTF-8 and uses HTTPS. GZIP compression is also used to reduce the time it takes to serve content.
+
+The server is deployed to cloud hosting, provided by [Heroku](http://heroku.com) when the `grunt push` command is issued.
+
+All server-side JavaScript is linted using JSLint.
+
+The report is written in a Markdown file for easy editing, and a PUG Filter renders the markdown file in the `/report` section. A button was added to render the report to a PDF on demand, using a node module `markdown-to-pdf`.
+
 
 ## Database
 
-Why not Mongo DB
-http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
+A database is used to count the number of views on this website.
 
-http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/
+Database manipulation is done server-side and client-side in JavaScript via an API accessing a separate JavaScript module `database.js`.
 
-- Embedded database using SQLite
+An SQLite embedded database is used over a Key-Value-Store such as MongoDB, because KVS are only useful when you want to store arbitrary pieces of JSON.
+
+The database is simple, however the JavaScript module isn't and performs the correct error checking.
+
+The number of views a website has is accessed by JavaScript on a page load and passed to the footer using jQuery.
+
+On a new page load, the number is accessed server-side, incremented and inserted back into the database.
 
 
 ## Dynamic Pages
-
-### *HTML* Templates
 
 The website is written in a *HTML* templating language called *[Pug](https://pugjs.org)*. *'Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.'* [\[2\]](https://github.com/pugjs/pug). *Pug* makes writing *HTML* code easier by using templates to split the document into tidy sections. For example below is a *Pug* snippet for the `/report` page - notice how we `extend layout.pug` which is the base *HTML* for this page.
 
@@ -354,7 +375,7 @@ extends layout.pug
 
 block content
   h1= title
-  p This was built as ... a full write up is found&#32;
+  p This was built as ... a full write up is found
     a( href='/report' ) here.
 ```
 
@@ -372,37 +393,16 @@ html
   include includes/foot.pug
 ```
 
-Dynamically compiling each page enables less code reuse. Each `.pug` file is validated during the build process with a pug validated *Ruby* gem.
+Dynamically compiling each page enables less code reuse. Each `.pug` file is validated during the build process with a pug validator *Ruby* gem.
 
-*Pug* uses XXXX to extend *Pug*. I am using https://highlightjs.org ..
-
-### Page Views
-
-Talk about dynamic page views
+*Pug* uses a filter to extend *Pug* syntax by adding code highlighting provided by https://highlightjs.org.
 
 
-### Markdown Report to PDF
+## Performance
 
+The website performance is improved by using: a [compression node module](https://www.npmjs.com/package/compression), code and image minification, and finally by thoroughly evaluating performance by using the following services.
 
-
-
-## Tests
-
-
-Talk about mocha JavaScript tests
-
-### Performance & General
-
-Take from readme.
-
-- Compression is used https://www.npmjs.com/package/compression
-- Minification is used
-- All images are crushed to reduce filesize
-
-### General Testing
-- Performance, tests CL production code hosted on heroku
-- Use PhantomJs to automate things you do in the website
-
+<README INSERT TODO>
 
 
 ## Security
@@ -412,7 +412,7 @@ The website considers several security issues looking at the server (ExpressJS) 
 - [Helmet](https://www.npmjs.com/package/helmet) to help protect the app from some well-known web vulnerabilities by setting HTTP headers appropriately.
 - [Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security) SSL configuration based on [Mozilla SSL config](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 - External links use `rel='noopener'` based on [Google's Lighthouse Audit](https://developers.google.com/web/tools/lighthouse/audits/noopener).
-- Site runs on HTTPS to prevent attackers from exploting communications between this website and the users' browser, as reccommended by Googles [Web Fundementals security section](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+- Site runs on HTTPS to prevent attackers from exploting communications between this website and the users' browser, as recommended by Googles [Web Fundementals security section](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
 Finally, these online services rate the security level of the web playground.
 
