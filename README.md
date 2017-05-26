@@ -7,12 +7,6 @@ Harry's web playground, demonstrating variety of website development techniques 
 
 Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.ac.uk/Teaching/Resources/COMSM0104/cw/assign5/).
 
-
-### Possible Future Additions
-
-- Run static analysis [tools](https://github.com/mre/awesome-static-analysis#css) on CSS, HTML and Javascript
-
-
 ## Setup
 
 
@@ -111,6 +105,10 @@ grunt.registerTask('deploy', ['lint', 'build', 'exec:deploy', 'pagespeed']);
 - [SEO Rich Preview](https://richpreview.com/?url=https://webtechnologies.herokuapp.com/)
 - [Page Speed Optimization](https://varvy.com/pagespeed/)
 
+
+### Possible Future Additions
+
+- Run static analysis [tools](https://github.com/mre/awesome-static-analysis#css) on CSS, HTML and Javascript
 
 
 ## Technologies Used
