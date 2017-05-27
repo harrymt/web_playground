@@ -1,7 +1,6 @@
 # Web Playground
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
-[![NodeJS dependencies](https://david-dm.org/harrymt/web_playground.svg)](https://david-dm.org)
 
 Harry's web playground, demonstrating variety of website development techniques using best practices and standards.
 
