@@ -81,6 +81,8 @@ grunt.registerTask('deploy', ['lint', 'build', 'exec:deploy', 'pagespeed']);
 
 ## Online Testing
 
+These scores were for the hosted version of this site on heroku (currently offline).
+
 ### Score
 
 - < 32% per load [Content served - Browser Calories](https://chrome.google.com/webstore/detail/browser-calories/pdkibgfjegigkoaleelbkdpkgceljfco)
