@@ -12,6 +12,7 @@ Built for the University of Bristol unit [Web Technologies](https://www.cs.bris.
 Install [dependencies](#dependencies) and read about [grunt](#grunt) first!
 
 - `npm install`
+- `sudo npm install -g grunt-cli` (to install `grunt` globally)
 - `grunt server` - view at [http://localhost:3001/](http://localhost:3001/)
 
 
