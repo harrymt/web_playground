@@ -6,3 +6,5 @@ patch:
   'npm:ms:20170412':
     - compression > debug > ms:
         patched: '2017-06-29T09:22:50.241Z'
+    - markdown-pdf > phantomjs-prebuilt > extract-zip > debug > ms:
+        patched: '2017-08-17T02:09:06.326Z'
