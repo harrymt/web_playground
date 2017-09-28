@@ -20,7 +20,7 @@
   "author": "Harry Mumford-Turner",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "~1.17.2",
+    "body-parser": "~1.18.2",
     "compression": "^1.6.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
@@ -31,11 +31,11 @@
     "helmet": "^3.4.1",
     "jstransformer-markdown-it": "^2.0.0",
     "markdown-pdf": "^7.0.0",
-    "morgan": "~1.8.2",
+    "morgan": "~1.9.0",
     "pug": "~2.0.0-beta10",
     "serve-favicon": "~2.4.3",
     "sqlite3": "^3.1.8",
-    "snyk": "^1.36.2"
+    "snyk": "^1.41.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
