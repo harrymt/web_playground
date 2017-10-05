@@ -24,7 +24,7 @@
     "compression": "^1.6.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
-    "express": "~4.15.3",
+    "express": "~4.16.0",
     "express-sitemap": "^1.7.0",
     "grunt": "^1.0.0",
     "grunt-cli": "^1.2.0",
