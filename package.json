@@ -35,7 +35,7 @@
     "pug": "~2.0.0-beta10",
     "serve-favicon": "~2.4.3",
     "sqlite3": "^4.0.0",
-    "snyk": "^1.41.1"
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
